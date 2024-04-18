@@ -537,8 +537,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -581,6 +581,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_ent_[]" id="color_values_<?= $ent->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_ent[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $ent->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $ent->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $ent->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="ident[]" size="5" value="<?= $ent->id ?>"><?= $consec ?>.- <?= $ent->nombre ?><input type="hidden" name="nombreent[]" value="<?= $ent->nombre ?>">
                                                                         <?php if ($ent->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -595,12 +601,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $ent->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_ent[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $ent->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $ent->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $ent->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasident ?>" class="getrowident" style="cursor:pointer"></i>
@@ -676,8 +676,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -720,6 +720,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_dcmpi_[]" id="color_values_<?= $dcmpi->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_dcmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $dcmpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $dcmpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $dcmpi->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="iddcmpi[]" size="5" value="<?= $dcmpi->id ?>"><?= $consec ?>.- <?= $dcmpi->nombre ?><input type="hidden" name="nombredcmpi[]" value="<?= $dcmpi->nombre ?>">
                                                                         <?php if ($dcmpi->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -734,12 +740,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $dcmpi->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_dcmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $dcmpi->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $dcmpi->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $dcmpi->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasiddcmpi ?>" class="getrowiddcmpi" style="cursor:pointer"></i>
@@ -803,8 +803,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -847,6 +847,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_dcmpe_[]" id="color_values_<?= $dcmpe->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_dcmpe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $dcmpe->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $dcmpe->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $dcmpe->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="iddcmpe[]" size="5" value="<?= $dcmpe->id ?>"><?= $consec ?>.- <?= $dcmpe->nombre ?><input type="hidden" name="nombredcmpe[]" value="<?= $dcmpe->nombre ?>">
                                                                         <?php if ($dcmpe->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -861,12 +867,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $dcmpe->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_dcmpe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $dcmpe->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $dcmpe->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $dcmpe->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasiddcmpe ?>" class="getrowiddcmpe" style="cursor:pointer"></i>
@@ -942,8 +942,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -986,6 +986,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_mhjmpi_[]" id="color_values_<?= $mhjmpi->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_mhjmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpi->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idmhjmpi[]" size="5" value="<?= $mhjmpi->id ?>"><?= $consec ?>.- <?= $mhjmpi->nombre ?><input type="hidden" name="nombremhjmpi[]" value="<?= $mhjmpi->nombre ?>">
                                                                         <?php if ($mhjmpi->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -1000,12 +1006,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $mhjmpi->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_mhjmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpi->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpi->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpi->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidmhjmpi ?>" class="getrowidmhjmpi" style="cursor:pointer"></i>
@@ -1069,8 +1069,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -1113,6 +1113,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_mhjmpe_[]" id="color_values_<?= $mhjmpe->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_mhjmpe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpe->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpe->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpe->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idmhjmpe[]" size="5" value="<?= $mhjmpe->id ?>"><?= $consec ?>.- <?= $mhjmpe->nombre ?><input type="hidden" name="nombremhjmpe[]" value="<?= $mhjmpe->nombre ?>">
                                                                         <?php if ($mhjmpe->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -1127,12 +1133,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $mhjmpe->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_mhjmpe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpe->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpe->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpe->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidmhjmpe ?>" class="getrowidmhjmpe" style="cursor:pointer"></i>
@@ -1196,8 +1196,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -1240,6 +1240,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_mhjmpje_[]" id="color_values_<?= $mhjmpje->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_mhjmpje[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpje->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpje->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpje->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idmhjmpje[]" size="5" value="<?= $mhjmpje->id ?>"><?= $consec ?>.- <?= $mhjmpje->nombre ?><input type="hidden" name="nombremhjmpje[]" value="<?= $mhjmpje->nombre ?>">
                                                                         <?php if ($mhjmpje->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -1254,12 +1260,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $mhjmpje->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_mhjmpje[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpje->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpje->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpje->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidmhjmpje ?>" class="getrowidmhjmpje" style="cursor:pointer"></i>
@@ -1323,8 +1323,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -1367,6 +1367,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_mhjmpli_[]" id="color_values_<?= $mhjmpli->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_mhjmpli[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpli->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpli->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpli->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idmhjmpli[]" size="5" value="<?= $mhjmpli->id ?>"><?= $consec ?>.- <?= $mhjmpli->nombre ?><input type="hidden" name="nombremhjmpli[]" value="<?= $mhjmpli->nombre ?>">
                                                                         <?php if ($mhjmpli->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -1381,12 +1387,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $mhjmpli->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_mhjmpli[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpli->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpli->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpli->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidmhjmpli ?>" class="getrowidmhjmpli" style="cursor:pointer"></i>
@@ -1462,8 +1462,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -1506,6 +1506,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_impi_[]" id="color_values_<?= $impi->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_impi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $impi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $impi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $impi->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idimpi[]" size="5" value="<?= $impi->id ?>"><?= $consec ?>.- <?= $impi->nombre ?><input type="hidden" name="nombreimpi[]" value="<?= $impi->nombre ?>">
                                                                         <?php if ($impi->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -1517,12 +1523,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $impi->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_impi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $impi->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $impi->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $impi->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidimpi ?>" class="getrowidimpi" style="cursor:pointer"></i>
@@ -1586,8 +1586,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -1630,6 +1630,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_impe_[]" id="color_values_<?= $impe->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_impe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $impe->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $impe->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $impe->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idimpe[]" size="5" value="<?= $impe->id ?>"><?= $consec ?>.- <?= $impe->nombre ?><input type="hidden" name="nombreimpe[]" value="<?= $impe->nombre ?>">
                                                                         <?php if ($impe->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -1644,12 +1650,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $impe->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_impe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $impe->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $impe->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $impe->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidimpe ?>" class="getrowidimpe" style="cursor:pointer"></i>
@@ -1713,8 +1713,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -1757,6 +1757,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_imhe_[]" id="color_values_<?= $imhe->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_imhe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $imhe->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $imhe->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $imhe->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idimhe[]" size="5" value="<?= $imhe->id ?>"><?= $consec ?>.- <?= $imhe->nombre ?><input type="hidden" name="nombreimhe[]" value="<?= $imhe->nombre ?>">
                                                                         <?php if ($imhe->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -1771,12 +1777,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $imhe->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_imhe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $imhe->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $imhe->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $imhe->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidimhe ?>" class="getrowidimhe" style="cursor:pointer"></i>
@@ -1852,8 +1852,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -1896,6 +1896,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_innpi_[]" id="color_values_<?= $innpi->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_innpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $innpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $innpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $innpi->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idinnpi[]" size="5" value="<?= $innpi->id ?>"><?= $consec ?>.- <?= $innpi->nombre ?><input type="hidden" name="nombreinnpi[]" value="<?= $innpi->nombre ?>">
                                                                         <?php if ($innpi->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -1910,12 +1916,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $innpi->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_innpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $innpi->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $innpi->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $innpi->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidinnpi ?>" class="getrowidinnpi" style="cursor:pointer"></i>
@@ -1979,8 +1979,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -2023,6 +2023,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_innpe_[]" id="color_values_<?= $innpe->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_innpe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $innpe->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $innpe->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $innpe->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idinnpe[]" size="5" value="<?= $innpe->id ?>"><?= $consec ?>.- <?= $innpe->nombre ?><input type="hidden" name="nombreinnpe[]" value="<?= $innpe->nombre ?>">
                                                                         <?php if ($innpe->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -2037,12 +2043,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $innpe->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_innpe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $innpe->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $innpe->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $innpe->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidinnpe ?>" class="getrowidinnpe" style="cursor:pointer"></i>
@@ -2118,8 +2118,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -2162,6 +2162,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_tnnbpi_[]" id="color_values_<?= $tnnbpi->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_tnnbpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $tnnbpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $tnnbpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $tnnbpi->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idtnnbpi[]" size="5" value="<?= $tnnbpi->id ?>"><?= $consec ?>.- <?= $tnnbpi->nombre ?><input type="hidden" name="nombretnnbpi[]" value="<?= $tnnbpi->nombre ?>">
                                                                         <?php if ($tnnbpi->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -2176,12 +2182,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $tnnbpi->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_tnnbpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $tnnbpi->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $tnnbpi->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $tnnbpi->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidtnnbpi ?>" class="getrowidtnnbpi" style="cursor:pointer"></i>
@@ -2244,8 +2244,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -2288,6 +2288,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_tnnbpe_[]" id="color_values_<?= $tnnbpe->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_tnnbpe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $tnnbpe->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $tnnbpe->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $tnnbpe->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idtnnbpe[]" size="5" value="<?= $tnnbpe->id ?>"><?= $consec ?>.- <?= $tnnbpe->nombre ?><input type="hidden" name="nombretnnbpe[]" value="<?= $tnnbpe->nombre ?>">
                                                                         <?php if ($tnnbpe->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -2302,12 +2308,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $tnnbpe->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_tnnbpe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $tnnbpe->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $tnnbpe->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $tnnbpe->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidtnnbpe ?>" class="getrowidtnnbpe" style="cursor:pointer"></i>
@@ -2382,8 +2382,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -2426,6 +2426,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_herna_[]" id="color_values_<?= $herna->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_herna[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $herna->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $herna->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $herna->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idherna[]" size="5" value="<?= $herna->id ?>"><?= $consec ?>.- <?= $herna->nombre ?><input type="hidden" name="nombreherna[]" value="<?= $herna->nombre ?>">
                                                                         <?php if ($herna->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -2440,12 +2446,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $herna->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_herna[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $herna->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $herna->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $herna->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidherna ?>" class="getrowidherna" style="cursor:pointer"></i>
@@ -2520,8 +2520,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -2564,6 +2564,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_probmpi_[]" id="color_values_<?= $probmpi->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_probmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $probmpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $probmpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $probmpi->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idprobmpi[]" size="5" value="<?= $probmpi->id ?>"><?= $consec ?>.- <?= $probmpi->nombre ?><input type="hidden" name="nombreprobmpi[]" value="<?= $probmpi->nombre ?>">
                                                                         <?php if ($probmpi->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -2578,12 +2584,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $probmpi->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_probmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $probmpi->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $probmpi->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $probmpi->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidprobmpi ?>" class="getrowidprobmpi" style="cursor:pointer"></i>
@@ -2658,8 +2658,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -2702,6 +2702,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_panmpi_[]" id="color_values_<?= $panmpi->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_panmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $panmpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $panmpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $panmpi->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idpanmpi[]" size="5" value="<?= $panmpi->id ?>"><?= $consec ?>.- <?= $panmpi->nombre ?><input type="hidden" name="nombrepanmpi[]" value="<?= $panmpi->nombre ?>">
                                                                         <?php if ($panmpi->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -2716,12 +2722,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $panmpi->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_panmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $panmpi->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $panmpi->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $panmpi->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidpanmpi ?>" class="getrowidpanmpi" style="cursor:pointer"></i>
@@ -2797,8 +2797,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -2841,6 +2841,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_extmpi_[]" id="color_values_<?= $extmpi->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_extmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $extmpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $extmpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $extmpi->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idextmpi[]" size="5" value="<?= $extmpi->id ?>"><?= $consec ?>.- <?= $extmpi->nombre ?><input type="hidden" name="nombreextmpi[]" value="<?= $extmpi->nombre ?>">
                                                                         <?php if ($extmpi->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -2855,12 +2861,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $extmpi->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_extmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $extmpi->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $extmpi->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $extmpi->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidextmpi ?>" class="getrowidextmpi" style="cursor:pointer"></i>
@@ -2932,8 +2932,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
                                                                 <th style="text-align: center; color: black">OBSERVACIONES (opcional)</th>
                                                                 <th style="text-align: center; color: black">TOTAL</th>
@@ -2974,6 +2974,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_imgp_[]" id="color_values_<?= $imgp->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_imgp[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $imgp->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $imgp->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $imgp->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idimgp[]" size="5" value="<?= $imgp->id ?>"><?= $consec ?>.- <?= $imgp->nombre ?><input type="hidden" name="nombreimgp[]" value="<?= $imgp->nombre ?>">
                                                                         <?php if ($imgp->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -2988,12 +2994,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $imgp->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_imgp[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $imgp->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $imgp->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $imgp->cc34 ?>">
                                                                     </td>
                                                                     <td style="width:10%">
                                                                         <i id="<?= $filasidimgp ?>" class="getrowidimgp" style="cursor:pointer"></i>
@@ -3048,8 +3048,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
                                                                 <th style="text-align: center; color: black">OBSERVACIONES (opcional)</th>
                                                                 <th style="text-align: center; color: black">TOTAL</th>
@@ -3090,6 +3090,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_imgm_[]" id="color_values_<?= $imgm->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_imgm[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $imgm->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $imgm->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $imgm->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idimgm[]" size="5" value="<?= $imgm->id ?>"><?= $consec ?>.- <?= $imgm->nombre ?><input type="hidden" name="nombreimgm[]" value="<?= $imgm->nombre ?>">
                                                                         <?php if ($imgm->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -3104,12 +3110,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $imgm->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_imgm[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $imgm->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $imgm->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $imgm->cc34 ?>">
                                                                     </td>
                                                                     <td style="width:10%">
                                                                         <i id="<?= $filasidimgm ?>" class="getrowidimgm" style="cursor:pointer"></i>
@@ -3179,8 +3179,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -3223,6 +3223,12 @@
                                                                         </div>
                                                                         <input type="hidden" name="color_ots_[]" id="color_values_<?= $ots->id ?>" value="0" size="5">
                                                                     </td>
+                                                                    <td>
+                                                                        <input class="skuvalueinsert" value="" name="sku_ots[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $ots->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $ots->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $ots->cc34 ?>">
+                                                                    </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idots[]" size="5" value="<?= $ots->id ?>"><?= $consec ?>.- <?= $ots->nombre ?><input type="hidden" name="nombreots[]" value="<?= $ots->nombre ?>">
                                                                         <?php if ($ots->incluye == '') : ?>
                                                                             <div style="padding-left: 5%; display: none;">
@@ -3237,12 +3243,6 @@
                                                                             </div>
                                                                         <?php endif ?>
                                                                         <div><input type="hidden" value="<?= $ots->sku ?>"></div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input class="skuvalueinsert" value="" name="sku_ots[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $ots->cc31 ?>">
-                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $ots->cc33 ?>">
-                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $ots->cc34 ?>">
                                                                     </td>
                                                                     <td>
                                                                         <i id="<?= $filasidots ?>" class="getrowidots" style="cursor:pointer"></i>

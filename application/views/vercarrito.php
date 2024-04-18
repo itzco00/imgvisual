@@ -96,10 +96,10 @@
                                                                 <?php if ($ius->rolusuario == 1) : ?>
                                                                     <td>
                                                                         <i class="enviarpapelera2" style="cursor: pointer" id="<?= $p->id ?>"><img src="<?= base_url() ?>assets/img/delete_btn.png" height="35px" width="35px"></i>
-                                                                        <?php if ($ius->nombreusuario == 'amnhed.lagunas' || $ius->nombreusuario == 'marco.morales') { ?>
+                                                                        <!--<?php if ($ius->nombreusuario == 'amnhed.lagunas' || $ius->nombreusuario == 'marco.morales') { ?>
                                                                             <i style="padding-left:10px;"><img src="<?= base_url() ?>assets/img/pending_return.png" height="35px" width="35px" class="devolverpendientes" style="cursor: pointer;" ordencomp="<?= $p->numordencompra ?>" tnd_val="<?= $p->tienda ?>" title="regresar a pendientes"></i>
                                                                         <?php } else { ?>
-                                                                        <?php } ?>
+                                                                        <?php } ?>-->
                                                                     </td>
                                                                 <?php else : ?>
                                                                 <?php endif ?>

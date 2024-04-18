@@ -490,8 +490,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -689,6 +689,9 @@
                                                                             <input type="hidden" name="color_ent_[]" id="color_values_<?= $ent->id ?>" value="<?= $ent->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input name="sku_ent[]" type="text" value="<?= $ent->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="ident[]" value="<?= $ent->id ?>"><?= $consec ?>.- <?= $ent->nombre ?><input type="hidden" name="nombreent[]" value="<?= $ent->nombre ?>">
                                                                         <?php if ($ent->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -696,9 +699,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $ent->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input name="sku_ent[]" type="text" value="<?= $ent->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -778,8 +778,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -977,19 +977,19 @@
                                                                             <input type="hidden" name="color_ent_[]" id="color_values_<?= $ent->id ?>" value="<?= $ent->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <?php if ($ius->rolusuario == 1) : ?>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_ent[]" type="text" value="<?= $ent->sku ?>" readonly>
+                                                                        <?php else : ?>
+                                                                            <span style="font-size: 1.3em; color: black;"><?= $ent->sku ?></span>
+                                                                        <?php endif ?>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="ident[]" value="<?= $ent->id ?>"><?= $consec ?>.- <?= $ent->nombre ?><input type="hidden" name="nombreent[]" value="<?= $ent->nombre ?>">
                                                                         <?php if ($ent->incluye == '') : ?>
                                                                         <?php else : ?>
                                                                             <div style="padding-left: 10%;">
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $ent->incluye ?></textarea>
                                                                             </div>
-                                                                        <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <?php if ($ius->rolusuario == 1) : ?>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_ent[]" type="text" value="<?= $ent->sku ?>" readonly>
-                                                                        <?php else : ?>
-                                                                            <span style="font-size: 1.3em; color: black;"><?= $ent->sku ?></span>
                                                                         <?php endif ?>
                                                                     </td>
                                                                     <td>
@@ -1094,8 +1094,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -1293,6 +1293,9 @@
                                                                             <input type="hidden" name="color_dcmpi_[]" id="color_values_<?= $dcmpi->id ?>" value="<?= $dcmpi->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input name="sku_dcmpi[]" type="text" value="<?= $dcmpi->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="iddcmpi[]" value="<?= $dcmpi->id ?>"><?= $consec ?>.- <?= $dcmpi->nombre ?><input type="hidden" name="nombredcmpi[]" value="<?= $dcmpi->nombre ?>">
                                                                         <?php if ($dcmpi->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -1300,9 +1303,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $dcmpi->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input name="sku_dcmpi[]" type="text" value="<?= $dcmpi->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -1376,8 +1376,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -1575,6 +1575,9 @@
                                                                             <input type="hidden" name="color_dcmpe_[]" id="color_values_<?= $dcmpe->id ?>" value="<?= $dcmpe->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input name="sku_dcmpe[]" type="text" value="<?= $dcmpe->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="iddcmpe[]" value="<?= $dcmpe->id ?>"><?= $consec ?>.- <?= $dcmpe->nombre ?><input type="hidden" name="nombredcmpe[]" value="<?= $dcmpe->nombre ?>">
                                                                         <?php if ($dcmpe->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -1582,9 +1585,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $dcmpe->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input name="sku_dcmpe[]" type="text" value="<?= $dcmpe->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -1700,8 +1700,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -1899,6 +1899,9 @@
                                                                                 <input type="hidden" name="color_dcmpi_[]" id="color_values_<?= $dcmpi->id ?>" value="<?= $dcmpi->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpi[]" type="text" value="<?= $dcmpi->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="iddcmpi[]" value="<?= $dcmpi->id ?>"><?= $consec ?>.- <?= $dcmpi->nombre ?><input type="hidden" name="nombredcmpi[]" value="<?= $dcmpi->nombre ?>">
                                                                             <?php if ($dcmpi->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -1906,9 +1909,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $dcmpi->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpi[]" type="text" value="<?= $dcmpi->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -1979,8 +1979,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -2178,19 +2178,19 @@
                                                                                 <input type="hidden" name="color_dcmpi_[]" id="color_values_<?= $dcmpi->id ?>" value="<?= $dcmpi->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpi[]" type="text" value="<?= $dcmpi->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $dcmpi->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="iddcmpi[]" value="<?= $dcmpi->id ?>"><?= $consec ?>.- <?= $dcmpi->nombre ?><input type="hidden" name="nombredcmpi[]" value="<?= $dcmpi->nombre ?>">
                                                                             <?php if ($dcmpi->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $dcmpi->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpi[]" type="text" value="<?= $dcmpi->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $dcmpi->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -2276,8 +2276,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -2475,6 +2475,9 @@
                                                                                 <input type="hidden" name="color_dcmpe_[]" id="color_values_<?= $dcmpe->id ?>" value="<?= $dcmpe->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpe[]" type="text" value="<?= $dcmpe->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="iddcmpe[]" value="<?= $dcmpe->id ?>"><?= $consec ?>.- <?= $dcmpe->nombre ?><input type="hidden" name="nombredcmpe[]" value="<?= $dcmpe->nombre ?>">
                                                                             <?php if ($dcmpe->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -2482,9 +2485,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $dcmpe->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpe[]" type="text" value="<?= $dcmpe->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -2555,8 +2555,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -2754,19 +2754,19 @@
                                                                                 <input type="hidden" name="color_dcmpe_[]" id="color_values_<?= $dcmpe->id ?>" value="<?= $dcmpe->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpe[]" type="text" value="<?= $dcmpe->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $dcmpe->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="iddcmpe[]" value="<?= $dcmpe->id ?>"><?= $consec ?>.- <?= $dcmpe->nombre ?><input type="hidden" name="nombredcmpe[]" value="<?= $dcmpe->nombre ?>">
                                                                             <?php if ($dcmpe->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $dcmpe->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpe[]" type="text" value="<?= $dcmpe->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $dcmpe->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -2891,8 +2891,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -3090,6 +3090,9 @@
                                                                             <input type="hidden" name="color_mhjmpi_[]" id="color_values_<?= $mhjmpi->id ?>" value="<?= $mhjmpi->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpi[]" type="text" value="<?= $mhjmpi->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idmhjmpi[]" value="<?= $mhjmpi->id ?>"><?= $consec ?>.- <?= $mhjmpi->nombre ?><input type="hidden" name="nombremhjmpi[]" value="<?= $mhjmpi->nombre ?>">
                                                                         <?php if ($mhjmpi->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -3097,9 +3100,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $mhjmpi->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpi[]" type="text" value="<?= $mhjmpi->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -3173,8 +3173,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -3372,6 +3372,9 @@
                                                                             <input type="hidden" name="color_mhjmpe_[]" id="color_values_<?= $mhjmpe->id ?>" value="<?= $mhjmpe->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpe[]" type="text" value="<?= $mhjmpe->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idmhjmpe[]" value="<?= $mhjmpe->id ?>"><?= $consec ?>.- <?= $mhjmpe->nombre ?><input type="hidden" name="nombremhjmpe[]" value="<?= $mhjmpe->nombre ?>">
                                                                         <?php if ($mhjmpe->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -3379,9 +3382,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $mhjmpe->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpe[]" type="text" value="<?= $mhjmpe->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -3455,8 +3455,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -3654,6 +3654,9 @@
                                                                             <input type="hidden" name="color_mhjmpje_[]" id="color_values_<?= $mhjmpje->id ?>" value="<?= $mhjmpje->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpje[]" type="text" value="<?= $mhjmpje->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idmhjmpje[]" value="<?= $mhjmpje->id ?>"><?= $consec ?>.- <?= $mhjmpje->nombre ?><input type="hidden" name="nombremhjmpje[]" value="<?= $mhjmpje->nombre ?>">
                                                                         <?php if ($mhjmpje->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -3661,9 +3664,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $mhjmpje->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpje[]" type="text" value="<?= $mhjmpje->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -3737,8 +3737,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -3936,6 +3936,9 @@
                                                                             <input type="hidden" name="color_mhjmpli_[]" id="color_values_<?= $mhjmpli->id ?>" value="<?= $mhjmpli->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpli[]" type="text" value="<?= $mhjmpli->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idmhjmpli[]" value="<?= $mhjmpli->id ?>"><?= $consec ?>.- <?= $mhjmpli->nombre ?><input type="hidden" name="nombremhjmpli[]" value="<?= $mhjmpli->nombre ?>">
                                                                         <?php if ($mhjmpli->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -3943,9 +3946,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $mhjmpli->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpli[]" type="text" value="<?= $mhjmpli->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -4063,8 +4063,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -4262,6 +4262,9 @@
                                                                                 <input type="hidden" name="color_mhjmpi_[]" id="color_values_<?= $mhjmpi->id ?>" value="<?= $mhjmpi->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpi[]" type="text" value="<?= $mhjmpi->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idmhjmpi[]" value="<?= $mhjmpi->id ?>"><?= $consec ?>.- <?= $mhjmpi->nombre ?><input type="hidden" name="nombremhjmpi[]" value="<?= $mhjmpi->nombre ?>">
                                                                             <?php if ($mhjmpi->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -4269,9 +4272,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $mhjmpi->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpi[]" type="text" value="<?= $mhjmpi->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -4342,8 +4342,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -4541,19 +4541,19 @@
                                                                                 <input type="hidden" name="color_mhjmpi_[]" id="color_values_<?= $mhjmpi->id ?>" value="<?= $mhjmpi->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpi[]" type="text" value="<?= $mhjmpi->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $mhjmpi->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idmhjmpi[]" value="<?= $mhjmpi->id ?>"><?= $consec ?>.- <?= $mhjmpi->nombre ?><input type="hidden" name="nombremhjmpi[]" value="<?= $mhjmpi->nombre ?>">
                                                                             <?php if ($mhjmpi->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $mhjmpi->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpi[]" type="text" value="<?= $mhjmpi->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $mhjmpi->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -4639,8 +4639,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -4838,6 +4838,9 @@
                                                                                 <input type="hidden" name="color_mhjmpe_[]" id="color_values_<?= $mhjmpe->id ?>" value="<?= $mhjmpe->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpe[]" type="text" value="<?= $mhjmpe->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idmhjmpe[]" value="<?= $mhjmpe->id ?>"><?= $consec ?>.- <?= $mhjmpe->nombre ?><input type="hidden" name="nombremhjmpe[]" value="<?= $mhjmpe->nombre ?>">
                                                                             <?php if ($mhjmpe->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -4845,9 +4848,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $mhjmpe->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpe[]" type="text" value="<?= $mhjmpe->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -4918,8 +4918,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -5117,19 +5117,19 @@
                                                                                 <input type="hidden" name="color_mhjmpe_[]" id="color_values_<?= $mhjmpe->id ?>" value="<?= $mhjmpe->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpe[]" type="text" value="<?= $mhjmpe->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $mhjmpe->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idmhjmpe[]" value="<?= $mhjmpe->id ?>"><?= $consec ?>.- <?= $mhjmpe->nombre ?><input type="hidden" name="nombremhjmpe[]" value="<?= $mhjmpe->nombre ?>">
                                                                             <?php if ($mhjmpe->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $mhjmpe->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpe[]" type="text" value="<?= $mhjmpe->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $mhjmpe->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -5215,8 +5215,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -5414,6 +5414,9 @@
                                                                                 <input type="hidden" name="color_mhjmpje_[]" id="color_values_<?= $mhjmpje->id ?>" value="<?= $mhjmpje->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpje[]" type="text" value="<?= $mhjmpje->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idmhjmpje[]" value="<?= $mhjmpje->id ?>"><?= $consec ?>.- <?= $mhjmpje->nombre ?><input type="hidden" name="nombremhjmpje[]" value="<?= $mhjmpje->nombre ?>">
                                                                             <?php if ($mhjmpje->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -5421,9 +5424,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $mhjmpje->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpje[]" type="text" value="<?= $mhjmpje->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -5494,8 +5494,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -5693,19 +5693,19 @@
                                                                                 <input type="hidden" name="color_mhjmpje_[]" id="color_values_<?= $mhjmpje->id ?>" value="<?= $mhjmpje->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpje[]" type="text" value="<?= $mhjmpje->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $mhjmpje->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idmhjmpje[]" value="<?= $mhjmpje->id ?>"><?= $consec ?>.- <?= $mhjmpje->nombre ?><input type="hidden" name="nombremhjmpje[]" value="<?= $mhjmpje->nombre ?>">
                                                                             <?php if ($mhjmpje->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $mhjmpje->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpje[]" type="text" value="<?= $mhjmpje->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $mhjmpje->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -5791,8 +5791,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -5990,6 +5990,9 @@
                                                                                 <input type="hidden" name="color_mhjmpli_[]" id="color_values_<?= $mhjmpli->id ?>" value="<?= $mhjmpli->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpli[]" type="text" value="<?= $mhjmpli->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idmhjmpli[]" value="<?= $mhjmpli->id ?>"><?= $consec ?>.- <?= $mhjmpli->nombre ?><input type="hidden" name="nombremhjmpli[]" value="<?= $mhjmpli->nombre ?>">
                                                                             <?php if ($mhjmpli->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -5997,9 +6000,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $mhjmpli->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpli[]" type="text" value="<?= $mhjmpli->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -6070,8 +6070,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -6269,19 +6269,19 @@
                                                                                 <input type="hidden" name="color_mhjmpli_[]" id="color_values_<?= $mhjmpli->id ?>" value="<?= $mhjmpli->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpli[]" type="text" value="<?= $mhjmpli->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $mhjmpli->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idmhjmpli[]" value="<?= $mhjmpli->id ?>"><?= $consec ?>.- <?= $mhjmpli->nombre ?><input type="hidden" name="nombremhjmpli[]" value="<?= $mhjmpli->nombre ?>">
                                                                             <?php if ($mhjmpli->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $mhjmpli->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpli[]" type="text" value="<?= $mhjmpli->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $mhjmpli->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -6404,8 +6404,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -6603,6 +6603,9 @@
                                                                             <input type="hidden" name="color_impi_[]" id="color_values_<?= $impi->id ?>" value="<?= $impi->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_impi[]" type="text" value="<?= $impi->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimpi[]" value="<?= $impi->id ?>"><?= $consec ?>.- <?= $impi->nombre ?><input type="hidden" name="nombreimpi[]" value="<?= $impi->nombre ?>">
                                                                         <?php if ($impi->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -6610,9 +6613,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $impi->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_impi[]" type="text" value="<?= $impi->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -6686,8 +6686,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -6885,6 +6885,9 @@
                                                                             <input type="hidden" name="color_impe_[]" id="color_values_<?= $impe->id ?>" value="<?= $impe->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_impe[]" type="text" value="<?= $impe->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimpe[]" value="<?= $impe->id ?>"><?= $consec ?>.- <?= $impe->nombre ?><input type="hidden" name="nombreimpe[]" value="<?= $impe->nombre ?>">
                                                                         <?php if ($impe->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -6892,9 +6895,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $impe->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_impe[]" type="text" value="<?= $impe->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -6968,8 +6968,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -7167,6 +7167,9 @@
                                                                             <input type="hidden" name="color_imhe_[]" id="color_values_<?= $imhe->id ?>" value="<?= $imhe->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_imhe[]" type="text" value="<?= $imhe->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimhe[]" value="<?= $imhe->id ?>"><?= $consec ?>.- <?= $imhe->nombre ?><input type="hidden" name="nombreimhe[]" value="<?= $imhe->nombre ?>">
                                                                         <?php if ($imhe->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -7174,9 +7177,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $imhe->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_imhe[]" type="text" value="<?= $imhe->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -7296,8 +7296,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -7495,6 +7495,9 @@
                                                                                 <input type="hidden" name="color_impi_[]" id="color_values_<?= $impi->id ?>" value="<?= $impi->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_impi[]" type="text" value="<?= $impi->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimpi[]" value="<?= $impi->id ?>"><?= $consec ?>.- <?= $impi->nombre ?><input type="hidden" name="nombreimpi[]" value="<?= $impi->nombre ?>">
                                                                             <?php if ($impi->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -7502,9 +7505,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $impi->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_impi[]" type="text" value="<?= $impi->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -7575,8 +7575,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -7774,19 +7774,19 @@
                                                                                 <input type="hidden" name="color_impi_[]" id="color_values_<?= $impi->id ?>" value="<?= $impi->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_impi[]" type="text" value="<?= $impi->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $impi->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimpi[]" value="<?= $impi->id ?>"><?= $consec ?>.- <?= $impi->nombre ?><input type="hidden" name="nombreimpi[]" value="<?= $impi->nombre ?>">
                                                                             <?php if ($impi->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $impi->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_impi[]" type="text" value="<?= $impi->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $impi->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -7872,8 +7872,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -8071,6 +8071,9 @@
                                                                                 <input type="hidden" name="color_impe_[]" id="color_values_<?= $impe->id ?>" value="<?= $impe->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_impe[]" type="text" value="<?= $impe->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimpe[]" value="<?= $impe->id ?>"><?= $consec ?>.- <?= $impe->nombre ?><input type="hidden" name="nombreimpe[]" value="<?= $impe->nombre ?>">
                                                                             <?php if ($impe->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -8078,9 +8081,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $impe->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_impe[]" type="text" value="<?= $impe->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -8151,8 +8151,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -8350,19 +8350,19 @@
                                                                                 <input type="hidden" name="color_impe_[]" id="color_values_<?= $impe->id ?>" value="<?= $impe->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_impe[]" type="text" value="<?= $impe->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $impe->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimpe[]" value="<?= $impe->id ?>"><?= $consec ?>.- <?= $impe->nombre ?><input type="hidden" name="nombreimpe[]" value="<?= $impe->nombre ?>">
                                                                             <?php if ($impe->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $impe->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_impe[]" type="text" value="<?= $impe->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $impe->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -8448,8 +8448,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -8647,6 +8647,9 @@
                                                                                 <input type="hidden" name="color_imhe_[]" id="color_values_<?= $imhe->id ?>" value="<?= $imhe->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_imhe[]" type="text" value="<?= $imhe->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimhe[]" value="<?= $imhe->id ?>"><?= $consec ?>.- <?= $imhe->nombre ?><input type="hidden" name="nombreimhe[]" value="<?= $imhe->nombre ?>">
                                                                             <?php if ($imhe->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -8654,9 +8657,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $imhe->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_imhe[]" type="text" value="<?= $imhe->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -8727,8 +8727,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -8926,19 +8926,19 @@
                                                                                 <input type="hidden" name="color_imhe_[]" id="color_values_<?= $imhe->id ?>" value="<?= $imhe->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_imhe[]" type="text" value="<?= $imhe->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $imhe->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimhe[]" value="<?= $imhe->id ?>"><?= $consec ?>.- <?= $imhe->nombre ?><input type="hidden" name="nombreimhe[]" value="<?= $imhe->nombre ?>">
                                                                             <?php if ($imhe->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $imhe->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_imhe[]" type="text" value="<?= $imhe->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $imhe->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -9066,8 +9066,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -9265,6 +9265,9 @@
                                                                             <input type="hidden" name="color_innpi_[]" id="color_values_<?= $innpi->id ?>" value="<?= $innpi->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpi[]" type="text" value="<?= $innpi->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idinnpi[]" value="<?= $innpi->id ?>"><?= $consec ?>.- <?= $innpi->nombre ?><input type="hidden" name="nombreinnpi[]" value="<?= $innpi->nombre ?>">
                                                                         <?php if ($innpi->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -9272,9 +9275,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $innpi->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpi[]" type="text" value="<?= $innpi->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -9348,8 +9348,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -9547,6 +9547,9 @@
                                                                             <input type="hidden" name="color_innpe_[]" id="color_values_<?= $innpe->id ?>" value="<?= $innpe->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpe[]" type="text" value="<?= $innpe->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idinnpe[]" value="<?= $innpe->id ?>"><?= $consec ?>.- <?= $innpe->nombre ?><input type="hidden" name="nombreinnpe[]" value="<?= $innpe->nombre ?>">
                                                                         <?php if ($innpe->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -9554,9 +9557,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $innpe->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpe[]" type="text" value="<?= $innpe->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -9681,8 +9681,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -9880,6 +9880,9 @@
                                                                                 <input type="hidden" name="color_innpi_[]" id="color_values_<?= $innpi->id ?>" value="<?= $innpi->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpi[]" type="text" value="<?= $innpi->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idinnpi[]" value="<?= $innpi->id ?>"><?= $consec ?>.- <?= $innpi->nombre ?><input type="hidden" name="nombreinnpi[]" value="<?= $innpi->nombre ?>">
                                                                             <?php if ($innpi->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -9887,9 +9890,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $innpi->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpi[]" type="text" value="<?= $innpi->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -9960,8 +9960,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -10159,19 +10159,19 @@
                                                                                 <input type="hidden" name="color_innpi_[]" id="color_values_<?= $innpi->id ?>" value="<?= $innpi->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpi[]" type="text" value="<?= $innpi->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $innpi->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idinnpi[]" value="<?= $innpi->id ?>"><?= $consec ?>.- <?= $innpi->nombre ?><input type="hidden" name="nombreinnpi[]" value="<?= $innpi->nombre ?>">
                                                                             <?php if ($innpi->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $innpi->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpi[]" type="text" value="<?= $innpi->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $innpi->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -10257,8 +10257,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -10456,6 +10456,9 @@
                                                                                 <input type="hidden" name="color_innpe_[]" id="color_values_<?= $innpe->id ?>" value="<?= $innpe->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpe[]" type="text" value="<?= $innpe->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idinnpe[]" value="<?= $innpe->id ?>"><?= $consec ?>.- <?= $innpe->nombre ?><input type="hidden" name="nombreinnpe[]" value="<?= $innpe->nombre ?>">
                                                                             <?php if ($innpe->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -10463,9 +10466,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $innpe->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpe[]" type="text" value="<?= $innpe->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -10536,8 +10536,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -10735,19 +10735,19 @@
                                                                                 <input type="hidden" name="color_innpe_[]" id="color_values_<?= $innpe->id ?>" value="<?= $innpe->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpe[]" type="text" value="<?= $innpe->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $innpe->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idinnpe[]" value="<?= $innpe->id ?>"><?= $consec ?>.- <?= $innpe->nombre ?><input type="hidden" name="nombreinnpe[]" value="<?= $innpe->nombre ?>">
                                                                             <?php if ($innpe->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $innpe->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpe[]" type="text" value="<?= $innpe->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $innpe->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -10881,8 +10881,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -11080,6 +11080,9 @@
                                                                             <input type="hidden" name="color_tnnbpi_[]" id="color_values_<?= $tnnbpi->id ?>" value="<?= $tnnbpi->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpi[]" type="text" value="<?= $tnnbpi->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idtnnbpi[]" value="<?= $tnnbpi->id ?>"><?= $consec ?>.- <?= $tnnbpi->nombre ?><input type="hidden" name="nombretnnbpi[]" value="<?= $tnnbpi->nombre ?>">
                                                                         <?php if ($tnnbpi->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -11087,9 +11090,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $tnnbpi->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpi[]" type="text" value="<?= $tnnbpi->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -11163,8 +11163,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -11362,6 +11362,9 @@
                                                                             <input type="hidden" name="color_tnnbpe_[]" id="color_values_<?= $tnnbpe->id ?>" value="<?= $tnnbpe->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpe[]" type="text" value="<?= $tnnbpe->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idtnnbpe[]" value="<?= $tnnbpe->id ?>"><?= $consec ?>.- <?= $tnnbpe->nombre ?><input type="hidden" name="nombretnnbpe[]" value="<?= $tnnbpe->nombre ?>">
                                                                         <?php if ($tnnbpe->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -11369,9 +11372,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $tnnbpe->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpe[]" type="text" value="<?= $tnnbpe->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -11498,8 +11498,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -11697,6 +11697,9 @@
                                                                                 <input type="hidden" name="color_tnnbpi_[]" id="color_values_<?= $tnnbpi->id ?>" value="<?= $tnnbpi->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpi[]" type="text" value="<?= $tnnbpi->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idtnnbpi[]" value="<?= $tnnbpi->id ?>"><?= $consec ?>.- <?= $tnnbpi->nombre ?><input type="hidden" name="nombretnnbpi[]" value="<?= $tnnbpi->nombre ?>">
                                                                             <?php if ($tnnbpi->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -11704,9 +11707,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $tnnbpi->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpi[]" type="text" value="<?= $tnnbpi->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -11777,8 +11777,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -11976,19 +11976,19 @@
                                                                                 <input type="hidden" name="color_tnnbpi_[]" id="color_values_<?= $tnnbpi->id ?>" value="<?= $tnnbpi->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpi[]" type="text" value="<?= $tnnbpi->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $tnnbpi->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idtnnbpi[]" value="<?= $tnnbpi->id ?>"><?= $consec ?>.- <?= $tnnbpi->nombre ?><input type="hidden" name="nombretnnbpi[]" value="<?= $tnnbpi->nombre ?>">
                                                                             <?php if ($tnnbpi->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $tnnbpi->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpi[]" type="text" value="<?= $tnnbpi->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $tnnbpi->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -12074,8 +12074,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -12273,19 +12273,19 @@
                                                                                 <input type="hidden" name="color_tnnbpe_[]" id="color_values_<?= $tnnbpe->id ?>" value="<?= $tnnbpe->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpe[]" type="text" value="<?= $tnnbpe->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $tnnbpe->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idtnnbpe[]" value="<?= $tnnbpe->id ?>"><?= $consec ?>.- <?= $tnnbpe->nombre ?><input type="hidden" name="nombretnnbpe[]" value="<?= $tnnbpe->nombre ?>">
                                                                             <?php if ($tnnbpe->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $tnnbpe->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpe[]" type="text" value="<?= $tnnbpe->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $tnnbpe->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -12357,8 +12357,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">CANTIDAD</th>
                                                                     <th style="text-align: center; color: black">UNIDAD</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -12556,19 +12556,19 @@
                                                                                 <input type="hidden" name="color_tnnbpe_[]" id="color_values_<?= $tnnbpe->id ?>" value="<?= $tnnbpe->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpe[]" type="text" value="<?= $tnnbpe->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $tnnbpe->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idtnnbpe[]" value="<?= $tnnbpe->id ?>"><?= $consec ?>.- <?= $tnnbpe->nombre ?><input type="hidden" name="nombretnnbpe[]" value="<?= $tnnbpe->nombre ?>">
                                                                             <?php if ($tnnbpe->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $tnnbpe->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpe[]" type="text" value="<?= $tnnbpe->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $tnnbpe->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -12701,8 +12701,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -12900,6 +12900,9 @@
                                                                             <input type="hidden" name="color_herna_[]" id="color_values_<?= $herna->id ?>" value="<?= $herna->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_herna[]" type="text" value="<?= $herna->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idherna[]" value="<?= $herna->id ?>"><?= $consec ?>.- <?= $herna->nombre ?><input type="hidden" name="nombreherna[]" value="<?= $herna->nombre ?>">
                                                                         <?php if ($herna->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -12907,9 +12910,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $herna->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_herna[]" type="text" value="<?= $herna->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -13004,8 +13004,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -13203,19 +13203,19 @@
                                                                             <input type="hidden" name="color_herna_[]" id="color_values_<?= $herna->id ?>" value="<?= $herna->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <?php if ($ius->rolusuario == 1) : ?>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_herna[]" type="text" value="<?= $herna->sku ?>" readonly>
+                                                                        <?php else : ?>
+                                                                            <span style="font-size: 1.3em; color: black;"><?= $herna->sku ?></span>
+                                                                        <?php endif ?>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idherna[]" value="<?= $herna->id ?>"><?= $consec ?>.- <?= $herna->nombre ?><input type="hidden" name="nombreherna[]" value="<?= $herna->nombre ?>">
                                                                         <?php if ($herna->incluye == '') : ?>
                                                                         <?php else : ?>
                                                                             <div style="padding-left: 10%;">
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $herna->incluye ?></textarea>
                                                                             </div>
-                                                                        <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <?php if ($ius->rolusuario == 1) : ?>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_herna[]" type="text" value="<?= $herna->sku ?>" readonly>
-                                                                        <?php else : ?>
-                                                                            <span style="font-size: 1.3em; color: black;"><?= $herna->sku ?></span>
                                                                         <?php endif ?>
                                                                     </td>
                                                                     <td>
@@ -13341,8 +13341,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -13540,6 +13540,9 @@
                                                                             <input type="hidden" name="color_probmpi_[]" id="color_values_<?= $probmpi->id ?>" value="<?= $probmpi->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_probmpi[]" type="text" value="<?= $probmpi->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idprobmpi[]" value="<?= $probmpi->id ?>"><?= $consec ?>.- <?= $probmpi->nombre ?><input type="hidden" name="nombreprobmpi[]" value="<?= $probmpi->nombre ?>">
                                                                         <?php if ($probmpi->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -13547,9 +13550,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $probmpi->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_probmpi[]" type="text" value="<?= $probmpi->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -13842,19 +13842,19 @@
                                                                             <input type="hidden" name="color_probmpi_[]" id="color_values_<?= $probmpi->id ?>" value="<?= $probmpi->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <?php if ($ius->rolusuario == 1) : ?>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_probmpi[]" type="text" value="<?= $probmpi->sku ?>" readonly>
+                                                                        <?php else : ?>
+                                                                            <span style="font-size: 1.3em; color: black;"><?= $probmpi->sku ?></span>
+                                                                        <?php endif ?>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idprobmpi[]" value="<?= $probmpi->id ?>"><?= $consec ?>.- <?= $probmpi->nombre ?><input type="hidden" name="nombreprobmpi[]" value="<?= $probmpi->nombre ?>">
                                                                         <?php if ($probmpi->incluye == '') : ?>
                                                                         <?php else : ?>
                                                                             <div style="padding-left: 10%;">
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $probmpi->incluye ?></textarea>
                                                                             </div>
-                                                                        <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <?php if ($ius->rolusuario == 1) : ?>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_probmpi[]" type="text" value="<?= $probmpi->sku ?>" readonly>
-                                                                        <?php else : ?>
-                                                                            <span style="font-size: 1.3em; color: black;"><?= $probmpi->sku ?></span>
                                                                         <?php endif ?>
                                                                     </td>
                                                                     <td>
@@ -13972,8 +13972,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -14171,6 +14171,9 @@
                                                                             <input type="hidden" name="color_panmpi_[]" id="color_values_<?= $panmpi->id ?>" value="<?= $panmpi->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_panmpi[]" type="text" value="<?= $panmpi->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idpanmpi[]" value="<?= $panmpi->id ?>"><?= $consec ?>.- <?= $panmpi->nombre ?><input type="hidden" name="nombrepanmpi[]" value="<?= $panmpi->nombre ?>">
                                                                         <?php if ($panmpi->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -14178,9 +14181,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $panmpi->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_panmpi[]" type="text" value="<?= $panmpi->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -14294,8 +14294,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -14493,19 +14493,19 @@
                                                                             <input type="hidden" name="color_panmpi_[]" id="color_values_<?= $panmpi->id ?>" value="<?= $panmpi->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <?php if ($ius->rolusuario == 1) : ?>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_panmpi[]" type="text" value="<?= $panmpi->sku ?>" readonly>
+                                                                        <?php else : ?>
+                                                                            <span style="font-size: 1.3em; color: black;"><?= $panmpi->sku ?></span>
+                                                                        <?php endif ?>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idpanmpi[]" value="<?= $panmpi->id ?>"><?= $consec ?>.- <?= $panmpi->nombre ?><input type="hidden" name="nombrepanmpi[]" value="<?= $panmpi->nombre ?>">
                                                                         <?php if ($panmpi->incluye == '') : ?>
                                                                         <?php else : ?>
                                                                             <div style="padding-left: 10%;">
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $panmpi->incluye ?></textarea>
                                                                             </div>
-                                                                        <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <?php if ($ius->rolusuario == 1) : ?>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_panmpi[]" type="text" value="<?= $panmpi->sku ?>" readonly>
-                                                                        <?php else : ?>
-                                                                            <span style="font-size: 1.3em; color: black;"><?= $panmpi->sku ?></span>
                                                                         <?php endif ?>
                                                                     </td>
                                                                     <td>
@@ -14631,8 +14631,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -14830,6 +14830,9 @@
                                                                             <input type="hidden" name="color_extmpi_[]" id="color_values_<?= $extmpi->id ?>" value="<?= $extmpi->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_extmpi[]" type="text" value="<?= $extmpi->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idextmpi[]" value="<?= $extmpi->id ?>"><?= $consec ?>.- <?= $extmpi->nombre ?><input type="hidden" name="nombreextmpi[]" value="<?= $extmpi->nombre ?>">
                                                                         <?php if ($extmpi->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -14837,9 +14840,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $extmpi->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_extmpi[]" type="text" value="<?= $extmpi->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -14952,8 +14952,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -15151,19 +15151,19 @@
                                                                             <input type="hidden" name="color_extmpi_[]" id="color_values_<?= $extmpi->id ?>" value="<?= $extmpi->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <?php if ($ius->rolusuario == 1) : ?>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_extmpi[]" type="text" value="<?= $extmpi->sku ?>" readonly>
+                                                                        <?php else : ?>
+                                                                            <span style="font-size: 1.3em; color: black;"><?= $extmpi->sku ?></span>
+                                                                        <?php endif ?>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idextmpi[]" value="<?= $extmpi->id ?>"><?= $consec ?>.- <?= $extmpi->nombre ?><input type="hidden" name="nombreextmpi[]" value="<?= $extmpi->nombre ?>">
                                                                         <?php if ($extmpi->incluye == '') : ?>
                                                                         <?php else : ?>
                                                                             <div style="padding-left: 10%;">
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $extmpi->incluye ?></textarea>
                                                                             </div>
-                                                                        <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <?php if ($ius->rolusuario == 1) : ?>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_extmpi[]" type="text" value="<?= $extmpi->sku ?>" readonly>
-                                                                        <?php else : ?>
-                                                                            <span style="font-size: 1.3em; color: black;"><?= $extmpi->sku ?></span>
                                                                         <?php endif ?>
                                                                     </td>
                                                                     <td>
@@ -15281,8 +15281,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
                                                                 <th style="text-align: center; color: black">SUBTOTAL</th>
                                                                 <th style="text-align: center; color: black">OBSERVACIONES</th>
@@ -15478,6 +15478,9 @@
                                                                             <input type="hidden" name="color_imgp_[]" id="color_values_<?= $imgp->id ?>" value="<?= $imgp->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_imgp[]" type="text" value="<?= $imgp->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimgp[]" value="<?= $imgp->id ?>"><?= $consec ?>.- <?= $imgp->nombre ?><input type="hidden" name="nombreimgp[]" value="<?= $imgp->nombre ?>">
                                                                         <?php if ($imgp->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -15485,9 +15488,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $imgp->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_imgp[]" type="text" value="<?= $imgp->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -15547,8 +15547,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
                                                                 <th style="text-align: center; color: black">SUBTOTAL</th>
                                                                 <th style="text-align: center; color: black">OBSERVACIONES</th>
@@ -15744,6 +15744,9 @@
                                                                             <input type="hidden" name="color_imgm_[]" id="color_values_<?= $imgm->id ?>" value="<?= $imgm->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_imgm[]" type="text" value="<?= $imgm->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimgm[]" value="<?= $imgm->id ?>"><?= $consec ?>.- <?= $imgm->nombre ?><input type="hidden" name="nombreimgm[]" value="<?= $imgm->nombre ?>">
                                                                         <?php if ($imgm->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -15751,9 +15754,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $imgm->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_imgm[]" type="text" value="<?= $imgm->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -15866,8 +15866,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
                                                                     <th style="text-align: center; color: black">SUBTOTAL</th>
                                                                     <th style="text-align: center; color: black">OBSERVACIONES</th>
@@ -16063,6 +16063,9 @@
                                                                                 <input type="hidden" name="color_imgp_[]" id="color_values_<?= $imgp->id ?>" value="<?= $imgp->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_imgp[]" type="text" value="<?= $imgp->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimgp[]" value="<?= $imgp->id ?>"><?= $consec ?>.- <?= $imgp->nombre ?><input type="hidden" name="nombreimgp[]" value="<?= $imgp->nombre ?>">
                                                                             <?php if ($imgp->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -16070,9 +16073,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $imgp->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_imgp[]" type="text" value="<?= $imgp->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -16130,8 +16130,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
                                                                     <th style="text-align: center; color: black">SUBTOTAL</th>
                                                                     <th style="text-align: center; color: black">OBSERVACIONES</th>
@@ -16327,19 +16327,19 @@
                                                                                 <input type="hidden" name="color_imgp_[]" id="color_values_<?= $imgp->id ?>" value="<?= $imgp->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_imgp[]" type="text" value="<?= $imgp->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $imgp->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimgp[]" value="<?= $imgp->id ?>"><?= $consec ?>.- <?= $imgp->nombre ?><input type="hidden" name="nombreimgp[]" value="<?= $imgp->nombre ?>">
                                                                             <?php if ($imgp->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $imgp->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_imgp[]" type="text" value="<?= $imgp->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $imgp->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -16411,8 +16411,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
                                                                     <th style="text-align: center; color: black">SUBTOTAL</th>
                                                                     <th style="text-align: center; color: black">OBSERVACIONES</th>
@@ -16608,6 +16608,9 @@
                                                                                 <input type="hidden" name="color_imgm_[]" id="color_values_<?= $imgm->id ?>" value="<?= $imgm->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_imgm[]" type="text" value="<?= $imgm->sku ?>" readonly>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimgm[]" value="<?= $imgm->id ?>"><?= $consec ?>.- <?= $imgm->nombre ?><input type="hidden" name="nombreimgm[]" value="<?= $imgm->nombre ?>">
                                                                             <?php if ($imgm->incluye == '') : ?>
                                                                             <?php else : ?>
@@ -16615,9 +16618,6 @@
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $imgm->incluye ?></textarea>
                                                                                 </div>
                                                                             <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_imgm[]" type="text" value="<?= $imgm->sku ?>" readonly>
                                                                         </td>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
@@ -16688,8 +16688,8 @@
                                                             <thead>
                                                                 <tr style="width:100%; justify-content: center; text-align: center">
                                                                     <th></th>
-                                                                    <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                     <th style="text-align: center; color: black">PRECIO MXN</th>
                                                                     <th style="text-align: center; color: black">SUBTOTAL</th>
                                                                     <th style="text-align: center; color: black">OBSERVACIONES</th>
@@ -16885,19 +16885,19 @@
                                                                                 <input type="hidden" name="color_imgm_[]" id="color_values_<?= $imgm->id ?>" value="<?= $imgm->color ?>" size="5">
                                                                             </td>
                                                                         <?php endif ?>
+                                                                        <td>
+                                                                            <?php if ($ius->rolusuario == 1) : ?>
+                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_imgm[]" type="text" value="<?= $imgm->sku ?>" readonly>
+                                                                            <?php else : ?>
+                                                                                <span style="font-size: 1.3em; color: black;"><?= $imgm->sku ?></span>
+                                                                            <?php endif ?>
+                                                                        </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idimgm[]" value="<?= $imgm->id ?>"><?= $consec ?>.- <?= $imgm->nombre ?><input type="hidden" name="nombreimgm[]" value="<?= $imgm->nombre ?>">
                                                                             <?php if ($imgm->incluye == '') : ?>
                                                                             <?php else : ?>
                                                                                 <div style="padding-left: 10%;">
                                                                                     <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $imgm->incluye ?></textarea>
                                                                                 </div>
-                                                                            <?php endif ?>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input size="11" style="font-size: 1.3em; color: black;" name="sku_imgm[]" type="text" value="<?= $imgm->sku ?>" readonly>
-                                                                            <?php else : ?>
-                                                                                <span style="font-size: 1.3em; color: black;"><?= $imgm->sku ?></span>
                                                                             <?php endif ?>
                                                                         </td>
                                                                         <td>
@@ -17036,8 +17036,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -17235,6 +17235,9 @@
                                                                             <input type="hidden" name="color_ots_[]" id="color_values_<?= $ots->id ?>" value="<?= $ots->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_ots[]" type="text" value="<?= $ots->sku ?>" readonly>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idots[]" value="<?= $ots->id ?>"><?= $consec ?>.- <?= $ots->nombre ?><input type="hidden" name="nombreots[]" value="<?= $ots->nombre ?>">
                                                                         <?php if ($ots->incluye == '') : ?>
                                                                         <?php else : ?>
@@ -17242,9 +17245,6 @@
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $ots->incluye ?></textarea>
                                                                             </div>
                                                                         <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_ots[]" type="text" value="<?= $ots->sku ?>" readonly>
                                                                     </td>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
@@ -17326,8 +17326,8 @@
                                                         <thead>
                                                             <tr style="width:100%; justify-content: center; text-align: center">
                                                                 <th></th>
-                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">SKU</th>
+                                                                <th style="text-align: center; color: black">DESC. PRODUCTO</th>
                                                                 <th style="text-align: center; color: black">CANTIDAD</th>
                                                                 <th style="text-align: center; color: black">UNIDAD</th>
                                                                 <th style="text-align: center; color: black">PRECIO MXN</th>
@@ -17525,19 +17525,19 @@
                                                                             <input type="hidden" name="color_ots_[]" id="color_values_<?= $ots->id ?>" value="<?= $ots->color ?>" size="5">
                                                                         </td>
                                                                     <?php endif ?>
+                                                                    <td>
+                                                                        <?php if ($ius->rolusuario == 1) : ?>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_ots[]" type="text" value="<?= $ots->sku ?>" readonly>
+                                                                        <?php else : ?>
+                                                                            <span style="font-size: 1.3em; color: black;"><?= $ots->sku ?></span>
+                                                                        <?php endif ?>
+                                                                    </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width: 35%;"><input type="hidden" size="5" name="idots[]" value="<?= $ots->id ?>"><?= $consec ?>.- <?= $ots->nombre ?><input type="hidden" name="nombreots[]" value="<?= $ots->nombre ?>">
                                                                         <?php if ($ots->incluye == '') : ?>
                                                                         <?php else : ?>
                                                                             <div style="padding-left: 10%;">
                                                                                 <textarea style="border:none; background: transparent" cols="50" rows="7" disabled><?= $ots->incluye ?></textarea>
                                                                             </div>
-                                                                        <?php endif ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <?php if ($ius->rolusuario == 1) : ?>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_ots[]" type="text" value="<?= $ots->sku ?>" readonly>
-                                                                        <?php else : ?>
-                                                                            <span style="font-size: 1.3em; color: black;"><?= $ots->sku ?></span>
                                                                         <?php endif ?>
                                                                     </td>
                                                                     <td>
