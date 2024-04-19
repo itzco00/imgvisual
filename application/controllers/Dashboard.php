@@ -211,8 +211,22 @@ class Dashboard extends CI_Controller
         $cc31 = $this->input->post('cc31');
         $cc33 = $this->input->post('cc33');
         $cc34 = $this->input->post('cc34');
+        $cc31r = $this->input->post('cc31r');
+        $cc33r = $this->input->post('cc33r');
+        $cc34r = $this->input->post('cc34r');
+        $activof = $this->input->post('activof');
         $id_nuevo_reg = $this->input->post('id_nuevo_reg');
-        $this->model->get_insertskusdirect($cc31, $cc33, $cc34, $id_nuevo_reg);
+        $data = array(
+            'cc31' => $cc31,
+            'cc33' => $cc33,
+            'cc34' => $cc34,
+            'cc31r' => $cc31r,
+            'cc33r' => $cc33r,
+            'cc34r' => $cc34r,
+            'activof' => $activof,
+            'id_nuevo_reg'=> $id_nuevo_reg
+        );
+        $this->model->get_insertskusdirect($data);
     }
     function actualizarprods()
     {
@@ -336,14 +350,17 @@ class Dashboard extends CI_Controller
             'subdepartamentos' => $_POST['subdepartamentos_res'],
             'incluye' => $_POST['incluye'],
             'status' => $_POST['statusproductos'],
-            //'sku' => $_POST['sku'],
             'pieza' => $_POST['pieza'],
         );
         $data2 = array(
             'id' => $_POST['id'],
             'cc31' => $_POST['cc31'],
             'cc33' => $_POST['cc33'],
-            'cc34' => $_POST['cc34']
+            'cc34' => $_POST['cc34'],
+            'cc31r' => $_POST['cc31r'],
+            'cc33r' => $_POST['cc33r'],
+            'cc34r' => $_POST['cc34r'],
+            'activof' => $_POST['activof'],
         );
         $this->model->get_actualizarCatalogo($data);
         $this->model->get_actulizaSkus($data2);
@@ -1739,7 +1756,7 @@ class Dashboard extends CI_Controller
 
     function productosDetalleCompra()
     {
-        $this->loadViews("detallecompras", $data);
+        $this->loadViews("detallecompras");
     }
 
     function GuardarPrecioCantidadFila()

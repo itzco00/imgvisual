@@ -161,18 +161,36 @@
 
                     <h4 for="opciones" style="display: block; margin-bottom: 8px; font-weight: bold; color:black;">Cuenta Contable:</h4>
                     <table style="width: 100%; margin-bottom: 16px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; color:black; font-size:1.3em">
-                        <thead>
-                            <tr>
-                                <td style="text-align: center; font-weight: bold; color: black;">Sku CC 31</td>
-                                <td style="text-align: center; font-weight: bold; color: black;">Sku CC 33</td>
-                                <td style="text-align: center; font-weight: bold; color: black;">Sku CC 34</td>
-                            </tr>
-                        </thead>
                         <tbody>
+                            <tr>
+                                <td style="text-align: center; color: black;">Sku CC 31</td>
+                                <td style="text-align: center; color: black;">Sku CC 33</td>
+                                <td style="text-align: center; color: black;">Sku CC 34</td>
+                            </tr>
                             <tr>
                                 <td style="text-align: center;"><input id="cc31" style="border: none; border-bottom: 1px solid black; width: 90%;" type="text"></td>
                                 <td style="text-align: center;"><input id="cc33" style="border: none; border-bottom: 1px solid black; width: 90%;" type="text"></td>
                                 <td style="text-align: center;"><input id="cc34" style="border: none; border-bottom: 1px solid black; width: 90%;" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; color: black;">Sku CC 31 r</td>
+                                <td style="text-align: center; color: black;">Sku CC 33 r</td>
+                                <td style="text-align: center; color: black;">Sku CC 34 r</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><input id="cc31r" style="border: none; border-bottom: 1px solid black; width: 90%;" type="text"></td>
+                                <td style="text-align: center;"><input id="cc33r" style="border: none; border-bottom: 1px solid black; width: 90%;" type="text"></td>
+                                <td style="text-align: center;"><input id="cc34r" style="border: none; border-bottom: 1px solid black; width: 90%;" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; color: black;">Activo Fijo</td>
+                                <td style="text-align: center; color: black;"></td>
+                                <td style="text-align: center; color: black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><input id="activof" style="border: none; border-bottom: 1px solid black; width: 90%;" type="text"></td>
+                                <td style="text-align: center;"></td>
+                                <td style="text-align: center;"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -393,9 +411,13 @@
             var cc31 = $('#cc31').val();
             var cc33 = $('#cc33').val();
             var cc34 = $('#cc34').val();
+            var cc31r = $('#cc31r').val();
+            var cc33r = $('#cc33r').val();
+            var cc34r = $('#cc34r').val();
+            var activof = $('#activof').val();
 
-            if (nombre == '' || precio == '' || reproceso == '' || unidad == '' || status == '' || departamentos == '' || subdepartamentos == '' || cc31 == '' || cc33 == '' || cc34 == '') {
-                alert('uno o mas campos estan vacios');
+            if (nombre == '' || precio == '' || reproceso == '' || unidad == '' || status == '' || departamentos == '' || subdepartamentos == '') {
+                alert('uno o mas campos obligatorios estan vacios');
             } else {
                 $('#loader_modal').show();
                 var formData = new FormData();
@@ -429,6 +451,10 @@
                                 'cc31': cc31,
                                 'cc33': cc33,
                                 'cc34': cc34,
+                                'cc31r': cc31r,
+                                'cc33r': cc33r,
+                                'cc34r': cc34r,
+                                'activof': activof,
                                 'id_nuevo_reg': id_nuevo_reg
                             },
                             success: function(response) {
@@ -445,6 +471,10 @@
                                 $('#cc31').val('');
                                 $('#cc33').val('');
                                 $('#cc34').val('');
+                                $('#cc31r').val('');
+                                $('#cc33r').val('');
+                                $('#cc34r').val('');
+                                $('#activof').val('');
                                 $('#loader_modal').hide();
                             },
                             error: function(error) {

@@ -552,9 +552,11 @@
                                                             <?php
                                                             $filasident = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($entrada as $ent) {
                                                                 $filasident++;
                                                                 $consec++;
+                                                                if($ent->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $ent->id ?>" class="ent_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $ent->id ?>">
@@ -586,6 +588,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $ent->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $ent->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $ent->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $ent->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $ent->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $ent->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $ent->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="ident[]" size="5" value="<?= $ent->id ?>"><?= $consec ?>.- <?= $ent->nombre ?><input type="hidden" name="nombreent[]" value="<?= $ent->nombre ?>">
                                                                         <?php if ($ent->incluye == '') : ?>
@@ -610,8 +617,8 @@
                                                                     <td style="font-size: 1.3em; color: black;width: 50px;"><?= $ent->unidad ?><input type="hidden" name="unidadent[]" value="<?= $ent->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioent-<?= $filasident ?>" name="precioent[]" oninput="Calcent(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $ent->precio ?>">
-                                                                        <i id="flag_reprocess_ent<?= $filasident ?>"><img class="get_reprocess_ent" id="<?= $filasident ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_ent<?= $filasident ?>" style="display:none"><img class="get_normal_ent" id="<?= $filasident ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_ent<?= $filasident ?>"><img class="get_reprocess_ent check_isfijor" id="<?= $filasident ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_ent<?= $filasident ?>" style="display:none"><img class="get_normal_ent check_isfijo" id="<?= $filasident ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusent[]" size="10" id="status_reprocess_val_ent<?= $filasident ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_ent<?= $filasident ?>" value="<?= $ent->id ?>">
                                                                     </td>
@@ -691,9 +698,11 @@
                                                             <?php
                                                             $filasiddcmpi = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($dcmpiso as $dcmpi) {
                                                                 $filasiddcmpi++;
                                                                 $consec++;
+                                                                if($dcmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $dcmpi->id ?>" class="dcmpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $dcmpi->id ?>">
@@ -725,6 +734,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $dcmpi->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $dcmpi->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $dcmpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $dcmpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $dcmpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $dcmpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $dcmpi->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="iddcmpi[]" size="5" value="<?= $dcmpi->id ?>"><?= $consec ?>.- <?= $dcmpi->nombre ?><input type="hidden" name="nombredcmpi[]" value="<?= $dcmpi->nombre ?>">
                                                                         <?php if ($dcmpi->incluye == '') : ?>
@@ -749,8 +763,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $dcmpi->unidad ?><input type="hidden" name="unidaddcmpi[]" value="<?= $dcmpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciodcmpi-<?= $filasiddcmpi ?>" name="preciodcmpi[]" oninput="Calcdcmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $dcmpi->precio ?>">
-                                                                        <i id="flag_reprocess_dcmpi<?= $filasiddcmpi ?>"><img class="get_reprocess_dcmpi" id="<?= $filasiddcmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_dcmpi<?= $filasiddcmpi ?>" style="display:none"><img class="get_normal_dcmpi" id="<?= $filasiddcmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_dcmpi<?= $filasiddcmpi ?>"><img class="get_reprocess_dcmpi check_isfijor" id="<?= $filasiddcmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_dcmpi<?= $filasiddcmpi ?>" style="display:none"><img class="get_normal_dcmpi check_isfijo" id="<?= $filasiddcmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusdcmpi[]" size="10" id="status_reprocess_val_dcmpi<?= $filasiddcmpi ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_dcmpi<?= $filasiddcmpi ?>" value="<?= $dcmpi->id ?>">
                                                                     </td>
@@ -818,9 +832,11 @@
                                                             <?php
                                                             $filasiddcmpe = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($dcmperimetral as $dcmpe) {
                                                                 $filasiddcmpe++;
                                                                 $consec++;
+                                                                if($dcmpe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $dcmpe->id ?>" class="dcmpe_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $dcmpe->id ?>">
@@ -852,6 +868,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $dcmpe->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $dcmpe->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $dcmpe->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $dcmpe->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $dcmpe->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $dcmpe->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $dcmpe->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="iddcmpe[]" size="5" value="<?= $dcmpe->id ?>"><?= $consec ?>.- <?= $dcmpe->nombre ?><input type="hidden" name="nombredcmpe[]" value="<?= $dcmpe->nombre ?>">
                                                                         <?php if ($dcmpe->incluye == '') : ?>
@@ -876,8 +897,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $dcmpe->unidad ?><input type="hidden" name="unidaddcmpe[]" value="<?= $dcmpe->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciodcmpe-<?= $filasiddcmpe ?>" name="preciodcmpe[]" oninput="Calcdcmpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $dcmpe->precio ?>">
-                                                                        <i id="flag_reprocess_dcmpe<?= $filasiddcmpe ?>"><img class="get_reprocess_dcmpe" id="<?= $filasiddcmpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_dcmpe<?= $filasiddcmpe ?>" style="display:none"><img class="get_normal_dcmpe" id="<?= $filasiddcmpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_dcmpe<?= $filasiddcmpe ?>"><img class="get_reprocess_dcmpe check_isfijor" id="<?= $filasiddcmpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_dcmpe<?= $filasiddcmpe ?>" style="display:none"><img class="get_normal_dcmpe check_isfijo" id="<?= $filasiddcmpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusdcmpe[]" size="10" id="status_reprocess_val_dcmpe<?= $filasiddcmpe ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_dcmpe<?= $filasiddcmpe ?>" value="<?= $dcmpe->id ?>">
                                                                     </td>
@@ -957,9 +978,11 @@
                                                             <?php
                                                             $filasidmhjmpi = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($mhjmpiso as $mhjmpi) {
                                                                 $filasidmhjmpi++;
                                                                 $consec++;
+                                                                if($mhjmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $mhjmpi->id ?>" class="mhjmpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $mhjmpi->id ?>">
@@ -991,6 +1014,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpi->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpi->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $mhjmpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $mhjmpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $mhjmpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $mhjmpi->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idmhjmpi[]" size="5" value="<?= $mhjmpi->id ?>"><?= $consec ?>.- <?= $mhjmpi->nombre ?><input type="hidden" name="nombremhjmpi[]" value="<?= $mhjmpi->nombre ?>">
                                                                         <?php if ($mhjmpi->incluye == '') : ?>
@@ -1015,8 +1043,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $mhjmpi->unidad ?><input type="hidden" name="unidadmhjmpi[]" value="<?= $mhjmpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciomhjmpi-<?= $filasidmhjmpi ?>" name="preciomhjmpi[]" oninput="Calcmhjmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $mhjmpi->precio ?>">
-                                                                        <i id="flag_reprocess_mhjmpi<?= $filasidmhjmpi ?>"><img class="get_reprocess_mhjmpi" id="<?= $filasidmhjmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_mhjmpi<?= $filasidmhjmpi ?>" style="display:none"><img class="get_normal_mhjmpi" id="<?= $filasidmhjmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_mhjmpi<?= $filasidmhjmpi ?>"><img class="get_reprocess_mhjmpi check_isfijor" id="<?= $filasidmhjmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_mhjmpi<?= $filasidmhjmpi ?>" style="display:none"><img class="get_normal_mhjmpi check_isfijo" id="<?= $filasidmhjmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusmhjmpi[]" size="10" id="status_reprocess_val_mhjmpi<?= $filasidmhjmpi ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_mhjmpi<?= $filasidmhjmpi ?>" value="<?= $mhjmpi->id ?>">
                                                                     </td>
@@ -1084,9 +1112,11 @@
                                                             <?php
                                                             $filasidmhjmpe = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($mhjmperimetral as $mhjmpe) {
                                                                 $filasidmhjmpe++;
                                                                 $consec++;
+                                                                if($mhjmpe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $mhjmpe->id ?>" class="mhjmpe_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $mhjmpe->id ?>">
@@ -1118,6 +1148,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpe->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpe->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpe->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $mhjmpe->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $mhjmpe->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $mhjmpe->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $mhjmpe->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idmhjmpe[]" size="5" value="<?= $mhjmpe->id ?>"><?= $consec ?>.- <?= $mhjmpe->nombre ?><input type="hidden" name="nombremhjmpe[]" value="<?= $mhjmpe->nombre ?>">
                                                                         <?php if ($mhjmpe->incluye == '') : ?>
@@ -1142,8 +1177,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $mhjmpe->unidad ?><input type="hidden" name="unidadmhjmpe[]" value="<?= $mhjmpe->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciomhjmpe-<?= $filasidmhjmpe ?>" name="preciomhjmpe[]" oninput="Calcmhjmpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $mhjmpe->precio ?>">
-                                                                        <i id="flag_reprocess_mhjmpe<?= $filasidmhjmpe ?>"><img class="get_reprocess_mhjmpe" id="<?= $filasidmhjmpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_mhjmpe<?= $filasidmhjmpe ?>" style="display:none"><img class="get_normal_mhjmpe" id="<?= $filasidmhjmpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_mhjmpe<?= $filasidmhjmpe ?>"><img class="get_reprocess_mhjmpe check_isfijor" id="<?= $filasidmhjmpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_mhjmpe<?= $filasidmhjmpe ?>" style="display:none"><img class="get_normal_mhjmpe check_isfijo" id="<?= $filasidmhjmpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusmhjmpe[]" size="10" id="status_reprocess_val_mhjmpe<?= $filasidmhjmpe ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_mhjmpe<?= $filasidmhjmpe ?>" value="<?= $mhjmpe->id ?>">
                                                                     </td>
@@ -1211,9 +1246,11 @@
                                                             <?php
                                                             $filasidmhjmpje = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($mhjmpjeans as $mhjmpje) {
                                                                 $filasidmhjmpje++;
                                                                 $consec++;
+                                                                if($mhjmpje->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $mhjmpje->id ?>" class="mhjmpje_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $mhjmpje->id ?>">
@@ -1245,6 +1282,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpje->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpje->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpje->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $mhjmpje->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $mhjmpje->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $mhjmpje->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $mhjmpje->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idmhjmpje[]" size="5" value="<?= $mhjmpje->id ?>"><?= $consec ?>.- <?= $mhjmpje->nombre ?><input type="hidden" name="nombremhjmpje[]" value="<?= $mhjmpje->nombre ?>">
                                                                         <?php if ($mhjmpje->incluye == '') : ?>
@@ -1269,8 +1311,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $mhjmpje->unidad ?><input type="hidden" name="unidadmhjmpje[]" value="<?= $mhjmpje->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciomhjmpje-<?= $filasidmhjmpje ?>" name="preciomhjmpje[]" oninput="Calcmhjmpje(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $mhjmpje->precio ?>">
-                                                                        <i id="flag_reprocess_mhjmpje<?= $filasidmhjmpje ?>"><img class="get_reprocess_mhjmpje" id="<?= $filasidmhjmpje ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_mhjmpje<?= $filasidmhjmpje ?>" style="display:none"><img class="get_normal_mhjmpje" id="<?= $filasidmhjmpje ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_mhjmpje<?= $filasidmhjmpje ?>"><img class="get_reprocess_mhjmpje check_isfijor" id="<?= $filasidmhjmpje ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_mhjmpje<?= $filasidmhjmpje ?>" style="display:none"><img class="get_normal_mhjmpje check_isfijo" id="<?= $filasidmhjmpje ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusmhjmpje[]" size="10" id="status_reprocess_val_mhjmpje<?= $filasidmhjmpje ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_mhjmpje<?= $filasidmhjmpje ?>" value="<?= $mhjmpje->id ?>">
                                                                     </td>
@@ -1338,9 +1380,11 @@
                                                             <?php
                                                             $filasidmhjmpli = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($mhjmplicencias as $mhjmpli) {
                                                                 $filasidmhjmpli++;
                                                                 $consec++;
+                                                                if($mhjmpli->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $mhjmpli->id ?>" class="mhjmpli_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $mhjmpli->id ?>">
@@ -1372,6 +1416,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpli->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpli->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpli->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $mhjmpli->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $mhjmpli->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $mhjmpli->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $mhjmpli->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idmhjmpli[]" size="5" value="<?= $mhjmpli->id ?>"><?= $consec ?>.- <?= $mhjmpli->nombre ?><input type="hidden" name="nombremhjmpli[]" value="<?= $mhjmpli->nombre ?>">
                                                                         <?php if ($mhjmpli->incluye == '') : ?>
@@ -1396,8 +1445,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $mhjmpli->unidad ?><input type="hidden" name="unidadmhjmpli[]" value="<?= $mhjmpli->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciomhjmpli-<?= $filasidmhjmpli ?>" name="preciomhjmpli[]" oninput="Calcmhjmpli(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $mhjmpli->precio ?>">
-                                                                        <i id="flag_reprocess_mhjmpli<?= $filasidmhjmpli ?>"><img class="get_reprocess_mhjmpli" id="<?= $filasidmhjmpli ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_mhjmpli<?= $filasidmhjmpli ?>" style="display:none"><img class="get_normal_mhjmpli" id="<?= $filasidmhjmpli ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_mhjmpli<?= $filasidmhjmpli ?>"><img class="get_reprocess_mhjmpli check_isfijor" id="<?= $filasidmhjmpli ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_mhjmpli<?= $filasidmhjmpli ?>" style="display:none"><img class="get_normal_mhjmpli check_isfijo" id="<?= $filasidmhjmpli ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusmhjmpli[]" size="10" id="status_reprocess_val_mhjmpli<?= $filasidmhjmpli ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_mhjmpli<?= $filasidmhjmpli ?>" value="<?= $mhjmpli->id ?>">
                                                                     </td>
@@ -1477,9 +1526,11 @@
                                                             <?php
                                                             $filasidimpi = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($impiso as $impi) {
                                                                 $filasidimpi++;
                                                                 $consec++;
+                                                                if($impi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $impi->id ?>" class="impi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $impi->id ?>">
@@ -1511,6 +1562,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $impi->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $impi->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $impi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $impi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $impi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $impi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $impi->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idimpi[]" size="5" value="<?= $impi->id ?>"><?= $consec ?>.- <?= $impi->nombre ?><input type="hidden" name="nombreimpi[]" value="<?= $impi->nombre ?>">
                                                                         <?php if ($impi->incluye == '') : ?>
@@ -1532,8 +1588,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $impi->unidad ?><input type="hidden" name="unidadimpi[]" value="<?= $impi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioimpi-<?= $filasidimpi ?>" name="precioimpi[]" oninput="Calcimpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $impi->precio ?>">
-                                                                        <i id="flag_reprocess_impi<?= $filasidimpi ?>"><img class="get_reprocess_impi" id="<?= $filasidimpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_impi<?= $filasidimpi ?>" style="display:none"><img class="get_normal_impi" id="<?= $filasidimpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_impi<?= $filasidimpi ?>"><img class="get_reprocess_impi check_isfijor" id="<?= $filasidimpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_impi<?= $filasidimpi ?>" style="display:none"><img class="get_normal_impi check_isfijo" id="<?= $filasidimpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusimpi[]" size="10" id="status_reprocess_val_impi<?= $filasidimpi ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_impi<?= $filasidimpi ?>" value="<?= $impi->id ?>">
                                                                     </td>
@@ -1601,9 +1657,11 @@
                                                             <?php
                                                             $filasidimpe = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($imperimetral as $impe) {
                                                                 $filasidimpe++;
                                                                 $consec++;
+                                                                if($impe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $impe->id ?>" class="impe_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $impe->id ?>">
@@ -1635,6 +1693,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $impe->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $impe->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $impe->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $impe->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $impe->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $impe->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $impe->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idimpe[]" size="5" value="<?= $impe->id ?>"><?= $consec ?>.- <?= $impe->nombre ?><input type="hidden" name="nombreimpe[]" value="<?= $impe->nombre ?>">
                                                                         <?php if ($impe->incluye == '') : ?>
@@ -1659,8 +1722,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $impe->unidad ?><input type="hidden" name="unidadimpe[]" value="<?= $impe->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioimpe-<?= $filasidimpe ?>" name="precioimpe[]" oninput="Calcimpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $impe->precio ?>">
-                                                                        <i id="flag_reprocess_impe<?= $filasidimpe ?>"><img class="get_reprocess_impe" id="<?= $filasidimpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_impe<?= $filasidimpe ?>" style="display:none"><img class="get_normal_impe" id="<?= $filasidimpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_impe<?= $filasidimpe ?>"><img class="get_reprocess_impe check_isfijor" id="<?= $filasidimpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_impe<?= $filasidimpe ?>" style="display:none"><img class="get_normal_impe check_isfijo" id="<?= $filasidimpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusimpe[]" size="10" id="status_reprocess_val_impe<?= $filasidimpe ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_impe<?= $filasidimpe ?>" value="<?= $impe->id ?>">
                                                                     </td>
@@ -1728,9 +1791,11 @@
                                                             <?php
                                                             $filasidimhe = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($imherraje as $imhe) {
                                                                 $filasidimhe++;
                                                                 $consec++;
+                                                                if($imhe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $imhe->id ?>" class="imhe_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $imhe->id ?>">
@@ -1762,6 +1827,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $imhe->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $imhe->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $imhe->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $imhe->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $imhe->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $imhe->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $imhe->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idimhe[]" size="5" value="<?= $imhe->id ?>"><?= $consec ?>.- <?= $imhe->nombre ?><input type="hidden" name="nombreimhe[]" value="<?= $imhe->nombre ?>">
                                                                         <?php if ($imhe->incluye == '') : ?>
@@ -1786,8 +1856,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $imhe->unidad ?><input type="hidden" name="unidadimhe[]" value="<?= $imhe->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioimhe-<?= $filasidimhe ?>" name="precioimhe[]" oninput="Calcimhe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $imhe->precio ?>">
-                                                                        <i id="flag_reprocess_imhe<?= $filasidimhe ?>"><img class="get_reprocess_imhe" id="<?= $filasidimhe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_imhe<?= $filasidimhe ?>" style="display:none"><img class="get_normal_imhe" id="<?= $filasidimhe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_imhe<?= $filasidimhe ?>"><img class="get_reprocess_imhe check_isfijor" id="<?= $filasidimhe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_imhe<?= $filasidimhe ?>" style="display:none"><img class="get_normal_imhe check_isfijo" id="<?= $filasidimhe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusimhe[]" size="10" id="status_reprocess_val_imhe<?= $filasidimhe ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_imhe<?= $filasidimhe ?>" value="<?= $imhe->id ?>">
                                                                     </td>
@@ -1867,9 +1937,11 @@
                                                             <?php
                                                             $filasidinnpi = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($innpiso as $innpi) {
                                                                 $filasidinnpi++;
                                                                 $consec++;
+                                                                if($innpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $innpi->id ?>" class="innpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $innpi->id ?>">
@@ -1901,6 +1973,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $innpi->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $innpi->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $innpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $innpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $innpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $innpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $innpi->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idinnpi[]" size="5" value="<?= $innpi->id ?>"><?= $consec ?>.- <?= $innpi->nombre ?><input type="hidden" name="nombreinnpi[]" value="<?= $innpi->nombre ?>">
                                                                         <?php if ($innpi->incluye == '') : ?>
@@ -1925,8 +2002,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $innpi->unidad ?><input type="hidden" name="unidadinnpi[]" value="<?= $innpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioinnpi-<?= $filasidinnpi ?>" name="precioinnpi[]" oninput="Calcinnpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $innpi->precio ?>">
-                                                                        <i id="flag_reprocess_innpi<?= $filasidinnpi ?>"><img class="get_reprocess_innpi" id="<?= $filasidinnpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_innpi<?= $filasidinnpi ?>" style="display:none"><img class="get_normal_innpi" id="<?= $filasidinnpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_innpi<?= $filasidinnpi ?>"><img class="get_reprocess_innpi check_isfijor" id="<?= $filasidinnpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_innpi<?= $filasidinnpi ?>" style="display:none"><img class="get_normal_innpi check_isfijo" id="<?= $filasidinnpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusinnpi[]" size="10" id="status_reprocess_val_innpi<?= $filasidinnpi ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_innpi<?= $filasidinnpi ?>" value="<?= $innpi->id ?>">
                                                                     </td>
@@ -1994,9 +2071,11 @@
                                                             <?php
                                                             $filasidinnpe = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($innperimetral as $innpe) {
                                                                 $filasidinnpe++;
                                                                 $consec++;
+                                                                if($innpe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $innpe->id ?>" class="innpe_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $innpe->id ?>">
@@ -2028,6 +2107,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $innpe->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $innpe->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $innpe->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $innpe->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $innpe->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $innpe->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $innpe->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idinnpe[]" size="5" value="<?= $innpe->id ?>"><?= $consec ?>.- <?= $innpe->nombre ?><input type="hidden" name="nombreinnpe[]" value="<?= $innpe->nombre ?>">
                                                                         <?php if ($innpe->incluye == '') : ?>
@@ -2052,8 +2136,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $innpe->unidad ?><input type="hidden" name="unidadinnpe[]" value="<?= $innpe->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioinnpe-<?= $filasidinnpe ?>" name="precioinnpe[]" oninput="Calcinnpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $innpe->precio ?>">
-                                                                        <i id="flag_reprocess_innpe<?= $filasidinnpe ?>"><img class="get_reprocess_innpe" id="<?= $filasidinnpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_innpe<?= $filasidinnpe ?>" style="display:none"><img class="get_normal_innpe" id="<?= $filasidinnpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_innpe<?= $filasidinnpe ?>"><img class="get_reprocess_innpe check_isfijor" id="<?= $filasidinnpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_innpe<?= $filasidinnpe ?>" style="display:none"><img class="get_normal_innpe check_isfijo" id="<?= $filasidinnpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusinnpe[]" size="10" id="status_reprocess_val_innpe<?= $filasidinnpe ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_innpe<?= $filasidinnpe ?>" value="<?= $innpe->id ?>">
                                                                     </td>
@@ -2133,9 +2217,11 @@
                                                             <?php
                                                             $filasidtnnbpi = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($tnnbpiso as $tnnbpi) {
                                                                 $filasidtnnbpi++;
                                                                 $consec++;
+                                                                if($tnnbpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $tnnbpi->id ?>" class="tnnbpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $tnnbpi->id ?>">
@@ -2167,6 +2253,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $tnnbpi->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $tnnbpi->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $tnnbpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $tnnbpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $tnnbpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $tnnbpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $tnnbpi->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idtnnbpi[]" size="5" value="<?= $tnnbpi->id ?>"><?= $consec ?>.- <?= $tnnbpi->nombre ?><input type="hidden" name="nombretnnbpi[]" value="<?= $tnnbpi->nombre ?>">
                                                                         <?php if ($tnnbpi->incluye == '') : ?>
@@ -2191,8 +2282,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $tnnbpi->unidad ?><input type="hidden" name="unidadtnnbpi[]" value="<?= $tnnbpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciotnnbpi-<?= $filasidtnnbpi ?>" name="preciotnnbpi[]" oninput="Calctnnbpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $tnnbpi->precio ?>">
-                                                                        <i id="flag_reprocess_tnnbpi<?= $filasidtnnbpi ?>"><img class="get_reprocess_tnnbpi" id="<?= $filasidtnnbpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_tnnbpi<?= $filasidtnnbpi ?>" style="display:none"><img class="get_normal_tnnbpi" id="<?= $filasidtnnbpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_tnnbpi<?= $filasidtnnbpi ?>"><img class="get_reprocess_tnnbpi check_isfijor" id="<?= $filasidtnnbpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_tnnbpi<?= $filasidtnnbpi ?>" style="display:none"><img class="get_normal_tnnbpi check_isfijo" id="<?= $filasidtnnbpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatustnnbpi[]" size="10" id="status_reprocess_val_tnnbpi<?= $filasidtnnbpi ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_tnnbpi<?= $filasidtnnbpi ?>" value="<?= $tnnbpi->id ?>">
                                                                     </td>
@@ -2259,9 +2350,11 @@
                                                             <?php
                                                             $filasidtnnbpe = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($tnnbperimetral as $tnnbpe) {
                                                                 $filasidtnnbpe++;
                                                                 $consec++;
+                                                                if($tnnbpe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $tnnbpe->id ?>" class="tnnbpe_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $tnnbpe->id ?>">
@@ -2293,6 +2386,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $tnnbpe->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $tnnbpe->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $tnnbpe->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $tnnbpe->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $tnnbpe->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $tnnbpe->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $tnnbpe->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idtnnbpe[]" size="5" value="<?= $tnnbpe->id ?>"><?= $consec ?>.- <?= $tnnbpe->nombre ?><input type="hidden" name="nombretnnbpe[]" value="<?= $tnnbpe->nombre ?>">
                                                                         <?php if ($tnnbpe->incluye == '') : ?>
@@ -2317,8 +2415,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $tnnbpe->unidad ?><input type="hidden" name="unidadtnnbpe[]" value="<?= $tnnbpe->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciotnnbpe-<?= $filasidtnnbpe ?>" name="preciotnnbpe[]" oninput="Calctnnbpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $tnnbpe->precio ?>">
-                                                                        <i id="flag_reprocess_tnnbpe<?= $filasidtnnbpe ?>"><img class="get_reprocess_tnnbpe" id="<?= $filasidtnnbpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_tnnbpe<?= $filasidtnnbpe ?>" style="display:none"><img class="get_normal_tnnbpe" id="<?= $filasidtnnbpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_tnnbpe<?= $filasidtnnbpe ?>"><img class="get_reprocess_tnnbpe check_isfijor" id="<?= $filasidtnnbpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_tnnbpe<?= $filasidtnnbpe ?>" style="display:none"><img class="get_normal_tnnbpe check_isfijo" id="<?= $filasidtnnbpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatustnnbpe[]" size="10" id="status_reprocess_val_tnnbpe<?= $filasidtnnbpe ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_tnnbpe<?= $filasidtnnbpe ?>" value="<?= $tnnbpe->id ?>">
                                                                     </td>
@@ -2397,9 +2495,11 @@
                                                             <?php
                                                             $filasidherna = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($hernoaplica as $herna) {
                                                                 $filasidherna++;
                                                                 $consec++;
+                                                                if($herna->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $herna->id ?>" class="herna_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $herna->id ?>">
@@ -2431,6 +2531,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $herna->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $herna->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $herna->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $herna->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $herna->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $herna->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $herna->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idherna[]" size="5" value="<?= $herna->id ?>"><?= $consec ?>.- <?= $herna->nombre ?><input type="hidden" name="nombreherna[]" value="<?= $herna->nombre ?>">
                                                                         <?php if ($herna->incluye == '') : ?>
@@ -2455,8 +2560,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $herna->unidad ?><input type="hidden" name="unidadherna[]" value="<?= $herna->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioherna-<?= $filasidherna ?>" name="precioherna[]" oninput="Calcherna(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $herna->precio ?>">
-                                                                        <i id="flag_reprocess_herna<?= $filasidherna ?>"><img class="get_reprocess_herna" id="<?= $filasidherna ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_herna<?= $filasidherna ?>" style="display:none"><img class="get_normal_herna" id="<?= $filasidherna ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_herna<?= $filasidherna ?>"><img class="get_reprocess_herna check_isfijor" id="<?= $filasidherna ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_herna<?= $filasidherna ?>" style="display:none"><img class="get_normal_herna check_isfijo" id="<?= $filasidherna ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusherna[]" size="10" id="status_reprocess_val_herna<?= $filasidherna ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_herna<?= $filasidherna ?>" value="<?= $herna->id ?>">
                                                                     </td>
@@ -2535,9 +2640,11 @@
                                                             <?php
                                                             $filasidprobmpi = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($probmpiso as $probmpi) {
                                                                 $filasidprobmpi++;
                                                                 $consec++;
+                                                                if($probmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $probmpi->id ?>" class="probmpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $probmpi->id ?>">
@@ -2569,6 +2676,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $probmpi->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $probmpi->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $probmpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $probmpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $probmpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $probmpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $probmpi->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idprobmpi[]" size="5" value="<?= $probmpi->id ?>"><?= $consec ?>.- <?= $probmpi->nombre ?><input type="hidden" name="nombreprobmpi[]" value="<?= $probmpi->nombre ?>">
                                                                         <?php if ($probmpi->incluye == '') : ?>
@@ -2593,8 +2705,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $probmpi->unidad ?><input type="hidden" name="unidadprobmpi[]" value="<?= $probmpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioprobmpi-<?= $filasidprobmpi ?>" name="precioprobmpi[]" oninput="Calcprobmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $probmpi->precio ?>">
-                                                                        <i id="flag_reprocess_probmpi<?= $filasidprobmpi ?>"><img class="get_reprocess_probmpi" id="<?= $filasidprobmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_probmpi<?= $filasidprobmpi ?>" style="display:none"><img class="get_normal_probmpi" id="<?= $filasidprobmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_probmpi<?= $filasidprobmpi ?>"><img class="get_reprocess_probmpi check_isfijor" id="<?= $filasidprobmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_probmpi<?= $filasidprobmpi ?>" style="display:none"><img class="get_normal_probmpi check_isfijo" id="<?= $filasidprobmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusprobmpi[]" size="10" id="status_reprocess_val_probmpi<?= $filasidprobmpi ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_probmpi<?= $filasidprobmpi ?>" value="<?= $probmpi->id ?>">
                                                                     </td>
@@ -2673,9 +2785,11 @@
                                                             <?php
                                                             $filasidpanmpi = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($panmpiso as $panmpi) {
                                                                 $filasidpanmpi++;
                                                                 $consec++;
+                                                                if($panmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $panmpi->id ?>" class="panmpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $panmpi->id ?>">
@@ -2707,6 +2821,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $panmpi->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $panmpi->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $panmpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $panmpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $panmpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $panmpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $panmpi->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idpanmpi[]" size="5" value="<?= $panmpi->id ?>"><?= $consec ?>.- <?= $panmpi->nombre ?><input type="hidden" name="nombrepanmpi[]" value="<?= $panmpi->nombre ?>">
                                                                         <?php if ($panmpi->incluye == '') : ?>
@@ -2731,8 +2850,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $panmpi->unidad ?><input type="hidden" name="unidadpanmpi[]" value="<?= $panmpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciopanmpi-<?= $filasidpanmpi ?>" name="preciopanmpi[]" oninput="Calcpanmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $panmpi->precio ?>">
-                                                                        <i id="flag_reprocess_panmpi<?= $filasidpanmpi ?>"><img class="get_reprocess_panmpi" id="<?= $filasidpanmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_panmpi<?= $filasidpanmpi ?>" style="display:none"><img class="get_normal_panmpi" id="<?= $filasidpanmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_panmpi<?= $filasidpanmpi ?>"><img class="get_reprocess_panmpi check_isfijor" id="<?= $filasidpanmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_panmpi<?= $filasidpanmpi ?>" style="display:none"><img class="get_normal_panmpi check_isfijo" id="<?= $filasidpanmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatuspanmpi[]" size="10" id="status_reprocess_val_panmpi<?= $filasidpanmpi ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_panmpi<?= $filasidpanmpi ?>" value="<?= $panmpi->id ?>">
                                                                     </td>
@@ -2812,9 +2931,11 @@
                                                             <?php
                                                             $filasidextmpi = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($extmpiso as $extmpi) {
                                                                 $filasidextmpi++;
                                                                 $consec++;
+                                                                if($extmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $extmpi->id ?>" class="extmpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $extmpi->id ?>">
@@ -2846,6 +2967,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $extmpi->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $extmpi->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $extmpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $extmpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $extmpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $extmpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $extmpi->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idextmpi[]" size="5" value="<?= $extmpi->id ?>"><?= $consec ?>.- <?= $extmpi->nombre ?><input type="hidden" name="nombreextmpi[]" value="<?= $extmpi->nombre ?>">
                                                                         <?php if ($extmpi->incluye == '') : ?>
@@ -2870,8 +2996,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $extmpi->unidad ?><input type="hidden" name="unidadextmpi[]" value="<?= $extmpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioextmpi-<?= $filasidextmpi ?>" name="precioextmpi[]" oninput="Calcextmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $extmpi->precio ?>">
-                                                                        <i id="flag_reprocess_extmpi<?= $filasidextmpi ?>"><img class="get_reprocess_extmpi" id="<?= $filasidextmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_extmpi<?= $filasidextmpi ?>" style="display:none"><img class="get_normal_extmpi" id="<?= $filasidextmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_extmpi<?= $filasidextmpi ?>"><img class="get_reprocess_extmpi check_isfijor" id="<?= $filasidextmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_extmpi<?= $filasidextmpi ?>" style="display:none"><img class="get_normal_extmpi check_isfijo" id="<?= $filasidextmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusextmpi[]" size="10" id="status_reprocess_val_extmpi<?= $filasidextmpi ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_extmpi<?= $filasidextmpi ?>" value="<?= $extmpi->id ?>">
                                                                     </td>
@@ -2945,9 +3071,11 @@
                                                             <?php
                                                             $filasidimgp = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($imgpop as $imgp) {
                                                                 $filasidimgp++;
                                                                 $consec++;
+                                                                if($imgp->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $imgp->id ?>" class="imgp_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $imgp->id ?>">
@@ -2979,6 +3107,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $imgp->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $imgp->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $imgp->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $imgp->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $imgp->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $imgp->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $imgp->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idimgp[]" size="5" value="<?= $imgp->id ?>"><?= $consec ?>.- <?= $imgp->nombre ?><input type="hidden" name="nombreimgp[]" value="<?= $imgp->nombre ?>">
                                                                         <?php if ($imgp->incluye == '') : ?>
@@ -2999,8 +3132,8 @@
                                                                         <i id="<?= $filasidimgp ?>" class="getrowidimgp" style="cursor:pointer"></i>
                                                                         <i id="recalc_imgp_<?= $filasidimgp ?>" class="getrowidimgp2" style="cursor:pointer"></i>
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioimgp-<?= $filasidimgp ?>" name="precioimgp[]" oninput=" enviarimagenpops(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes(); " value="<?= $imgp->precio ?>" class="recallc">
-                                                                        <i id="flag_reprocess_imgp<?= $filasidimgp ?>"><img class="get_reprocess_imgp" id="<?= $filasidimgp ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_imgp<?= $filasidimgp ?>" style="display:none"><img class="get_normal_imgp" id="<?= $filasidimgp ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_imgp<?= $filasidimgp ?>"><img class="get_reprocess_imgp check_isfijor" id="<?= $filasidimgp ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_imgp<?= $filasidimgp ?>" style="display:none"><img class="get_normal_imgp check_isfijo" id="<?= $filasidimgp ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusimgp[]" size="10" id="status_reprocess_val_imgp<?= $filasidimgp ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_imgp<?= $filasidimgp ?>" value="<?= $imgp->id ?>">
                                                                     </td>
@@ -3061,9 +3194,11 @@
                                                             <?php
                                                             $filasidimgm = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($imgmaniquis as $imgm) {
                                                                 $filasidimgm++;
                                                                 $consec++;
+                                                                if($imgm->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $imgm->id ?>" class="imgm_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $imgm->id ?>">
@@ -3095,6 +3230,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $imgm->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $imgm->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $imgm->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $imgm->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $imgm->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $imgm->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $imgm->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idimgm[]" size="5" value="<?= $imgm->id ?>"><?= $consec ?>.- <?= $imgm->nombre ?><input type="hidden" name="nombreimgm[]" value="<?= $imgm->nombre ?>">
                                                                         <?php if ($imgm->incluye == '') : ?>
@@ -3115,8 +3255,8 @@
                                                                         <i id="<?= $filasidimgm ?>" class="getrowidimgm" style="cursor:pointer"></i>
                                                                         <i id="recalc_imgm_<?= $filasidimgm ?>" class="getrowidimgm2" style="cursor:pointer"></i>
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioimgm-<?= $filasidimgm ?>" name="precioimgm[]" oninput=" enviarimagenmaniquis(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes(); " value="<?= $imgm->precio ?>" class="recallc">
-                                                                        <i id="flag_reprocess_imgm<?= $filasidimgm ?>"><img class="get_reprocess_imgm" id="<?= $filasidimgm ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_imgm<?= $filasidimgm ?>" style="display:none"><img class="get_normal_imgm" id="<?= $filasidimgm ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_imgm<?= $filasidimgm ?>"><img class="get_reprocess_imgm check_isfijor" id="<?= $filasidimgm ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_imgm<?= $filasidimgm ?>" style="display:none"><img class="get_normal_imgm check_isfijo" id="<?= $filasidimgm ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusimgm[]" size="10" id="status_reprocess_val_imgm<?= $filasidimgm ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_imgm<?= $filasidimgm ?>" value="<?= $imgm->id ?>">
                                                                     </td>
@@ -3194,9 +3334,11 @@
                                                             <?php
                                                             $filasidots = 0;
                                                             $consec = 0;
+                                                            $isfijo = 0; // para identificar si es activo fijo si es 0 no es, si es 1 si es Activo fijo
                                                             foreach ($otros as $ots) {
                                                                 $filasidots++;
                                                                 $consec++;
+                                                                if($ots->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $ots->id ?>" class="ots_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <td id="color_prods_<?= $ots->id ?>">
@@ -3228,6 +3370,11 @@
                                                                         <input type="hidden" class="skuvaluecc31" value="<?= $ots->cc31 ?>">
                                                                         <input type="hidden" class="skuvaluecc33" value="<?= $ots->cc33 ?>">
                                                                         <input type="hidden" class="skuvaluecc34" value="<?= $ots->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $ots->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $ots->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $ots->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $ots->activof ?>">
+                                                                        <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black;text-align:left;width: 30%;"><input type="hidden" name="idots[]" size="5" value="<?= $ots->id ?>"><?= $consec ?>.- <?= $ots->nombre ?><input type="hidden" name="nombreots[]" value="<?= $ots->nombre ?>">
                                                                         <?php if ($ots->incluye == '') : ?>
@@ -3252,8 +3399,8 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $ots->unidad ?><input type="hidden" name="unidadots[]" value="<?= $ots->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioots-<?= $filasidots ?>" name="precioots[]" oninput="Calcots(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $ots->precio ?>">
-                                                                        <i id="flag_reprocess_ots<?= $filasidots ?>"><img class="get_reprocess_ots" id="<?= $filasidots ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
-                                                                        <i id="flag_normal_ots<?= $filasidots ?>" style="display:none"><img class="get_normal_ots" id="<?= $filasidots ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_reprocess_ots<?= $filasidots ?>"><img class="get_reprocess_ots check_isfijor" id="<?= $filasidots ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
+                                                                        <i id="flag_normal_ots<?= $filasidots ?>" style="display:none"><img class="get_normal_ots check_isfijo" id="<?= $filasidots ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <input type="hidden" name="reprocesstatusots[]" size="10" id="status_reprocess_val_ots<?= $filasidots ?>" value="0">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_ots<?= $filasidots ?>" value="<?= $ots->id ?>">
                                                                     </td>
@@ -14544,87 +14691,213 @@
             $('#ccstatus').val(31);
             $('#contenidotablaentrada tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotabladcmpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotabladcmpe tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablamhjmpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablamhjmpe tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablamhjmpje tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablamhjmpli tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablaimpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablaimpe tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablaimhe tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablainnpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablainnpe tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablatnnbpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablatnnbpe tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablaherna tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablaprobmpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablapanmpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablaextmpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablaimgp tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablaimgm tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
             $('#contenidotablaots tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
-                $(this).find('.skuvalueinsert').val(cc31v);
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
             });
 
             click_on_ckecked();
@@ -14641,87 +14914,213 @@
             $('#ccstatus').val(33);
             $('#contenidotablaentrada tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotabladcmpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotabladcmpe tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablamhjmpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablamhjmpe tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablamhjmpje tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablamhjmpli tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablaimpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablaimpe tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablaimhe tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablainnpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablainnpe tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablatnnbpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablatnnbpe tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablaherna tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablaprobmpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablapanmpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablaextmpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablaimgp tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablaimgm tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
             $('#contenidotablaots tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
-                $(this).find('.skuvalueinsert').val(cc33v);
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
             });
 
             click_on_ckecked();
@@ -14738,87 +15137,213 @@
             $('#ccstatus').val(34);
             $('#contenidotablaentrada tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotabladcmpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotabladcmpe tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablamhjmpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablamhjmpe tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablamhjmpje tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablamhjmpli tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablaimpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablaimpe tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablaimhe tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablainnpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablainnpe tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablatnnbpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablatnnbpe tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablaherna tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablaprobmpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablapanmpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablaextmpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablaimgp tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablaimgm tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
             $('#contenidotablaots tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
-                $(this).find('.skuvalueinsert').val(cc34v);
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
             });
 
             click_on_ckecked();
@@ -14906,6 +15431,50 @@
     });
     $("#recall").click(function() {
         $('.recallc').trigger('input');
+    });
+    $('.check_isfijor').click(function (){ //traer skus de reprocesos cuando se selecciona la bandera roja
+        var isfijo = $(this).closest('tr').find('.isfijoval').attr('isfijo');//como mencionamos si es 1, es activo fijo, si no, no
+        var cc31rv = $(this).closest('tr').find('.skuvaluecc31r').val();
+        var cc33rv = $(this).closest('tr').find('.skuvaluecc33r').val();
+        var cc34rv = $(this).closest('tr').find('.skuvaluecc34r').val();
+        var ccstatus = $('#ccstatus').val();//trae valor de cuenta contable
+        if(ccstatus == ''){ //si no se ha seleccionado cuenta contable
+            console.log('seleccione cc');// no interccambia sku de reproceso
+        }else{//si hay cuenta contable activa
+            if(isfijo == '1'){// si es activo fijo
+                console.log('no se cambia rep');//se queda con el valor de AC.F.
+            }else{//si no es activo fijo
+                if(ccstatus == '31'){//si la cuenta contable es 31
+                    $(this).closest('tr').find('.skuvalueinsert').val(cc31rv);//cambia sku de reproceso de de la cuenta contable 31
+                }else if(ccstatus == '33'){//si la cuenta contable es 33
+                    $(this).closest('tr').find('.skuvalueinsert').val(cc33rv);//cambia sku de reproceso de de la cuenta contable 33
+                }else if(ccstatus == '34'){//si la cuenta contable es 34
+                    $(this).closest('tr').find('.skuvalueinsert').val(cc34rv);//cambia sku de reproceso de de la cuenta contable 34
+                }else{}
+            }
+        }
+    });
+    $('.check_isfijo').click(function (){ //traer skus normales cuando se selecciona la bandera azul
+        var isfijo = $(this).closest('tr').find('.isfijoval').attr('isfijo');//como mencionamos si es 1, es activo fijo, si no, no
+        var cc31v = $(this).closest('tr').find('.skuvaluecc31').val();
+        var cc33v = $(this).closest('tr').find('.skuvaluecc33').val();
+        var cc34v = $(this).closest('tr').find('.skuvaluecc34').val();
+        var ccstatus = $('#ccstatus').val();//trae valor de cuenta contable
+        if(ccstatus == ''){ //si no se ha seleccionado cuenta contable
+            console.log('seleccione cc');// no interccambia sku normal
+        }else{//si hay cuenta contable activa
+            if(isfijo == '1'){// si es activo fijo
+                console.log('no se cambia rep');//se queda con el valor de AC.F.
+            }else{//si no es activo fijo
+                if(ccstatus == '31'){//si la cuenta contable es 31
+                    $(this).closest('tr').find('.skuvalueinsert').val(cc31v);//cambia sku de reproceso de de la cuenta contable 31
+                }else if(ccstatus == '33'){//si la cuenta contable es 33
+                    $(this).closest('tr').find('.skuvalueinsert').val(cc33v);//cambia sku de reproceso de de la cuenta contable 33
+                }else if(ccstatus == '34'){//si la cuenta contable es 34
+                    $(this).closest('tr').find('.skuvalueinsert').val(cc34v);//cambia sku de reproceso de de la cuenta contable 34
+                }else{}
+            }
+        }
     });
 </script>
 <style>
