@@ -7773,7 +7773,7 @@ class model extends CI_Model
             return NULL;
         }*/
 
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -7791,7 +7791,7 @@ class model extends CI_Model
     //2. TRAER PROD DAMA Y CABALLERO
     function getProductosDamaYCaballeroPiso2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -7808,7 +7808,7 @@ class model extends CI_Model
     }
     function getProductosDamaYCaballeroPerimetral2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -7828,7 +7828,7 @@ class model extends CI_Model
     //3. TRAER PROD MUJER HOMBRE JR
     function getProductosMujerHombreJrPiso2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -7845,7 +7845,7 @@ class model extends CI_Model
     }
     function getProductosMujerHombreJrPerimetral2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -7862,7 +7862,7 @@ class model extends CI_Model
     }
     function getProductosMujerHombreJrJeans2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -7879,7 +7879,7 @@ class model extends CI_Model
     }
     function getProductosMujerHombreJrLicencias2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -7899,7 +7899,7 @@ class model extends CI_Model
     //4. TRAER PROD INTERIOR MUJER
     function getProductosInteriorMujerPiso2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -7916,7 +7916,7 @@ class model extends CI_Model
     }
     function getProductosInteriorMujerPerimetral2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -7933,7 +7933,7 @@ class model extends CI_Model
     }
     function getProductosInteriorMujerHerraje2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -7953,7 +7953,7 @@ class model extends CI_Model
     //5. TRAER PROD INFANTIL NIÑO Y NIÑA
     function getProductosInfantilNiñoYNiñaPiso2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -7970,7 +7970,7 @@ class model extends CI_Model
     }
     function getProductosInfantilNiñoYNiñaPerimetral2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -7990,7 +7990,7 @@ class model extends CI_Model
     //6. TRAER PROD TODDLER NIÑO NIÑA Y BEBES
     function getProductosToddlerNiñoNiñaYBebesPiso2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -8007,7 +8007,7 @@ class model extends CI_Model
     }
     function getProductosToddlerNiñoNiñaYBebesPerimetral2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -8027,7 +8027,7 @@ class model extends CI_Model
     //7. TRAER PROD HERRAJE
     function getProductosHerrajeNoAplica2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -8047,7 +8047,7 @@ class model extends CI_Model
     //8. TRAER PROD PROBADORES
     function getProductosProbadoresPiso2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -8067,7 +8067,7 @@ class model extends CI_Model
     //9. TRAER PROD PANELES
     function getProductosPanelesPiso2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -8087,7 +8087,7 @@ class model extends CI_Model
     //10. TRAER PROD EXTRAS
     function getProductosExtrasPiso2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -8105,7 +8105,7 @@ class model extends CI_Model
 
     function getProductosExtrasPiso2_2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -8126,7 +8126,7 @@ class model extends CI_Model
     //11. TRAER PROD IMAGEN
     function getProductosImagenPop2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -8143,7 +8143,7 @@ class model extends CI_Model
     }
     function getProductosImagenManiquis2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);
@@ -8161,7 +8161,7 @@ class model extends CI_Model
     //12. TRAER PROD OTROS
     function getProductosOtrosNoAplica2($numordencompra)
     {
-        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34");
+        $this->db->select("a.*, COALESCE(b.cc31, '') as cc31, COALESCE(b.cc33, '') as cc33, COALESCE(b.cc34, '') as cc34, COALESCE(b.cc31r, '') as cc31r, COALESCE(b.cc33r, '') as cc33r, COALESCE(b.cc34r, '') as cc34r, COALESCE(b.activof, '') as activof");
         $this->db->from("detallecompras a");
         $this->db->join("rel_sku_prod b", "b.id_producto=a.idprincipalproducto2", "left");
         $this->db->where("a.numordencompra", $numordencompra);

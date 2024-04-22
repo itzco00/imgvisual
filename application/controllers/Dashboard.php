@@ -1754,11 +1754,6 @@ class Dashboard extends CI_Controller
         $this->load->view("ajax/subdepartamentos", $data);
     }
 
-    function productosDetalleCompra()
-    {
-        $this->loadViews("detallecompras");
-    }
-
     function GuardarPrecioCantidadFila()
     {
         $data = array(

@@ -5595,6 +5595,10 @@
                     <div><input class="skuvaluecc31" id="newcc31ent` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33ent` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34ent` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31rent` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33rent` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34rent` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofent` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezaent` + i + `" name="piezaent[]" oninput="Calcent(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="" class="recallc">

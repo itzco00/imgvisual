@@ -772,13 +772,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_ent[]" value="<?= $ent->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $ent->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $ent->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $ent->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $ent->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $ent->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $ent->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $ent->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $ent->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $ent->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $ent->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $ent->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $ent->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $ent->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $ent->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="ident[]" size="5" value="<?= $ent->id ?>"><?= $consec ?>.- <?= $ent->nombre ?><input type="hidden" name="nombreent[]" value="<?= $ent->nombre ?>">
@@ -1082,13 +1082,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_dcmpi[]" value="<?= $dcmpi->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $dcmpi->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $dcmpi->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $dcmpi->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $dcmpi->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $dcmpi->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $dcmpi->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $dcmpi->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $dcmpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $dcmpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $dcmpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $dcmpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $dcmpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $dcmpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $dcmpi->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="iddcmpi[]" size="5" value="<?= $dcmpi->id ?>"><?= $consec ?>.- <?= $dcmpi->nombre ?><input type="hidden" name="nombredcmpi[]" value="<?= $dcmpi->nombre ?>">
@@ -1380,13 +1380,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_dcmpe[]" value="<?= $dcmpe->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $dcmpe->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $dcmpe->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $dcmpe->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $dcmpe->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $dcmpe->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $dcmpe->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $dcmpe->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $dcmpe->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $dcmpe->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $dcmpe->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $dcmpe->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $dcmpe->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $dcmpe->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $dcmpe->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="iddcmpe[]" size="5" value="<?= $dcmpe->id ?>"><?= $consec ?>.- <?= $dcmpe->nombre ?><input type="hidden" name="nombredcmpe[]" value="<?= $dcmpe->nombre ?>">
@@ -1690,13 +1690,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_mhjmpi[]" value="<?= $mhjmpi->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $mhjmpi->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $mhjmpi->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $mhjmpi->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $mhjmpi->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $mhjmpi->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $mhjmpi->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $mhjmpi->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $mhjmpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $mhjmpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $mhjmpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $mhjmpi->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idmhjmpi[]" size="5" value="<?= $mhjmpi->id ?>"><?= $consec ?>.- <?= $mhjmpi->nombre ?><input type="hidden" name="nombremhjmpi[]" value="<?= $mhjmpi->nombre ?>">
@@ -1988,13 +1988,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_mhjmpe[]" value="<?= $mhjmpe->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $mhjmpe->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $mhjmpe->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $mhjmpe->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $mhjmpe->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $mhjmpe->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $mhjmpe->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $mhjmpe->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpe->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpe->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpe->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $mhjmpe->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $mhjmpe->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $mhjmpe->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $mhjmpe->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idmhjmpe[]" size="5" value="<?= $mhjmpe->id ?>"><?= $consec ?>.- <?= $mhjmpe->nombre ?><input type="hidden" name="nombremhjmpe[]" value="<?= $mhjmpe->nombre ?>">
@@ -2286,13 +2286,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_mhjmpje[]" value="<?= $mhjmpje->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $mhjmpje->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $mhjmpje->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $mhjmpje->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $mhjmpje->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $mhjmpje->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $mhjmpje->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $mhjmpje->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpje->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpje->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpje->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $mhjmpje->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $mhjmpje->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $mhjmpje->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $mhjmpje->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idmhjmpje[]" size="5" value="<?= $mhjmpje->id ?>"><?= $consec ?>.- <?= $mhjmpje->nombre ?><input type="hidden" name="nombremhjmpje[]" value="<?= $mhjmpje->nombre ?>">
@@ -2584,13 +2584,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_mhjmpli[]" value="<?= $mhjmpli->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $mhjmpli->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $mhjmpli->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $mhjmpli->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $mhjmpli->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $mhjmpli->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $mhjmpli->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $mhjmpli->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpli->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpli->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpli->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $mhjmpli->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $mhjmpli->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $mhjmpli->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $mhjmpli->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idmhjmpli[]" size="5" value="<?= $mhjmpli->id ?>"><?= $consec ?>.- <?= $mhjmpli->nombre ?><input type="hidden" name="nombremhjmpli[]" value="<?= $mhjmpli->nombre ?>">
@@ -2894,13 +2894,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_impi[]" value="<?= $impi->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $impi->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $impi->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $impi->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $impi->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $impi->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $impi->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $impi->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $impi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $impi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $impi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $impi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $impi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $impi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $impi->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idimpi[]" size="5" value="<?= $impi->id ?>"><?= $consec ?>.- <?= $impi->nombre ?><input type="hidden" name="nombreimpi[]" value="<?= $impi->nombre ?>">
@@ -3192,13 +3192,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_impe[]" value="<?= $impe->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $impe->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $impe->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $impe->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $impe->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $impe->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $impe->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $impe->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $impe->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $impe->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $impe->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $impe->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $impe->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $impe->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $impe->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idimpe[]" size="5" value="<?= $impe->id ?>"><?= $consec ?>.- <?= $impe->nombre ?><input type="hidden" name="nombreimpe[]" value="<?= $impe->nombre ?>">
@@ -3490,13 +3490,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_imhe[]" value="<?= $imhe->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $imhe->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $imhe->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $imhe->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $imhe->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $imhe->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $imhe->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $imhe->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $imhe->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $imhe->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $imhe->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $imhe->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $imhe->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $imhe->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $imhe->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idimhe[]" size="5" value="<?= $imhe->id ?>"><?= $consec ?>.- <?= $imhe->nombre ?><input type="hidden" name="nombreimhe[]" value="<?= $imhe->nombre ?>">
@@ -3800,13 +3800,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_innpi[]" value="<?= $innpi->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $innpi->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $innpi->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $innpi->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $innpi->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $innpi->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $innpi->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $innpi->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $innpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $innpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $innpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $innpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $innpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $innpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $innpi->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idinnpi[]" size="5" value="<?= $innpi->id ?>"><?= $consec ?>.- <?= $innpi->nombre ?><input type="hidden" name="nombreinnpi[]" value="<?= $innpi->nombre ?>">
@@ -4098,13 +4098,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_innpe[]" value="<?= $innpe->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $innpe->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $innpe->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $innpe->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $innpe->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $innpe->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $innpe->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $innpe->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $innpe->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $innpe->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $innpe->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $innpe->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $innpe->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $innpe->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $innpe->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idinnpe[]" size="5" value="<?= $innpe->id ?>"><?= $consec ?>.- <?= $innpe->nombre ?><input type="hidden" name="nombreinnpe[]" value="<?= $innpe->nombre ?>">
@@ -4409,13 +4409,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_tnnbpi[]" value="<?= $tnnbpi->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $tnnbpi->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $tnnbpi->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $tnnbpi->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $tnnbpi->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $tnnbpi->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $tnnbpi->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $tnnbpi->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $tnnbpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $tnnbpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $tnnbpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $tnnbpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $tnnbpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $tnnbpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $tnnbpi->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idtnnbpi[]" size="5" value="<?= $tnnbpi->id ?>"><?= $consec ?>.- <?= $tnnbpi->nombre ?><input type="hidden" name="nombretnnbpi[]" value="<?= $tnnbpi->nombre ?>">
@@ -4707,13 +4707,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_tnnbpe[]" value="<?= $tnnbpe->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $tnnbpe->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $tnnbpe->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $tnnbpe->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $tnnbpe->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $tnnbpe->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $tnnbpe->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $tnnbpe->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $tnnbpe->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $tnnbpe->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $tnnbpe->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $tnnbpe->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $tnnbpe->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $tnnbpe->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $tnnbpe->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idtnnbpe[]" size="5" value="<?= $tnnbpe->id ?>"><?= $consec ?>.- <?= $tnnbpe->nombre ?><input type="hidden" name="nombretnnbpe[]" value="<?= $tnnbpe->nombre ?>">
@@ -5017,13 +5017,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_herna[]" value="<?= $herna->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $herna->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $herna->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $herna->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $herna->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $herna->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $herna->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $herna->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $herna->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $herna->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $herna->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $herna->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $herna->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $herna->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $herna->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idherna[]" size="5" value="<?= $herna->id ?>"><?= $consec ?>.- <?= $herna->nombre ?><input type="hidden" name="nombreherna[]" value="<?= $herna->nombre ?>">
@@ -5327,13 +5327,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_probmpi[]" value="<?= $probmpi->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $probmpi->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $probmpi->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $probmpi->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $probmpi->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $probmpi->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $probmpi->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $probmpi->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $probmpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $probmpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $probmpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $probmpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $probmpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $probmpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $probmpi->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idprobmpi[]" size="5" value="<?= $probmpi->id ?>"><?= $consec ?>.- <?= $probmpi->nombre ?><input type="hidden" name="nombreprobmpi[]" value="<?= $probmpi->nombre ?>">
@@ -5637,13 +5637,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_panmpi[]" value="<?= $panmpi->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $panmpi->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $panmpi->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $panmpi->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $panmpi->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $panmpi->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $panmpi->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $panmpi->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $panmpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $panmpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $panmpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $panmpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $panmpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $panmpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $panmpi->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idpanmpi[]" size="5" value="<?= $panmpi->id ?>"><?= $consec ?>.- <?= $panmpi->nombre ?><input type="hidden" name="nombrepanmpi[]" value="<?= $panmpi->nombre ?>">
@@ -5948,13 +5948,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_extmpi[]" value="<?= $extmpi->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $extmpi->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $extmpi->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $extmpi->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $extmpi->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $extmpi->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $extmpi->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $extmpi->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $extmpi->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $extmpi->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $extmpi->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $extmpi->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $extmpi->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $extmpi->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $extmpi->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idextmpi[]" size="5" value="<?= $extmpi->id ?>"><?= $consec ?>.- <?= $extmpi->nombre ?><input type="hidden" name="nombreextmpi[]" value="<?= $extmpi->nombre ?>">
@@ -6253,13 +6253,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_imgp[]" value="<?= $imgp->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $imgp->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $imgp->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $imgp->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $imgp->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $imgp->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $imgp->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $imgp->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $imgp->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $imgp->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $imgp->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $imgp->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $imgp->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $imgp->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $imgp->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idimgp[]" size="5" value="<?= $imgp->id ?>"><?= $consec ?>.- <?= $imgp->nombre ?><input type="hidden" name="nombreimgp[]" value="<?= $imgp->nombre ?>">
@@ -6537,13 +6537,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_imgm[]" value="<?= $imgm->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $imgm->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $imgm->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $imgm->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $imgm->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $imgm->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $imgm->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $imgm->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $imgm->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $imgm->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $imgm->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $imgm->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $imgm->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $imgm->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $imgm->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idimgm[]" size="5" value="<?= $imgm->id ?>"><?= $consec ?>.- <?= $imgm->nombre ?><input type="hidden" name="nombreimgm[]" value="<?= $imgm->nombre ?>">
@@ -6838,13 +6838,13 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <input class="skuvalueinsert" name="sku_ots[]" value="<?= $ots->sku ?>" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" readonly>
-                                                                        <input type="text" class="skuvaluecc31" value="<?= $ots->cc31 ?>">
-                                                                        <input type="text" class="skuvaluecc33" value="<?= $ots->cc33 ?>">
-                                                                        <input type="text" class="skuvaluecc34" value="<?= $ots->cc34 ?>">
-                                                                        <input type="text" class="skuvaluecc31r" value="<?= $ots->cc31r ?>">
-                                                                        <input type="text" class="skuvaluecc33r" value="<?= $ots->cc33r ?>">
-                                                                        <input type="text" class="skuvaluecc34r" value="<?= $ots->cc34r ?>">
-                                                                        <input type="text" class="skuvalueactivof" value="<?= $ots->activof ?>">
+                                                                        <input type="hidden" class="skuvaluecc31" value="<?= $ots->cc31 ?>">
+                                                                        <input type="hidden" class="skuvaluecc33" value="<?= $ots->cc33 ?>">
+                                                                        <input type="hidden" class="skuvaluecc34" value="<?= $ots->cc34 ?>">
+                                                                        <input type="hidden" class="skuvaluecc31r" value="<?= $ots->cc31r ?>">
+                                                                        <input type="hidden" class="skuvaluecc33r" value="<?= $ots->cc33r ?>">
+                                                                        <input type="hidden" class="skuvaluecc34r" value="<?= $ots->cc34r ?>">
+                                                                        <input type="hidden" class="skuvalueactivof" value="<?= $ots->activof ?>">
                                                                         <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                     </td>
                                                                     <td style="font-size: 1.3em; color: black; text-align:left;width: 30%;"><input type="hidden" name="idots[]" size="5" value="<?= $ots->id ?>"><?= $consec ?>.- <?= $ots->nombre ?><input type="hidden" name="nombreots[]" value="<?= $ots->nombre ?>">
