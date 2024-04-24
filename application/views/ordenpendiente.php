@@ -587,7 +587,7 @@
                                                             foreach ($entrada as $ent) {
                                                                 $filasident++;
                                                                 $consec++;
-                                                                if($ent->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($ent->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $ent->id_nuevo ?>" class="ent_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($ent->color == 1) : ?>
@@ -807,7 +807,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $ent->unidad ?><input type="hidden" name="unidadent[]" value="<?= $ent->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioent-<?= $filasident ?>" name="precioent[]" oninput="Calcent(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $ent->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($ent->statusreproceso == 0) : ?>
                                                                             <i id="flag_reprocess_ent<?= $filasident ?>"><img class="get_reprocess_ent check_isfijor" id="<?= $filasident ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                             <i id="flag_normal_ent<?= $filasident ?>" style="display:none"><img class="get_normal_ent check_isfijo" id="<?= $filasident ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -815,7 +815,7 @@
                                                                             <i id="flag_reprocess_ent<?= $filasident ?>" style="display:none"><img class="get_reprocess_ent check_isfijor" id="<?= $filasident ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                             <i id="flag_normal_ent<?= $filasident ?>"><img class="get_normal_ent check_isfijo" id="<?= $filasident ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusent[]" size="10" id="status_reprocess_val_ent<?= $filasident ?>" value="<?= $ent->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_ent<?= $filasident ?>" value="<?= $ent->id ?>">
                                                                     </td>
@@ -899,7 +899,7 @@
                                                             foreach ($dcmpiso as $dcmpi) {
                                                                 $filasiddcmpi++;
                                                                 $consec++;
-                                                                if($dcmpi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($dcmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $dcmpi->id_nuevo ?>" class="dcmpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($dcmpi->color == 1) : ?>
@@ -1119,7 +1119,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $dcmpi->unidad ?><input type="hidden" name="unidaddcmpi[]" value="<?= $dcmpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciodcmpi-<?= $filasiddcmpi ?>" name="preciodcmpi[]" oninput="Calcdcmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $dcmpi->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($dcmpi->statusreproceso == 0) : ?>
                                                                             <i id="flag_reprocess_dcmpi<?= $filasiddcmpi ?>"><img class="get_reprocess_dcmpi check_isfijor" id="<?= $filasiddcmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                             <i id="flag_normal_dcmpi<?= $filasiddcmpi ?>" style="display:none"><img class="get_normal_dcmpi check_isfijo" id="<?= $filasiddcmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -1127,7 +1127,7 @@
                                                                             <i id="flag_reprocess_dcmpi<?= $filasiddcmpi ?>" style="display:none"><img class="get_reprocess_dcmpi check_isfijor" id="<?= $filasiddcmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                             <i id="flag_normal_dcmpi<?= $filasiddcmpi ?>"><img class="get_normal_dcmpi check_isfijo" id="<?= $filasiddcmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusdcmpi[]" size="10" id="status_reprocess_val_dcmpi<?= $filasiddcmpi ?>" value="<?= $dcmpi->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_dcmpi<?= $filasiddcmpi ?>" value="<?= $dcmpi->id ?>">
                                                                     </td>
@@ -1199,7 +1199,7 @@
                                                             foreach ($dcmperimetral as $dcmpe) {
                                                                 $filasiddcmpe++;
                                                                 $consec++;
-                                                                if($dcmpe->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($dcmpe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $dcmpe->id_nuevo ?>" class="dcmpe_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($dcmpe->color == 1) : ?>
@@ -1419,7 +1419,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $dcmpe->unidad ?><input type="hidden" name="unidaddcmpe[]" value="<?= $dcmpe->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciodcmpe-<?= $filasiddcmpe ?>" name="preciodcmpe[]" oninput="Calcdcmpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $dcmpe->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($dcmpe->statusreproceso == 0) : ?>
                                                                         <i id="flag_reprocess_dcmpe<?= $filasiddcmpe ?>"><img class="get_reprocess_dcmpe check_isfijor" id="<?= $filasiddcmpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_dcmpe<?= $filasiddcmpe ?>" style="display:none"><img class="get_normal_dcmpe check_isfijo" id="<?= $filasiddcmpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -1427,7 +1427,7 @@
                                                                             <i id="flag_reprocess_dcmpe<?= $filasiddcmpe ?>" style="display:none"><img class="get_reprocess_dcmpe check_isfijor" id="<?= $filasiddcmpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                             <i id="flag_normal_dcmpe<?= $filasiddcmpe ?>"><img class="get_normal_dcmpe check_isfijo" id="<?= $filasiddcmpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusdcmpe[]" size="10" id="status_reprocess_val_dcmpe<?= $filasiddcmpe ?>" value="<?= $dcmpe->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_dcmpe<?= $filasiddcmpe ?>" value="<?= $dcmpe->id ?>">
                                                                     </td>
@@ -1511,7 +1511,7 @@
                                                             foreach ($mhjmpiso as $mhjmpi) {
                                                                 $filasidmhjmpi++;
                                                                 $consec++;
-                                                                if($mhjmpi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($mhjmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $mhjmpi->id_nuevo ?>" class="mhjmpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($mhjmpi->color == 1) : ?>
@@ -1731,7 +1731,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $mhjmpi->unidad ?><input type="hidden" name="unidadmhjmpi[]" value="<?= $mhjmpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciomhjmpi-<?= $filasidmhjmpi ?>" name="preciomhjmpi[]" oninput="Calcmhjmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $mhjmpi->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($mhjmpi->statusreproceso == 0) : ?>
                                                                             <i id="flag_reprocess_mhjmpi<?= $filasidmhjmpi ?>"><img class="get_reprocess_mhjmpi check_isfijor" id="<?= $filasidmhjmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                             <i id="flag_normal_mhjmpi<?= $filasidmhjmpi ?>" style="display:none"><img class="get_normal_mhjmpi check_isfijo" id="<?= $filasidmhjmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -1739,7 +1739,7 @@
                                                                             <i id="flag_reprocess_mhjmpi<?= $filasidmhjmpi ?>" style="display:none"><img class="get_reprocess_mhjmpi check_isfijor" id="<?= $filasidmhjmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                             <i id="flag_normal_mhjmpi<?= $filasidmhjmpi ?>"><img class="get_normal_mhjmpi check_isfijo" id="<?= $filasidmhjmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusmhjmpi[]" size="10" id="status_reprocess_val_mhjmpi<?= $filasidmhjmpi ?>" value="<?= $mhjmpi->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_mhjmpi<?= $filasidmhjmpi ?>" value="<?= $mhjmpi->id ?>">
                                                                     </td>
@@ -1811,7 +1811,7 @@
                                                             foreach ($mhjmperimetral as $mhjmpe) {
                                                                 $filasidmhjmpe++;
                                                                 $consec++;
-                                                                if($mhjmpe->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($mhjmpe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $mhjmpe->id_nuevo ?>" class="mhjmpe_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($mhjmpe->color == 1) : ?>
@@ -2031,7 +2031,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $mhjmpe->unidad ?><input type="hidden" name="unidadmhjmpe[]" value="<?= $mhjmpe->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciomhjmpe-<?= $filasidmhjmpe ?>" name="preciomhjmpe[]" oninput="Calcmhjmpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $mhjmpe->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($mhjmpe->statusreproceso == 0) : ?>
                                                                         <i id="flag_reprocess_mhjmpe<?= $filasidmhjmpe ?>"><img class="get_reprocess_mhjmpe check_isfijor" id="<?= $filasidmhjmpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_mhjmpe<?= $filasidmhjmpe ?>" style="display:none"><img class="get_normal_mhjmpe check_isfijo" id="<?= $filasidmhjmpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -2039,7 +2039,7 @@
                                                                             <i id="flag_reprocess_mhjmpe<?= $filasidmhjmpe ?>" style="display:none"><img class="get_reprocess_mhjmpe check_isfijor" id="<?= $filasidmhjmpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_mhjmpe<?= $filasidmhjmpe ?>"><img class="get_normal_mhjmpe check_isfijo" id="<?= $filasidmhjmpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusmhjmpe[]" size="10" id="status_reprocess_val_mhjmpe<?= $filasidmhjmpe ?>" value="<?= $mhjmpe->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_mhjmpe<?= $filasidmhjmpe ?>" value="<?= $mhjmpe->id ?>">
                                                                     </td>
@@ -2111,7 +2111,7 @@
                                                             foreach ($mhjmpjeans as $mhjmpje) {
                                                                 $filasidmhjmpje++;
                                                                 $consec++;
-                                                                if($mhjmpje->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($mhjmpje->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $mhjmpje->id_nuevo ?>" class="mhjmpje_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($mhjmpje->color == 1) : ?>
@@ -2331,7 +2331,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $mhjmpje->unidad ?><input type="hidden" name="unidadmhjmpje[]" value="<?= $mhjmpje->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciomhjmpje-<?= $filasidmhjmpje ?>" name="preciomhjmpje[]" oninput="Calcmhjmpje(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $mhjmpje->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($mhjmpje->statusreproceso == 0) : ?>
                                                                         <i id="flag_reprocess_mhjmpje<?= $filasidmhjmpje ?>"><img class="get_reprocess_mhjmpje check_isfijor" id="<?= $filasidmhjmpje ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_mhjmpje<?= $filasidmhjmpje ?>" style="display:none"><img class="get_normal_mhjmpje check_isfijo" id="<?= $filasidmhjmpje ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -2339,7 +2339,7 @@
                                                                             <i id="flag_reprocess_mhjmpje<?= $filasidmhjmpje ?>" style="display:none"><img class="get_reprocess_mhjmpje check_isfijor" id="<?= $filasidmhjmpje ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_mhjmpje<?= $filasidmhjmpje ?>"><img class="get_normal_mhjmpje check_isfijo" id="<?= $filasidmhjmpje ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusmhjmpje[]" size="10" id="status_reprocess_val_mhjmpje<?= $filasidmhjmpje ?>" value="<?= $mhjmpje->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_mhjmpje<?= $filasidmhjmpje ?>" value="<?= $mhjmpje->id ?>">
                                                                     </td>
@@ -2411,7 +2411,7 @@
                                                             foreach ($mhjmplicencias as $mhjmpli) {
                                                                 $filasidmhjmpli++;
                                                                 $consec++;
-                                                                if($mhjmpli->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($mhjmpli->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $mhjmpli->id_nuevo ?>" class="mhjmpli_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($mhjmpli->color == 1) : ?>
@@ -2631,7 +2631,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $mhjmpli->unidad ?><input type="hidden" name="unidadmhjmpli[]" value="<?= $mhjmpli->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciomhjmpli-<?= $filasidmhjmpli ?>" name="preciomhjmpli[]" oninput="Calcmhjmpli(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $mhjmpli->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($mhjmpli->statusreproceso == 0) : ?>
                                                                             <i id="flag_reprocess_mhjmpli<?= $filasidmhjmpli ?>"><img class="get_reprocess_mhjmpli check_isfijor" id="<?= $filasidmhjmpli ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_mhjmpli<?= $filasidmhjmpli ?>" style="display:none"><img class="get_normal_mhjmpli check_isfijo" id="<?= $filasidmhjmpli ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -2639,7 +2639,7 @@
                                                                             <i id="flag_reprocess_mhjmpli<?= $filasidmhjmpli ?>" style="display:none"><img class="get_reprocess_mhjmpli check_isfijor" id="<?= $filasidmhjmpli ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_mhjmpli<?= $filasidmhjmpli ?>"><img class="get_normal_mhjmpli check_isfijo" id="<?= $filasidmhjmpli ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusmhjmpli[]" size="10" id="status_reprocess_val_mhjmpli<?= $filasidmhjmpli ?>" value="<?= $mhjmpli->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_mhjmpli<?= $filasidmhjmpli ?>" value="<?= $mhjmpli->id ?>">
                                                                     </td>
@@ -2723,7 +2723,7 @@
                                                             foreach ($impiso as $impi) {
                                                                 $filasidimpi++;
                                                                 $consec++;
-                                                                if($impi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($impi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $impi->id_nuevo ?>" class="impi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($impi->color == 1) : ?>
@@ -2943,7 +2943,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $impi->unidad ?><input type="hidden" name="unidadimpi[]" value="<?= $impi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioimpi-<?= $filasidimpi ?>" name="precioimpi[]" oninput="Calcimpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $impi->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($impi->statusreproceso == 0) : ?>
                                                                         <i id="flag_reprocess_impi<?= $filasidimpi ?>"><img class="get_reprocess_impi check_isfijor" id="<?= $filasidimpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_impi<?= $filasidimpi ?>" style="display:none"><img class="get_normal_impi check_isfijo" id="<?= $filasidimpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -2951,7 +2951,7 @@
                                                                             <i id="flag_reprocess_impi<?= $filasidimpi ?>" style="display:none"><img class="get_reprocess_impi check_isfijor" id="<?= $filasidimpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_impi<?= $filasidimpi ?>"><img class="get_normal_impi check_isfijo" id="<?= $filasidimpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusimpi[]" size="10" id="status_reprocess_val_impi<?= $filasidimpi ?>" value="<?= $impi->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_impi<?= $filasidimpi ?>" value="<?= $impi->id ?>">
                                                                     </td>
@@ -3023,7 +3023,7 @@
                                                             foreach ($imperimetral as $impe) {
                                                                 $filasidimpe++;
                                                                 $consec++;
-                                                                if($impe->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($impe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $impe->id_nuevo ?>" class="impe_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($impe->color == 1) : ?>
@@ -3243,7 +3243,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $impe->unidad ?><input type="hidden" name="unidadimpe[]" value="<?= $impe->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioimpe-<?= $filasidimpe ?>" name="precioimpe[]" oninput="Calcimpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $impe->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($impe->statusreproceso == 0) : ?>
                                                                         <i id="flag_reprocess_impe<?= $filasidimpe ?>"><img class="get_reprocess_impe check_isfijor" id="<?= $filasidimpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_impe<?= $filasidimpe ?>" style="display:none"><img class="get_normal_impe check_isfijo" id="<?= $filasidimpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -3251,7 +3251,7 @@
                                                                             <i id="flag_reprocess_impe<?= $filasidimpe ?>" style="display:none"><img class="get_reprocess_impe check_isfijor" id="<?= $filasidimpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_impe<?= $filasidimpe ?>"><img class="get_normal_impe check_isfijo" id="<?= $filasidimpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusimpe[]" size="10" id="status_reprocess_val_impe<?= $filasidimpe ?>" value="<?= $impe->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_impe<?= $filasidimpe ?>" value="<?= $impe->id ?>">
                                                                     </td>
@@ -3323,7 +3323,7 @@
                                                             foreach ($imherraje as $imhe) {
                                                                 $filasidimhe++;
                                                                 $consec++;
-                                                                if($imhe->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($imhe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $imhe->id_nuevo ?>" class="imhe_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($imhe->color == 1) : ?>
@@ -3543,7 +3543,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $imhe->unidad ?><input type="hidden" name="unidadimhe[]" value="<?= $imhe->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioimhe-<?= $filasidimhe ?>" name="precioimhe[]" oninput="Calcimhe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $imhe->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($imhe->statusreproceso == 0) : ?>
                                                                             <i id="flag_reprocess_imhe<?= $filasidimhe ?>"><img class="get_reprocess_imhe check_isfijor" id="<?= $filasidimhe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_imhe<?= $filasidimhe ?>" style="display:none"><img class="get_normal_imhe check_isfijo" id="<?= $filasidimhe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -3551,7 +3551,7 @@
                                                                             <i id="flag_reprocess_imhe<?= $filasidimhe ?>" style="display:none"><img class="get_reprocess_imhe check_isfijor" id="<?= $filasidimhe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_imhe<?= $filasidimhe ?>"><img class="get_normal_imhe check_isfijo" id="<?= $filasidimhe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusimhe[]" size="10" id="status_reprocess_val_imhe<?= $filasidimhe ?>" value="<?= $imhe->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_imhe<?= $filasidimhe ?>" value="<?= $imhe->id ?>">
                                                                     </td>
@@ -3635,7 +3635,7 @@
                                                             foreach ($innpiso as $innpi) {
                                                                 $filasidinnpi++;
                                                                 $consec++;
-                                                                if($innpi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($innpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $innpi->id_nuevo ?>" class="innpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($innpi->color == 1) : ?>
@@ -3855,7 +3855,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $innpi->unidad ?><input type="hidden" name="unidadinnpi[]" value="<?= $innpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioinnpi-<?= $filasidinnpi ?>" name="precioinnpi[]" oninput="Calcinnpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $innpi->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($innpi->statusreproceso == 0) : ?>
                                                                             <i id="flag_reprocess_innpi<?= $filasidinnpi ?>"><img class="get_reprocess_innpi check_isfijor" id="<?= $filasidinnpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_innpi<?= $filasidinnpi ?>" style="display:none"><img class="get_normal_innpi check_isfijo" id="<?= $filasidinnpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -3863,7 +3863,7 @@
                                                                             <i id="flag_reprocess_innpi<?= $filasidinnpi ?>" style="display:none"><img class="get_reprocess_innpi check_isfijor" id="<?= $filasidinnpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_innpi<?= $filasidinnpi ?>"><img class="get_normal_innpi check_isfijo" id="<?= $filasidinnpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusinnpi[]" size="10" id="status_reprocess_val_innpi<?= $filasidinnpi ?>" value="<?= $innpi->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_innpi<?= $filasidinnpi ?>" value="<?= $innpi->id ?>">
                                                                     </td>
@@ -3935,7 +3935,7 @@
                                                             foreach ($innperimetral as $innpe) {
                                                                 $filasidinnpe++;
                                                                 $consec++;
-                                                                if($innpe->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($innpe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $innpe->id_nuevo ?>" class="innpe_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($innpe->color == 1) : ?>
@@ -4155,7 +4155,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $innpe->unidad ?><input type="hidden" name="unidadinnpe[]" value="<?= $innpe->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioinnpe-<?= $filasidinnpe ?>" name="precioinnpe[]" oninput="Calcinnpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $innpe->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($innpe->statusreproceso == 0) : ?>
                                                                         <i id="flag_reprocess_innpe<?= $filasidinnpe ?>"><img class="get_reprocess_innpe check_isfijor" id="<?= $filasidinnpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_innpe<?= $filasidinnpe ?>" style="display:none"><img class="get_normal_innpe check_isfijo" id="<?= $filasidinnpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -4163,7 +4163,7 @@
                                                                             <i id="flag_reprocess_innpe<?= $filasidinnpe ?>" style="display:none"><img class="get_reprocess_innpe check_isfijor" id="<?= $filasidinnpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_innpe<?= $filasidinnpe ?>"><img class="get_normal_innpe check_isfijo" id="<?= $filasidinnpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusinnpe[]" size="10" id="status_reprocess_val_innpe<?= $filasidinnpe ?>" value="<?= $innpe->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_innpe<?= $filasidinnpe ?>" value="<?= $innpe->id ?>">
                                                                     </td>
@@ -4248,7 +4248,7 @@
                                                             foreach ($tnnbpiso as $tnnbpi) {
                                                                 $filasidtnnbpi++;
                                                                 $consec++;
-                                                                if($tnnbpi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($tnnbpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $tnnbpi->id_nuevo ?>" class="tnnbpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($tnnbpi->color == 1) : ?>
@@ -4468,7 +4468,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $tnnbpi->unidad ?><input type="hidden" name="unidadtnnbpi[]" value="<?= $tnnbpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciotnnbpi-<?= $filasidtnnbpi ?>" name="preciotnnbpi[]" oninput="Calctnnbpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $tnnbpi->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($tnnbpi->statusreproceso == 0) : ?>
                                                                             <i id="flag_reprocess_tnnbpi<?= $filasidtnnbpi ?>"><img class="get_reprocess_tnnbpi check_isfijor" id="<?= $filasidtnnbpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_tnnbpi<?= $filasidtnnbpi ?>" style="display:none"><img class="get_normal_tnnbpi check_isfijo" id="<?= $filasidtnnbpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -4476,7 +4476,7 @@
                                                                             <i id="flag_reprocess_tnnbpi<?= $filasidtnnbpi ?>" style="display:none"><img class="get_reprocess_tnnbpi check_isfijor" id="<?= $filasidtnnbpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_tnnbpi<?= $filasidtnnbpi ?>"><img class="get_normal_tnnbpi check_isfijo" id="<?= $filasidtnnbpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatustnnbpi[]" size="10" id="status_reprocess_val_tnnbpi<?= $filasidtnnbpi ?>" value="<?= $tnnbpi->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_tnnbpi<?= $filasidtnnbpi ?>" value="<?= $tnnbpi->id ?>">
                                                                     </td>
@@ -4548,7 +4548,7 @@
                                                             foreach ($tnnbperimetral as $tnnbpe) {
                                                                 $filasidtnnbpe++;
                                                                 $consec++;
-                                                                if($tnnbpe->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($tnnbpe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $tnnbpe->id_nuevo ?>" class="tnnbpe_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($tnnbpe->color == 1) : ?>
@@ -4768,7 +4768,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $tnnbpe->unidad ?><input type="hidden" name="unidadtnnbpe[]" value="<?= $tnnbpe->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciotnnbpe-<?= $filasidtnnbpe ?>" name="preciotnnbpe[]" oninput="Calctnnbpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $tnnbpe->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($tnnbpe->statusreproceso == 0) : ?>
                                                                             <i id="flag_reprocess_tnnbpe<?= $filasidtnnbpe ?>"><img class="get_reprocess_tnnbpe check_isfijor" id="<?= $filasidtnnbpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_tnnbpe<?= $filasidtnnbpe ?>" style="display:none"><img class="get_normal_tnnbpe check_isfijo" id="<?= $filasidtnnbpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -4776,7 +4776,7 @@
                                                                             <i id="flag_reprocess_tnnbpe<?= $filasidtnnbpe ?>" style="display:none"><img class="get_reprocess_tnnbpe check_isfijor" id="<?= $filasidtnnbpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_tnnbpe<?= $filasidtnnbpe ?>"><img class="get_normal_tnnbpe check_isfijo" id="<?= $filasidtnnbpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatustnnbpe[]" size="10" id="status_reprocess_val_tnnbpe<?= $filasidtnnbpe ?>" value="<?= $tnnbpe->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_tnnbpe<?= $filasidtnnbpe ?>" value="<?= $tnnbpe->id ?>">
                                                                     </td>
@@ -4860,7 +4860,7 @@
                                                             foreach ($hernoaplica as $herna) {
                                                                 $filasidherna++;
                                                                 $consec++;
-                                                                if($herna->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($herna->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $herna->id_nuevo ?>" class="herna_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($herna->color == 1) : ?>
@@ -5080,7 +5080,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $herna->unidad ?><input type="hidden" name="unidadherna[]" value="<?= $herna->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioherna-<?= $filasidherna ?>" name="precioherna[]" oninput="Calcherna(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $herna->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($herna->statusreproceso == 0) : ?>
                                                                         <i id="flag_reprocess_herna<?= $filasidherna ?>"><img class="get_reprocess_herna check_isfijor" id="<?= $filasidherna ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_herna<?= $filasidherna ?>" style="display:none"><img class="get_normal_herna check_isfijo" id="<?= $filasidherna ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -5088,7 +5088,7 @@
                                                                             <i id="flag_reprocess_herna<?= $filasidherna ?>" style="display:none"><img class="get_reprocess_herna check_isfijor" id="<?= $filasidherna ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_herna<?= $filasidherna ?>"><img class="get_normal_herna check_isfijo" id="<?= $filasidherna ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusherna[]" size="10" id="status_reprocess_val_herna<?= $filasidherna ?>" value="<?= $herna->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_herna<?= $filasidherna ?>" value="<?= $herna->id ?>">
                                                                     </td>
@@ -5172,7 +5172,7 @@
                                                             foreach ($probmpiso as $probmpi) {
                                                                 $filasidprobmpi++;
                                                                 $consec++;
-                                                                if($probmpi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($probmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $probmpi->id_nuevo ?>" class="probmpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($probmpi->color == 1) : ?>
@@ -5392,7 +5392,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $probmpi->unidad ?><input type="hidden" name="unidadprobmpi[]" value="<?= $probmpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioprobmpi-<?= $filasidprobmpi ?>" name="precioprobmpi[]" oninput="Calcprobmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $probmpi->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($probmpi->statusreproceso == 0) : ?>
                                                                         <i id="flag_reprocess_probmpi<?= $filasidprobmpi ?>"><img class="get_reprocess_probmpi check_isfijor" id="<?= $filasidprobmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_probmpi<?= $filasidprobmpi ?>" style="display:none"><img class="get_normal_probmpi check_isfijo" id="<?= $filasidprobmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -5400,7 +5400,7 @@
                                                                             <i id="flag_reprocess_probmpi<?= $filasidprobmpi ?>" style="display:none"><img class="get_reprocess_probmpi check_isfijor" id="<?= $filasidprobmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_probmpi<?= $filasidprobmpi ?>"><img class="get_normal_probmpi check_isfijo" id="<?= $filasidprobmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusprobmpi[]" size="10" id="status_reprocess_val_probmpi<?= $filasidprobmpi ?>" value="<?= $probmpi->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_probmpi<?= $filasidprobmpi ?>" value="<?= $probmpi->id ?>">
                                                                     </td>
@@ -5484,7 +5484,7 @@
                                                             foreach ($panmpiso as $panmpi) {
                                                                 $filasidpanmpi++;
                                                                 $consec++;
-                                                                if($panmpi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($panmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $panmpi->id_nuevo ?>" class="panmpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($panmpi->color == 1) : ?>
@@ -5704,7 +5704,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $panmpi->unidad ?><input type="hidden" name="unidadpanmpi[]" value="<?= $panmpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="preciopanmpi-<?= $filasidpanmpi ?>" name="preciopanmpi[]" oninput="Calcpanmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $panmpi->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($panmpi->statusreproceso == 0) : ?>
                                                                         <i id="flag_reprocess_panmpi<?= $filasidpanmpi ?>"><img class="get_reprocess_panmpi check_isfijor" id="<?= $filasidpanmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_panmpi<?= $filasidpanmpi ?>" style="display:none"><img class="get_normal_panmpi check_isfijo" id="<?= $filasidpanmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -5712,7 +5712,7 @@
                                                                             <i id="flag_reprocess_panmpi<?= $filasidpanmpi ?>" style="display:none"><img class="get_reprocess_panmpi check_isfijor" id="<?= $filasidpanmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_panmpi<?= $filasidpanmpi ?>"><img class="get_normal_panmpi check_isfijo" id="<?= $filasidpanmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatuspanmpi[]" size="10" id="status_reprocess_val_panmpi<?= $filasidpanmpi ?>" value="<?= $panmpi->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_panmpi<?= $filasidpanmpi ?>" value="<?= $panmpi->id ?>">
                                                                     </td>
@@ -5797,7 +5797,7 @@
                                                             foreach ($extmpiso as $extmpi) {
                                                                 $filasidextmpi++;
                                                                 $consec++;
-                                                                if($extmpi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($extmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $extmpi->id_nuevo ?>" class="extmpi_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($extmpi->color == 1) : ?>
@@ -6017,7 +6017,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $extmpi->unidad ?><input type="hidden" name="unidadextmpi[]" value="<?= $extmpi->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioextmpi-<?= $filasidextmpi ?>" name="precioextmpi[]" oninput="Calcextmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $extmpi->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($extmpi->statusreproceso == 0) : ?>
                                                                         <i id="flag_reprocess_extmpi<?= $filasidextmpi ?>"><img class="get_reprocess_extmpi check_isfijor" id="<?= $filasidextmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_extmpi<?= $filasidextmpi ?>" style="display:none"><img class="get_normal_extmpi check_isfijo" id="<?= $filasidextmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -6025,7 +6025,7 @@
                                                                             <i id="flag_reprocess_extmpi<?= $filasidextmpi ?>" style="display:none"><img class="get_reprocess_extmpi check_isfijor" id="<?= $filasidextmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_extmpi<?= $filasidextmpi ?>"><img class="get_normal_extmpi check_isfijo" id="<?= $filasidextmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusextmpi[]" size="10" id="status_reprocess_val_extmpi<?= $filasidextmpi ?>" value="<?= $extmpi->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_extmpi<?= $filasidextmpi ?>" value="<?= $extmpi->id ?>">
                                                                     </td>
@@ -6104,7 +6104,7 @@
                                                             foreach ($imgpop as $imgp) {
                                                                 $filasidimgp++;
                                                                 $consec++;
-                                                                if($imgp->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($imgp->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $imgp->id_nuevo ?>" class="imgp_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($imgp->color == 1) : ?>
@@ -6316,7 +6316,7 @@
                                                                         <i id="<?= $filasidimgp ?>" class="getrowidimgp" style="cursor:pointer"></i>
                                                                         <i id="recalc_imgp_<?= $filasidimgp ?>" class="getrowidimgp2" style="cursor:pointer"></i>
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioimgp-<?= $filasidimgp ?>" name="precioimgp[]" oninput=" enviarimagenpops(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes(); " value="<?= $imgp->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($imgp->statusreproceso == 0) : ?>
                                                                         <i id="flag_reprocess_imgp<?= $filasidimgp ?>"><img class="get_reprocess_imgp check_isfijor" id="<?= $filasidimgp ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_imgp<?= $filasidimgp ?>" style="display:none"><img class="get_normal_imgp check_isfijo" id="<?= $filasidimgp ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -6324,7 +6324,7 @@
                                                                             <i id="flag_reprocess_imgp<?= $filasidimgp ?>" style="display:none"><img class="get_reprocess_imgp check_isfijor" id="<?= $filasidimgp ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_imgp<?= $filasidimgp ?>"><img class="get_normal_imgp check_isfijo" id="<?= $filasidimgp ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusimgp[]" size="10" id="status_reprocess_val_imgp<?= $filasidimgp ?>" value="<?= $imgp->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_imgp<?= $filasidimgp ?>" value="<?= $imgp->id ?>">
                                                                     </td>
@@ -6390,7 +6390,7 @@
                                                             foreach ($imgmaniquis as $imgm) {
                                                                 $filasidimgm++;
                                                                 $consec++;
-                                                                if($imgm->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($imgm->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $imgm->id_nuevo ?>" class="imgm_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($imgm->color == 1) : ?>
@@ -6602,7 +6602,7 @@
                                                                         <i id="<?= $filasidimgm ?>" class="getrowidimgm" style="cursor:pointer"></i>
                                                                         <i id="recalc_imgm_<?= $filasidimgm ?>" class="getrowidimgm2" style="cursor:pointer"></i>
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioimgm-<?= $filasidimgm ?>" name="precioimgm[]" oninput=" enviarimagenmaniquis(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes(); " value="<?= $imgm->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($imgm->statusreproceso == 0) : ?>
                                                                         <i id="flag_reprocess_imgm<?= $filasidimgm ?>"><img class="get_reprocess_imgm check_isfijor" id="<?= $filasidimgm ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_imgm<?= $filasidimgm ?>" style="display:none"><img class="get_normal_imgm check_isfijo" id="<?= $filasidimgm ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -6610,7 +6610,7 @@
                                                                             <i id="flag_reprocess_imgm<?= $filasidimgm ?>" style="display:none"><img class="get_reprocess_imgm check_isfijor" id="<?= $filasidimgm ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_imgm<?= $filasidimgm ?>"><img class="get_normal_imgm check_isfijo" id="<?= $filasidimgm ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusimgm[]" size="10" id="status_reprocess_val_imgm<?= $filasidimgm ?>" value="<?= $imgm->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_imgm<?= $filasidimgm ?>" value="<?= $imgm->id ?>">
                                                                     </td>
@@ -6693,7 +6693,7 @@
                                                             foreach ($otros as $ots) {
                                                                 $filasidots++;
                                                                 $consec++;
-                                                                if($ots->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
+                                                                if($ots->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
                                                             ?>
                                                                 <tr id="rowproducto<?= $ots->id_nuevo ?>" class="ots_rows_to_delete" style="justify-content: center; text-align: center">
                                                                     <?php if ($ots->color == 1) : ?>
@@ -6913,7 +6913,7 @@
                                                                     <td style="font-size: 1.3em; color: black"><?= $ots->unidad ?><input type="hidden" name="unidadots[]" value="<?= $ots->unidad ?>"></td>
                                                                     <td style="width:10%">
                                                                         <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required id="precioots-<?= $filasidots ?>" name="precioots[]" oninput="Calcots(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $ots->precio ?>">
-                                                                        <?= $displayflagisfijo1 ?>
+                                                                        
                                                                         <?php if ($ots->statusreproceso == 0) : ?>
                                                                         <i id="flag_reprocess_ots<?= $filasidots ?>"><img class="get_reprocess_ots check_isfijor" id="<?= $filasidots ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_ots<?= $filasidots ?>" style="display:none"><img class="get_normal_ots check_isfijo" id="<?= $filasidots ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -6921,7 +6921,7 @@
                                                                             <i id="flag_reprocess_ots<?= $filasidots ?>" style="display:none"><img class="get_reprocess_ots check_isfijor" id="<?= $filasidots ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <i id="flag_normal_ots<?= $filasidots ?>"><img class="get_normal_ots check_isfijo" id="<?= $filasidots ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                         <?php endif ?>
-                                                                        <?= $displayflagisfijo2 ?>
+                                                                        
                                                                         <input type="hidden" name="reprocesstatusots[]" size="10" id="status_reprocess_val_ots<?= $filasidots ?>" value="<?= $ots->statusreproceso ?>">
                                                                         <input type="hidden" size="10" id="reprocess_id_val_ots<?= $filasidots ?>" value="<?= $ots->id ?>">
                                                                     </td>
