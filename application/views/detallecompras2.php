@@ -206,10 +206,6 @@
                             <?php
                             }else{
                             ?>
-                             <div id="limpia_skus_div" >
-                                <input type="radio" id="limpia_skus_vals" name="radioGroup" class="radio-btn">
-                                <label for="limpia_skus_vals" class="radio-label">Limpia skus</label>
-                            </div>
                             <?php
                             }
                             ?>
@@ -698,7 +694,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_ent[]" type="text" value="<?= $ent->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_ent[]" type="text" value="<?= $ent->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="ident[]" value="<?= $ent->id ?>"><?= $consec ?>.- <?= $ent->nombre ?><input type="hidden" name="nombreent[]" value="<?= $ent->nombre ?>">
                                                                         <?php if ($ent->incluye == '') : ?>
@@ -1023,7 +1019,7 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
-                                                                            <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_ent[]" type="text" value="<?= $ent->sku ?>" readonly>
+                                                                            <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_ent[]" type="text" value="<?= $ent->sku ?>" >
                                                                             <input type="hidden" class="skuvaluecc31" value="<?= $ent->cc31 ?>">
                                                                             <input type="hidden" class="skuvaluecc33" value="<?= $ent->cc33 ?>">
                                                                             <input type="hidden" class="skuvaluecc34" value="<?= $ent->cc34 ?>">
@@ -1372,7 +1368,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpi[]" type="text" value="<?= $dcmpi->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpi[]" type="text" value="<?= $dcmpi->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="iddcmpi[]" value="<?= $dcmpi->id ?>"><?= $consec ?>.- <?= $dcmpi->nombre ?><input type="hidden" name="nombredcmpi[]" value="<?= $dcmpi->nombre ?>">
                                                                         <?php if ($dcmpi->incluye == '') : ?>
@@ -1656,7 +1652,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpe[]" type="text" value="<?= $dcmpe->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpe[]" type="text" value="<?= $dcmpe->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="iddcmpe[]" value="<?= $dcmpe->id ?>"><?= $consec ?>.- <?= $dcmpe->nombre ?><input type="hidden" name="nombredcmpe[]" value="<?= $dcmpe->nombre ?>">
                                                                         <?php if ($dcmpe->incluye == '') : ?>
@@ -1972,7 +1968,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpi[]" type="text" value="<?= $dcmpi->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpi[]" type="text" value="<?= $dcmpi->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="iddcmpi[]" value="<?= $dcmpi->id ?>"><?= $consec ?>.- <?= $dcmpi->nombre ?><input type="hidden" name="nombredcmpi[]" value="<?= $dcmpi->nombre ?>">
                                                                             <?php if ($dcmpi->incluye == '') : ?>
@@ -2254,7 +2250,7 @@
                                                                         <?php endif ?>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpi[]" type="text" value="<?= $dcmpi->sku ?>" readonly>
+                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpi[]" type="text" value="<?= $dcmpi->sku ?>" >
                                                                                 <input type="hidden" class="skuvaluecc31" value="<?= $dcmpi->cc31 ?>">
                                                                                 <input type="hidden" class="skuvaluecc33" value="<?= $dcmpi->cc33 ?>">
                                                                                 <input type="hidden" class="skuvaluecc34" value="<?= $dcmpi->cc34 ?>">
@@ -2562,7 +2558,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpe[]" type="text" value="<?= $dcmpe->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpe[]" type="text" value="<?= $dcmpe->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="iddcmpe[]" value="<?= $dcmpe->id ?>"><?= $consec ?>.- <?= $dcmpe->nombre ?><input type="hidden" name="nombredcmpe[]" value="<?= $dcmpe->nombre ?>">
                                                                             <?php if ($dcmpe->incluye == '') : ?>
@@ -2844,7 +2840,7 @@
                                                                         <?php endif ?>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpe[]" type="text" value="<?= $dcmpe->sku ?>" readonly>
+                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpe[]" type="text" value="<?= $dcmpe->sku ?>" >
                                                                                 <input type="hidden" class="skuvaluecc31" value="<?= $dcmpe->cc31 ?>">
                                                                                 <input type="hidden" class="skuvaluecc33" value="<?= $dcmpe->cc33 ?>">
                                                                                 <input type="hidden" class="skuvaluecc34" value="<?= $dcmpe->cc34 ?>">
@@ -3195,7 +3191,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpi[]" type="text" value="<?= $mhjmpi->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpi[]" type="text" value="<?= $mhjmpi->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idmhjmpi[]" value="<?= $mhjmpi->id ?>"><?= $consec ?>.- <?= $mhjmpi->nombre ?><input type="hidden" name="nombremhjmpi[]" value="<?= $mhjmpi->nombre ?>">
                                                                         <?php if ($mhjmpi->incluye == '') : ?>
@@ -3479,7 +3475,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpe[]" type="text" value="<?= $mhjmpe->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpe[]" type="text" value="<?= $mhjmpe->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idmhjmpe[]" value="<?= $mhjmpe->id ?>"><?= $consec ?>.- <?= $mhjmpe->nombre ?><input type="hidden" name="nombremhjmpe[]" value="<?= $mhjmpe->nombre ?>">
                                                                         <?php if ($mhjmpe->incluye == '') : ?>
@@ -3763,7 +3759,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpje[]" type="text" value="<?= $mhjmpje->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpje[]" type="text" value="<?= $mhjmpje->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idmhjmpje[]" value="<?= $mhjmpje->id ?>"><?= $consec ?>.- <?= $mhjmpje->nombre ?><input type="hidden" name="nombremhjmpje[]" value="<?= $mhjmpje->nombre ?>">
                                                                         <?php if ($mhjmpje->incluye == '') : ?>
@@ -4047,7 +4043,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpli[]" type="text" value="<?= $mhjmpli->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpli[]" type="text" value="<?= $mhjmpli->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idmhjmpli[]" value="<?= $mhjmpli->id ?>"><?= $consec ?>.- <?= $mhjmpli->nombre ?><input type="hidden" name="nombremhjmpli[]" value="<?= $mhjmpli->nombre ?>">
                                                                         <?php if ($mhjmpli->incluye == '') : ?>
@@ -4388,7 +4384,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpi[]" type="text" value="<?= $mhjmpi->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpi[]" type="text" value="<?= $mhjmpi->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idmhjmpi[]" value="<?= $mhjmpi->id ?>"><?= $consec ?>.- <?= $mhjmpi->nombre ?><input type="hidden" name="nombremhjmpi[]" value="<?= $mhjmpi->nombre ?>">
                                                                             <?php if ($mhjmpi->incluye == '') : ?>
@@ -4670,7 +4666,7 @@
                                                                         <?php endif ?>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpi[]" type="text" value="<?= $mhjmpi->sku ?>" readonly>
+                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpi[]" type="text" value="<?= $mhjmpi->sku ?>" >
                                                                                 <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpi->cc31 ?>">
                                                                                 <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpi->cc33 ?>">
                                                                                 <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpi->cc34 ?>">
@@ -4978,7 +4974,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpe[]" type="text" value="<?= $mhjmpe->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpe[]" type="text" value="<?= $mhjmpe->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idmhjmpe[]" value="<?= $mhjmpe->id ?>"><?= $consec ?>.- <?= $mhjmpe->nombre ?><input type="hidden" name="nombremhjmpe[]" value="<?= $mhjmpe->nombre ?>">
                                                                             <?php if ($mhjmpe->incluye == '') : ?>
@@ -5260,7 +5256,7 @@
                                                                         <?php endif ?>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpe[]" type="text" value="<?= $mhjmpe->sku ?>" readonly>
+                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpe[]" type="text" value="<?= $mhjmpe->sku ?>" >
                                                                                 <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpe->cc31 ?>">
                                                                                 <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpe->cc33 ?>">
                                                                                 <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpe->cc34 ?>">
@@ -5568,7 +5564,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpje[]" type="text" value="<?= $mhjmpje->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpje[]" type="text" value="<?= $mhjmpje->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idmhjmpje[]" value="<?= $mhjmpje->id ?>"><?= $consec ?>.- <?= $mhjmpje->nombre ?><input type="hidden" name="nombremhjmpje[]" value="<?= $mhjmpje->nombre ?>">
                                                                             <?php if ($mhjmpje->incluye == '') : ?>
@@ -5850,7 +5846,7 @@
                                                                         <?php endif ?>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpje[]" type="text" value="<?= $mhjmpje->sku ?>" readonly>
+                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpje[]" type="text" value="<?= $mhjmpje->sku ?>" >
                                                                                 <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpje->cc31 ?>">
                                                                                 <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpje->cc33 ?>">
                                                                                 <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpje->cc34 ?>">
@@ -6158,7 +6154,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpli[]" type="text" value="<?= $mhjmpli->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpli[]" type="text" value="<?= $mhjmpli->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idmhjmpli[]" value="<?= $mhjmpli->id ?>"><?= $consec ?>.- <?= $mhjmpli->nombre ?><input type="hidden" name="nombremhjmpli[]" value="<?= $mhjmpli->nombre ?>">
                                                                             <?php if ($mhjmpli->incluye == '') : ?>
@@ -6440,7 +6436,7 @@
                                                                         <?php endif ?>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpli[]" type="text" value="<?= $mhjmpli->sku ?>" readonly>
+                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpli[]" type="text" value="<?= $mhjmpli->sku ?>" >
                                                                                 <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpli->cc31 ?>">
                                                                                 <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpli->cc33 ?>">
                                                                                 <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpli->cc34 ?>">
@@ -6799,7 +6795,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_impi[]" type="text" value="<?= $impi->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_impi[]" type="text" value="<?= $impi->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idimpi[]" value="<?= $impi->id ?>"><?= $consec ?>.- <?= $impi->nombre ?><input type="hidden" name="nombreimpi[]" value="<?= $impi->nombre ?>">
                                                                         <?php if ($impi->incluye == '') : ?>
@@ -7083,7 +7079,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_impe[]" type="text" value="<?= $impe->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_impe[]" type="text" value="<?= $impe->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idimpe[]" value="<?= $impe->id ?>"><?= $consec ?>.- <?= $impe->nombre ?><input type="hidden" name="nombreimpe[]" value="<?= $impe->nombre ?>">
                                                                         <?php if ($impe->incluye == '') : ?>
@@ -7367,7 +7363,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_imhe[]" type="text" value="<?= $imhe->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_imhe[]" type="text" value="<?= $imhe->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idimhe[]" value="<?= $imhe->id ?>"><?= $consec ?>.- <?= $imhe->nombre ?><input type="hidden" name="nombreimhe[]" value="<?= $imhe->nombre ?>">
                                                                         <?php if ($imhe->incluye == '') : ?>
@@ -7700,7 +7696,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_impi[]" type="text" value="<?= $impi->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_impi[]" type="text" value="<?= $impi->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idimpi[]" value="<?= $impi->id ?>"><?= $consec ?>.- <?= $impi->nombre ?><input type="hidden" name="nombreimpi[]" value="<?= $impi->nombre ?>">
                                                                             <?php if ($impi->incluye == '') : ?>
@@ -7982,7 +7978,7 @@
                                                                         <?php endif ?>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_impi[]" type="text" value="<?= $impi->sku ?>" readonly>
+                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_impi[]" type="text" value="<?= $impi->sku ?>" >
                                                                                 <input type="hidden" class="skuvaluecc31" value="<?= $impi->cc31 ?>">
                                                                                 <input type="hidden" class="skuvaluecc33" value="<?= $impi->cc33 ?>">
                                                                                 <input type="hidden" class="skuvaluecc34" value="<?= $impi->cc34 ?>">
@@ -8290,7 +8286,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_impe[]" type="text" value="<?= $impe->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_impe[]" type="text" value="<?= $impe->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idimpe[]" value="<?= $impe->id ?>"><?= $consec ?>.- <?= $impe->nombre ?><input type="hidden" name="nombreimpe[]" value="<?= $impe->nombre ?>">
                                                                             <?php if ($impe->incluye == '') : ?>
@@ -8572,7 +8568,7 @@
                                                                         <?php endif ?>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_impe[]" type="text" value="<?= $impe->sku ?>" readonly>
+                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_impe[]" type="text" value="<?= $impe->sku ?>" >
                                                                                 <input type="hidden" class="skuvaluecc31" value="<?= $impe->cc31 ?>">
                                                                                 <input type="hidden" class="skuvaluecc33" value="<?= $impe->cc33 ?>">
                                                                                 <input type="hidden" class="skuvaluecc34" value="<?= $impe->cc34 ?>">
@@ -8880,7 +8876,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_imhe[]" type="text" value="<?= $imhe->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_imhe[]" type="text" value="<?= $imhe->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idimhe[]" value="<?= $imhe->id ?>"><?= $consec ?>.- <?= $imhe->nombre ?><input type="hidden" name="nombreimhe[]" value="<?= $imhe->nombre ?>">
                                                                             <?php if ($imhe->incluye == '') : ?>
@@ -9162,7 +9158,7 @@
                                                                         <?php endif ?>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_imhe[]" type="text" value="<?= $imhe->sku ?>" readonly>
+                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_imhe[]" type="text" value="<?= $imhe->sku ?>" >
                                                                                 <input type="hidden" class="skuvaluecc31" value="<?= $imhe->cc31 ?>">
                                                                                 <input type="hidden" class="skuvaluecc33" value="<?= $imhe->cc33 ?>">
                                                                                 <input type="hidden" class="skuvaluecc34" value="<?= $imhe->cc34 ?>">
@@ -9516,7 +9512,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpi[]" type="text" value="<?= $innpi->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpi[]" type="text" value="<?= $innpi->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idinnpi[]" value="<?= $innpi->id ?>"><?= $consec ?>.- <?= $innpi->nombre ?><input type="hidden" name="nombreinnpi[]" value="<?= $innpi->nombre ?>">
                                                                         <?php if ($innpi->incluye == '') : ?>
@@ -9800,7 +9796,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpe[]" type="text" value="<?= $innpe->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpe[]" type="text" value="<?= $innpe->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idinnpe[]" value="<?= $innpe->id ?>"><?= $consec ?>.- <?= $innpe->nombre ?><input type="hidden" name="nombreinnpe[]" value="<?= $innpe->nombre ?>">
                                                                         <?php if ($innpe->incluye == '') : ?>
@@ -10121,7 +10117,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpi[]" type="text" value="<?= $innpi->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpi[]" type="text" value="<?= $innpi->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idinnpi[]" value="<?= $innpi->id ?>"><?= $consec ?>.- <?= $innpi->nombre ?><input type="hidden" name="nombreinnpi[]" value="<?= $innpi->nombre ?>">
                                                                             <?php if ($innpi->incluye == '') : ?>
@@ -10403,7 +10399,7 @@
                                                                         <?php endif ?>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_innpi[]" type="text" value="<?= $innpi->sku ?>" readonly>
+                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_innpi[]" type="text" value="<?= $innpi->sku ?>" >
                                                                                 <input type="hidden" class="skuvaluecc31" value="<?= $innpi->cc31 ?>">
                                                                                 <input type="hidden" class="skuvaluecc33" value="<?= $innpi->cc33 ?>">
                                                                                 <input type="hidden" class="skuvaluecc34" value="<?= $innpi->cc34 ?>">
@@ -10711,7 +10707,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpe[]" type="text" value="<?= $innpe->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_innpe[]" type="text" value="<?= $innpe->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idinnpe[]" value="<?= $innpe->id ?>"><?= $consec ?>.- <?= $innpe->nombre ?><input type="hidden" name="nombreinnpe[]" value="<?= $innpe->nombre ?>">
                                                                             <?php if ($innpe->incluye == '') : ?>
@@ -10993,7 +10989,7 @@
                                                                         <?php endif ?>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_innpe[]" type="text" value="<?= $innpe->sku ?>" readonly>
+                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_innpe[]" type="text" value="<?= $innpe->sku ?>" >
                                                                                 <input type="hidden" class="skuvaluecc31" value="<?= $innpe->cc31 ?>">
                                                                                 <input type="hidden" class="skuvaluecc33" value="<?= $innpe->cc33 ?>">
                                                                                 <input type="hidden" class="skuvaluecc34" value="<?= $innpe->cc34 ?>">
@@ -11348,7 +11344,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpi[]" type="text" value="<?= $tnnbpi->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpi[]" type="text" value="<?= $tnnbpi->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idtnnbpi[]" value="<?= $tnnbpi->id ?>"><?= $consec ?>.- <?= $tnnbpi->nombre ?><input type="hidden" name="nombretnnbpi[]" value="<?= $tnnbpi->nombre ?>">
                                                                             <?php if ($tnnbpi->incluye == '') : ?>
@@ -11632,7 +11628,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpe[]" type="text" value="<?= $tnnbpe->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpe[]" type="text" value="<?= $tnnbpe->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idtnnbpe[]" value="<?= $tnnbpe->id ?>"><?= $consec ?>.- <?= $tnnbpe->nombre ?><input type="hidden" name="nombretnnbpe[]" value="<?= $tnnbpe->nombre ?>">
                                                                             <?php if ($tnnbpe->incluye == '') : ?>
@@ -11953,7 +11949,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpi[]" type="text" value="<?= $tnnbpi->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpi[]" type="text" value="<?= $tnnbpi->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idtnnbpi[]" value="<?= $tnnbpi->id ?>"><?= $consec ?>.- <?= $tnnbpi->nombre ?><input type="hidden" name="nombretnnbpi[]" value="<?= $tnnbpi->nombre ?>">
                                                                             <?php if ($tnnbpi->incluye == '') : ?>
@@ -12235,7 +12231,7 @@
                                                                         <?php endif ?>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpi[]" type="text" value="<?= $tnnbpi->sku ?>" readonly>
+                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpi[]" type="text" value="<?= $tnnbpi->sku ?>" >
                                                                                 <input type="hidden" class="skuvaluecc31" value="<?= $tnnbpi->cc31 ?>">
                                                                                 <input type="hidden" class="skuvaluecc33" value="<?= $tnnbpi->cc33 ?>">
                                                                                 <input type="hidden" class="skuvaluecc34" value="<?= $tnnbpi->cc34 ?>">
@@ -12543,7 +12539,7 @@
                                                                             </td>
                                                                         <?php endif ?>
                                                                         <td>
-                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpe[]" type="text" value="<?= $tnnbpe->sku ?>" readonly>
+                                                                            <input size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpe[]" type="text" value="<?= $tnnbpe->sku ?>" >
                                                                         </td>
                                                                         <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idtnnbpe[]" value="<?= $tnnbpe->id ?>"><?= $consec ?>.- <?= $tnnbpe->nombre ?><input type="hidden" name="nombretnnbpe[]" value="<?= $tnnbpe->nombre ?>">
                                                                             <?php if ($tnnbpe->incluye == '') : ?>
@@ -12825,7 +12821,7 @@
                                                                         <?php endif ?>
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
-                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpe[]" type="text" value="<?= $tnnbpe->sku ?>" readonly>
+                                                                                <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpe[]" type="text" value="<?= $tnnbpe->sku ?>" >
                                                                                 <input type="hidden" class="skuvaluecc31" value="<?= $tnnbpe->cc31 ?>">
                                                                                 <input type="hidden" class="skuvaluecc33" value="<?= $tnnbpe->cc33 ?>">
                                                                                 <input type="hidden" class="skuvaluecc34" value="<?= $tnnbpe->cc34 ?>">
@@ -13171,7 +13167,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_herna[]" type="text" value="<?= $herna->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_herna[]" type="text" value="<?= $herna->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idherna[]" value="<?= $herna->id ?>"><?= $consec ?>.- <?= $herna->nombre ?><input type="hidden" name="nombreherna[]" value="<?= $herna->nombre ?>">
                                                                         <?php if ($herna->incluye == '') : ?>
@@ -13491,7 +13487,7 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
-                                                                            <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_herna[]" type="text" value="<?= $herna->sku ?>" readonly>
+                                                                            <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_herna[]" type="text" value="<?= $herna->sku ?>" >
                                                                             <input type="hidden" class="skuvaluecc31" value="<?= $herna->cc31 ?>">
                                                                             <input type="hidden" class="skuvaluecc33" value="<?= $herna->cc33 ?>">
                                                                             <input type="hidden" class="skuvaluecc34" value="<?= $herna->cc34 ?>">
@@ -13839,7 +13835,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_probmpi[]" type="text" value="<?= $probmpi->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_probmpi[]" type="text" value="<?= $probmpi->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idprobmpi[]" value="<?= $probmpi->id ?>"><?= $consec ?>.- <?= $probmpi->nombre ?><input type="hidden" name="nombreprobmpi[]" value="<?= $probmpi->nombre ?>">
                                                                         <?php if ($probmpi->incluye == '') : ?>
@@ -14154,7 +14150,7 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
-                                                                            <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_probmpi[]" type="text" value="<?= $probmpi->sku ?>" readonly>
+                                                                            <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_probmpi[]" type="text" value="<?= $probmpi->sku ?>" >
                                                                             <input type="hidden" class="skuvaluecc31" value="<?= $probmpi->cc31 ?>">
                                                                             <input type="hidden" class="skuvaluecc33" value="<?= $probmpi->cc33 ?>">
                                                                             <input type="hidden" class="skuvaluecc34" value="<?= $probmpi->cc34 ?>">
@@ -14509,7 +14505,7 @@
                                                                         </td>
                                                                     <?php endif ?>
                                                                     <td>
-                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_panmpi[]" type="text" value="<?= $panmpi->sku ?>" readonly>
+                                                                        <input size="11" style="font-size: 1.3em; color: black;" name="sku_panmpi[]" type="text" value="<?= $panmpi->sku ?>" >
                                                                     </td>
                                                                     <td style="font-size: 1.5em; color: black; text-align:left;width:35%;"><input type="hidden" size="5" name="idpanmpi[]" value="<?= $panmpi->id ?>"><?= $consec ?>.- <?= $panmpi->nombre ?><input type="hidden" name="nombrepanmpi[]" value="<?= $panmpi->nombre ?>">
                                                                         <?php if ($panmpi->incluye == '') : ?>
@@ -14824,7 +14820,7 @@
                                                                     <?php endif ?>
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
-                                                                            <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_panmpi[]" type="text" value="<?= $panmpi->sku ?>" readonly>
+                                                                            <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_panmpi[]" type="text" value="<?= $panmpi->sku ?>" >
                                                                             <input type="hidden" class="skuvaluecc31" value="<?= $panmpi->cc31 ?>">
                                                                             <input type="hidden" class="skuvaluecc33" value="<?= $panmpi->cc33 ?>">
                                                                             <input type="hidden" class="skuvaluecc34" value="<?= $panmpi->cc34 ?>">
