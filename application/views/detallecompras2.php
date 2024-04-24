@@ -182,23 +182,37 @@
                                     ?>
                                 </div>
                             </div>
-                            <div style="display: flex; justify-content: space-around; padding-top:5px;">
-                                <div id="section_cc31" >
-                                    <input type="radio" id="change_sku_values_cc31" name="radioGroup" class="radio-btn">
-                                    <label for="change_sku_values_cc31" class="radio-label">CC 31</label>
-                                </div>
-                                <div id="section_cc33" >
-                                    <input type="radio" id="change_sku_values_cc33" name="radioGroup" class="radio-btn">
-                                    <label for="change_sku_values_cc33" class="radio-label">CC 33</label>
-                                </div>
-                                <div id="section_cc34" >
-                                    <input type="radio" id="change_sku_values_cc34" name="radioGroup" class="radio-btn">
-                                    <label for="change_sku_values_cc34" class="radio-label">CC 34</label>
-                                </div>
-                                <div id="limpia_skus_div" >
-                                    <input type="radio" id="limpia_skus_vals" name="radioGroup" class="radio-btn">
-                                    <label for="limpia_skus_vals" class="radio-label">Limpia skus</label>
-                                </div>
+                            <div style="display: flex; justify-content: left; padding-top:5px;">
+                            <?php if ($cos->cuentacliente == '31'){
+                            ?>
+                            <div id="section_cc31" >
+                                <input type="radio" id="change_sku_values_cc31" name="radioGroup" class="radio-btn" checked>
+                                <label for="change_sku_values_cc31" class="radio-label">CC 31</label>
+                            </div>
+                            <?php
+                            }else if($cos->cuentacliente == '33'){
+                            ?>
+                            <div id="section_cc33" >
+                                <input type="radio" id="change_sku_values_cc33" name="radioGroup" class="radio-btn" checked>
+                                <label for="change_sku_values_cc33" class="radio-label">CC 33</label>
+                            </div>
+                            <?php
+                            }else if($cos->cuentacliente == '34'){
+                            ?>
+                            <div id="section_cc34" >
+                                <input type="radio" id="change_sku_values_cc34" name="radioGroup" class="radio-btn" checked>
+                                <label for="change_sku_values_cc34" class="radio-label">CC 34</label>
+                            </div>
+                            <?php
+                            }else{
+                            ?>
+                             <div id="limpia_skus_div" >
+                                <input type="radio" id="limpia_skus_vals" name="radioGroup" class="radio-btn">
+                                <label for="limpia_skus_vals" class="radio-label">Limpia skus</label>
+                            </div>
+                            <?php
+                            }
+                            ?>
                             </div>
                         </div>
                     </div>
@@ -824,7 +838,7 @@
                                                             foreach ($entrada2 as $ent) {
                                                                 $filasident++;
                                                                 $consec++;
-                                                                if($ent->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                if($ent->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                             ?>
                                                                 <tr id="rowproducto<?= $ent->id ?>" style="justify-content: center; text-align: center">
                                                                     <?php if ($ent->color == 1) : ?>
@@ -1010,13 +1024,13 @@
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
                                                                             <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_ent[]" type="text" value="<?= $ent->sku ?>" readonly>
-                                                                            <input type="text" class="skuvaluecc31" value="<?= $ent->cc31 ?>">
-                                                                            <input type="text" class="skuvaluecc33" value="<?= $ent->cc33 ?>">
-                                                                            <input type="text" class="skuvaluecc34" value="<?= $ent->cc34 ?>">
-                                                                            <input type="text" class="skuvaluecc31r" value="<?= $ent->cc31r ?>">
-                                                                            <input type="text" class="skuvaluecc33r" value="<?= $ent->cc33r ?>">
-                                                                            <input type="text" class="skuvaluecc34r" value="<?= $ent->cc34r ?>">
-                                                                            <input type="text" class="skuvalueactivof" value="<?= $ent->activof ?>">
+                                                                            <input type="hidden" class="skuvaluecc31" value="<?= $ent->cc31 ?>">
+                                                                            <input type="hidden" class="skuvaluecc33" value="<?= $ent->cc33 ?>">
+                                                                            <input type="hidden" class="skuvaluecc34" value="<?= $ent->cc34 ?>">
+                                                                            <input type="hidden" class="skuvaluecc31r" value="<?= $ent->cc31r ?>">
+                                                                            <input type="hidden" class="skuvaluecc33r" value="<?= $ent->cc33r ?>">
+                                                                            <input type="hidden" class="skuvaluecc34r" value="<?= $ent->cc34r ?>">
+                                                                            <input type="hidden" class="skuvalueactivof" value="<?= $ent->activof ?>">
                                                                             <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                         <?php else : ?>
                                                                             <span style="font-size: 1.3em; color: black;"><?= $ent->sku ?></span>
@@ -1044,6 +1058,7 @@
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
                                                                             <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="precioent-<?= $filasident ?>" name="precioent[]" oninput="Calcent(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $ent->precio ?>">
+                                                                            <?= $displayflagisfijo1 ?>
                                                                             <?php if ($ent->statusreproceso == 0) : ?>
                                                                                 <i id="flag_reprocess_ent<?= $filasident ?>"><img class="get_reprocess_ent check_isfijor" id="<?= $filasident ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <i id="flag_normal_ent<?= $filasident ?>" style="display:none"><img class="get_normal_ent check_isfijo" id="<?= $filasident ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -1051,6 +1066,7 @@
                                                                                 <i id="flag_reprocess_ent<?= $filasident ?>" style="display:none"><img class="get_reprocess_ent check_isfijor" id="<?= $filasident ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <i id="flag_normal_ent<?= $filasident ?>"><img class="get_normal_ent check_isfijo" id="<?= $filasident ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                             <?php endif ?>
+                                                                            <?= $displayflagisfijo2 ?>
                                                                             <input type="hidden" name="reprocesstatusent[]" size="10" id="status_reprocess_val_ent<?= $filasident ?>" value="<?= $ent->statusreproceso ?>">
                                                                             <input type="hidden" size="10" id="reprocess_id_val_ent<?= $filasident ?>" value="<?= $ent->idprincipalproducto2 ?>">
                                                                         <?php else : ?>
@@ -2053,7 +2069,7 @@
                                                                 foreach ($dcmpiso2 as $dcmpi) {
                                                                     $filasiddcmpi++;
                                                                     $consec++;
-                                                                    if($dcmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                    if($dcmpi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                                 ?>
                                                                     <tr id="rowproducto<?= $dcmpi->id ?>" style="justify-content: center; text-align: center">
                                                                         <?php if ($dcmpi->color == 1) : ?>
@@ -2239,13 +2255,13 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpi[]" type="text" value="<?= $dcmpi->sku ?>" readonly>
-                                                                                <input type="text" class="skuvaluecc31" value="<?= $dcmpi->cc31 ?>">
-                                                                                <input type="text" class="skuvaluecc33" value="<?= $dcmpi->cc33 ?>">
-                                                                                <input type="text" class="skuvaluecc34" value="<?= $dcmpi->cc34 ?>">
-                                                                                <input type="text" class="skuvaluecc31r" value="<?= $dcmpi->cc31r ?>">
-                                                                                <input type="text" class="skuvaluecc33r" value="<?= $dcmpi->cc33r ?>">
-                                                                                <input type="text" class="skuvaluecc34r" value="<?= $dcmpi->cc34r ?>">
-                                                                                <input type="text" class="skuvalueactivof" value="<?= $dcmpi->activof ?>">
+                                                                                <input type="hidden" class="skuvaluecc31" value="<?= $dcmpi->cc31 ?>">
+                                                                                <input type="hidden" class="skuvaluecc33" value="<?= $dcmpi->cc33 ?>">
+                                                                                <input type="hidden" class="skuvaluecc34" value="<?= $dcmpi->cc34 ?>">
+                                                                                <input type="hidden" class="skuvaluecc31r" value="<?= $dcmpi->cc31r ?>">
+                                                                                <input type="hidden" class="skuvaluecc33r" value="<?= $dcmpi->cc33r ?>">
+                                                                                <input type="hidden" class="skuvaluecc34r" value="<?= $dcmpi->cc34r ?>">
+                                                                                <input type="hidden" class="skuvalueactivof" value="<?= $dcmpi->activof ?>">
                                                                                 <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                             <?php else : ?>
                                                                                 <span style="font-size: 1.3em; color: black;"><?= $dcmpi->sku ?></span>
@@ -2273,6 +2289,7 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="preciodcmpi-<?= $filasiddcmpi ?>" name="preciodcmpi[]" oninput="Calcdcmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $dcmpi->precio ?>">
+                                                                                <?= $displayflagisfijo1 ?>
                                                                                 <?php if ($dcmpi->statusreproceso == 0) : ?>
                                                                                     <i id="flag_reprocess_dcmpi<?= $filasiddcmpi ?>"><img class="get_reprocess_dcmpi check_isfijor" id="<?= $filasiddcmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_dcmpi<?= $filasiddcmpi ?>" style="display:none"><img class="get_normal_dcmpi check_isfijo" id="<?= $filasiddcmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -2280,6 +2297,7 @@
                                                                                     <i id="flag_reprocess_dcmpi<?= $filasiddcmpi ?>" style="display:none"><img class="get_reprocess_dcmpi check_isfijor" id="<?= $filasiddcmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_dcmpi<?= $filasiddcmpi ?>"><img class="get_normal_dcmpi check_isfijo" id="<?= $filasiddcmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <?php endif ?>
+                                                                                <?= $displayflagisfijo2 ?>
                                                                                 <input type="hidden" name="reprocesstatusdcmpi[]" size="10" id="status_reprocess_val_dcmpi<?= $filasiddcmpi ?>" value="<?= $dcmpi->statusreproceso ?>">
                                                                                 <input type="hidden" size="10" id="reprocess_id_val_dcmpi<?= $filasiddcmpi ?>" value="<?= $dcmpi->idprincipalproducto2 ?>">
                                                                             <?php else : ?>
@@ -2641,7 +2659,7 @@
                                                                 foreach ($dcmperimetral2 as $dcmpe) {
                                                                     $filasiddcmpe++;
                                                                     $consec++;
-                                                                    if($dcmpe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                    if($dcmpe->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                                 ?>
                                                                     <tr id="rowproducto<?= $dcmpe->id ?>" style="justify-content: center; text-align: center">
                                                                         <?php if ($dcmpe->color == 1) : ?>
@@ -2827,13 +2845,13 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_dcmpe[]" type="text" value="<?= $dcmpe->sku ?>" readonly>
-                                                                                <input type="text" class="skuvaluecc31" value="<?= $dcmpe->cc31 ?>">
-                                                                                <input type="text" class="skuvaluecc33" value="<?= $dcmpe->cc33 ?>">
-                                                                                <input type="text" class="skuvaluecc34" value="<?= $dcmpe->cc34 ?>">
-                                                                                <input type="text" class="skuvaluecc31r" value="<?= $dcmpe->cc31r ?>">
-                                                                                <input type="text" class="skuvaluecc33r" value="<?= $dcmpe->cc33r ?>">
-                                                                                <input type="text" class="skuvaluecc34r" value="<?= $dcmpe->cc34r ?>">
-                                                                                <input type="text" class="skuvalueactivof" value="<?= $dcmpe->activof ?>">
+                                                                                <input type="hidden" class="skuvaluecc31" value="<?= $dcmpe->cc31 ?>">
+                                                                                <input type="hidden" class="skuvaluecc33" value="<?= $dcmpe->cc33 ?>">
+                                                                                <input type="hidden" class="skuvaluecc34" value="<?= $dcmpe->cc34 ?>">
+                                                                                <input type="hidden" class="skuvaluecc31r" value="<?= $dcmpe->cc31r ?>">
+                                                                                <input type="hidden" class="skuvaluecc33r" value="<?= $dcmpe->cc33r ?>">
+                                                                                <input type="hidden" class="skuvaluecc34r" value="<?= $dcmpe->cc34r ?>">
+                                                                                <input type="hidden" class="skuvalueactivof" value="<?= $dcmpe->activof ?>">
                                                                                 <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                             <?php else : ?>
                                                                                 <span style="font-size: 1.3em; color: black;"><?= $dcmpe->sku ?></span>
@@ -2861,6 +2879,7 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="preciodcmpe-<?= $filasiddcmpe ?>" name="preciodcmpe[]" oninput="Calcdcmpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $dcmpe->precio ?>">
+                                                                                <?= $displayflagisfijo1 ?>
                                                                                 <?php if ($dcmpe->statusreproceso == 0) : ?>
                                                                                     <i id="flag_reprocess_dcmpe<?= $filasiddcmpe ?>"><img class="get_reprocess_dcmpe check_isfijor" id="<?= $filasiddcmpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_dcmpe<?= $filasiddcmpe ?>" style="display:none"><img class="get_normal_dcmpe check_isfijo" id="<?= $filasiddcmpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -2868,6 +2887,7 @@
                                                                                     <i id="flag_reprocess_dcmpe<?= $filasiddcmpe ?>" style="display:none"><img class="get_reprocess_dcmpe check_isfijor" id="<?= $filasiddcmpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_dcmpe<?= $filasiddcmpe ?>"><img class="get_normal_dcmpe check_isfijo" id="<?= $filasiddcmpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <?php endif ?>
+                                                                                <?= $displayflagisfijo2 ?>
                                                                                 <input type="hidden" name="reprocesstatusdcmpe[]" size="10" id="status_reprocess_val_dcmpe<?= $filasiddcmpe ?>" value="<?= $dcmpe->statusreproceso ?>">
                                                                                 <input type="hidden" size="10" id="reprocess_id_val_dcmpe<?= $filasiddcmpe ?>" value="<?= $dcmpe->idprincipalproducto2 ?>">
                                                                             <?php else : ?>
@@ -4465,7 +4485,7 @@
                                                                 foreach ($mhjmpiso2 as $mhjmpi) {
                                                                     $filasidmhjmpi++;
                                                                     $consec++;
-                                                                    if($mhjmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                    if($mhjmpi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                                 ?>
                                                                     <tr id="rowproducto<?= $mhjmpi->id ?>" style="justify-content: center; text-align: center">
                                                                         <?php if ($mhjmpi->color == 1) : ?>
@@ -4651,13 +4671,13 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpi[]" type="text" value="<?= $mhjmpi->sku ?>" readonly>
-                                                                                <input type="text" class="skuvaluecc31" value="<?= $mhjmpi->cc31 ?>">
-                                                                                <input type="text" class="skuvaluecc33" value="<?= $mhjmpi->cc33 ?>">
-                                                                                <input type="text" class="skuvaluecc34" value="<?= $mhjmpi->cc34 ?>">
-                                                                                <input type="text" class="skuvaluecc31r" value="<?= $mhjmpi->cc31r ?>">
-                                                                                <input type="text" class="skuvaluecc33r" value="<?= $mhjmpi->cc33r ?>">
-                                                                                <input type="text" class="skuvaluecc34r" value="<?= $mhjmpi->cc34r ?>">
-                                                                                <input type="text" class="skuvalueactivof" value="<?= $mhjmpi->activof ?>">
+                                                                                <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpi->cc31 ?>">
+                                                                                <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpi->cc33 ?>">
+                                                                                <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpi->cc34 ?>">
+                                                                                <input type="hidden" class="skuvaluecc31r" value="<?= $mhjmpi->cc31r ?>">
+                                                                                <input type="hidden" class="skuvaluecc33r" value="<?= $mhjmpi->cc33r ?>">
+                                                                                <input type="hidden" class="skuvaluecc34r" value="<?= $mhjmpi->cc34r ?>">
+                                                                                <input type="hidden" class="skuvalueactivof" value="<?= $mhjmpi->activof ?>">
                                                                                 <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                             <?php else : ?>
                                                                                 <span style="font-size: 1.3em; color: black;"><?= $mhjmpi->sku ?></span>
@@ -4685,6 +4705,7 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="preciomhjmpi-<?= $filasidmhjmpi ?>" name="preciomhjmpi[]" oninput="Calcmhjmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $mhjmpi->precio ?>">
+                                                                                <?= $displayflagisfijo1 ?>
                                                                                 <?php if ($mhjmpi->statusreproceso == 0) : ?>
                                                                                     <i id="flag_reprocess_mhjmpi<?= $filasidmhjmpi ?>"><img class="get_reprocess_mhjmpi check_isfijor" id="<?= $filasidmhjmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_mhjmpi<?= $filasidmhjmpi ?>" style="display:none"><img class="get_normal_mhjmpi check_isfijo" id="<?= $filasidmhjmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -4692,6 +4713,7 @@
                                                                                     <i id="flag_reprocess_mhjmpi<?= $filasidmhjmpi ?>" style="display:none"><img class="get_reprocess_mhjmpi check_isfijor" id="<?= $filasidmhjmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_mhjmpi<?= $filasidmhjmpi ?>"><img class="get_normal_mhjmpi check_isfijo" id="<?= $filasidmhjmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <?php endif ?>
+                                                                                <?= $displayflagisfijo2 ?>
                                                                                 <input type="hidden" name="reprocesstatusmhjmpi[]" size="10" id="status_reprocess_val_mhjmpi<?= $filasidmhjmpi ?>" value="<?= $mhjmpi->statusreproceso ?>">
                                                                                 <input type="hidden" size="10" id="reprocess_id_val_mhjmpi<?= $filasidmhjmpi ?>" value="<?= $mhjmpi->idprincipalproducto2 ?>">
                                                                             <?php else : ?>
@@ -5053,7 +5075,7 @@
                                                                 foreach ($mhjmperimetral2 as $mhjmpe) {
                                                                     $filasidmhjmpe++;
                                                                     $consec++;
-                                                                    if($mhjmpe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                    if($mhjmpe->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                                 ?>
                                                                     <tr id="rowproducto<?= $mhjmpe->id ?>" style="justify-content: center; text-align: center">
                                                                         <?php if ($mhjmpe->color == 1) : ?>
@@ -5239,13 +5261,13 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpe[]" type="text" value="<?= $mhjmpe->sku ?>" readonly>
-                                                                                <input type="text" class="skuvaluecc31" value="<?= $mhjmpe->cc31 ?>">
-                                                                                <input type="text" class="skuvaluecc33" value="<?= $mhjmpe->cc33 ?>">
-                                                                                <input type="text" class="skuvaluecc34" value="<?= $mhjmpe->cc34 ?>">
-                                                                                <input type="text" class="skuvaluecc31r" value="<?= $mhjmpe->cc31r ?>">
-                                                                                <input type="text" class="skuvaluecc33r" value="<?= $mhjmpe->cc33r ?>">
-                                                                                <input type="text" class="skuvaluecc34r" value="<?= $mhjmpe->cc34r ?>">
-                                                                                <input type="text" class="skuvalueactivof" value="<?= $mhjmpe->activof ?>">
+                                                                                <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpe->cc31 ?>">
+                                                                                <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpe->cc33 ?>">
+                                                                                <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpe->cc34 ?>">
+                                                                                <input type="hidden" class="skuvaluecc31r" value="<?= $mhjmpe->cc31r ?>">
+                                                                                <input type="hidden" class="skuvaluecc33r" value="<?= $mhjmpe->cc33r ?>">
+                                                                                <input type="hidden" class="skuvaluecc34r" value="<?= $mhjmpe->cc34r ?>">
+                                                                                <input type="hidden" class="skuvalueactivof" value="<?= $mhjmpe->activof ?>">
                                                                                 <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                             <?php else : ?>
                                                                                 <span style="font-size: 1.3em; color: black;"><?= $mhjmpe->sku ?></span>
@@ -5273,6 +5295,7 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="preciomhjmpe-<?= $filasidmhjmpe ?>" name="preciomhjmpe[]" oninput="Calcmhjmpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $mhjmpe->precio ?>">
+                                                                                <?= $displayflagisfijo1 ?>
                                                                                 <?php if ($mhjmpe->statusreproceso == 0) : ?>
                                                                                     <i id="flag_reprocess_mhjmpe<?= $filasidmhjmpe ?>"><img class="get_reprocess_mhjmpe check_isfijor" id="<?= $filasidmhjmpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_mhjmpe<?= $filasidmhjmpe ?>" style="display:none"><img class="get_normal_mhjmpe check_isfijo" id="<?= $filasidmhjmpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -5280,6 +5303,7 @@
                                                                                     <i id="flag_reprocess_mhjmpe<?= $filasidmhjmpe ?>" style="display:none"><img class="get_reprocess_mhjmpe check_isfijor" id="<?= $filasidmhjmpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_mhjmpe<?= $filasidmhjmpe ?>"><img class="get_normal_mhjmpe check_isfijo" id="<?= $filasidmhjmpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <?php endif ?>
+                                                                                <?= $displayflagisfijo2 ?>
                                                                                 <input type="hidden" name="reprocesstatusmhjmpe[]" size="10" id="status_reprocess_val_mhjmpe<?= $filasidmhjmpe ?>" value="<?= $mhjmpe->statusreproceso ?>">
                                                                                 <input type="hidden" size="10" id="reprocess_id_val_mhjmpe<?= $filasidmhjmpe ?>" value="<?= $mhjmpe->idprincipalproducto2 ?>">
                                                                             <?php else : ?>
@@ -5641,7 +5665,7 @@
                                                                 foreach ($mhjmpjeans2 as $mhjmpje) {
                                                                     $filasidmhjmpje++;
                                                                     $consec++;
-                                                                    if($mhjmpje->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                    if($mhjmpje->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                                 ?>
                                                                     <tr id="rowproducto<?= $mhjmpje->id ?>" style="justify-content: center; text-align: center">
                                                                         <?php if ($mhjmpje->color == 1) : ?>
@@ -5827,13 +5851,13 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpje[]" type="text" value="<?= $mhjmpje->sku ?>" readonly>
-                                                                                <input type="text" class="skuvaluecc31" value="<?= $mhjmpje->cc31 ?>">
-                                                                                <input type="text" class="skuvaluecc33" value="<?= $mhjmpje->cc33 ?>">
-                                                                                <input type="text" class="skuvaluecc34" value="<?= $mhjmpje->cc34 ?>">
-                                                                                <input type="text" class="skuvaluecc31r" value="<?= $mhjmpje->cc31r ?>">
-                                                                                <input type="text" class="skuvaluecc33r" value="<?= $mhjmpje->cc33r ?>">
-                                                                                <input type="text" class="skuvaluecc34r" value="<?= $mhjmpje->cc34r ?>">
-                                                                                <input type="text" class="skuvalueactivof" value="<?= $mhjmpje->activof ?>">
+                                                                                <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpje->cc31 ?>">
+                                                                                <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpje->cc33 ?>">
+                                                                                <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpje->cc34 ?>">
+                                                                                <input type="hidden" class="skuvaluecc31r" value="<?= $mhjmpje->cc31r ?>">
+                                                                                <input type="hidden" class="skuvaluecc33r" value="<?= $mhjmpje->cc33r ?>">
+                                                                                <input type="hidden" class="skuvaluecc34r" value="<?= $mhjmpje->cc34r ?>">
+                                                                                <input type="hidden" class="skuvalueactivof" value="<?= $mhjmpje->activof ?>">
                                                                                 <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                             <?php else : ?>
                                                                                 <span style="font-size: 1.3em; color: black;"><?= $mhjmpje->sku ?></span>
@@ -5861,6 +5885,7 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="preciomhjmpje-<?= $filasidmhjmpje ?>" name="preciomhjmpje[]" oninput="Calcmhjmpje(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $mhjmpje->precio ?>">
+                                                                                <?= $displayflagisfijo1 ?>
                                                                                 <?php if ($mhjmpje->statusreproceso == 0) : ?>
                                                                                     <i id="flag_reprocess_mhjmpje<?= $filasidmhjmpje ?>"><img class="get_reprocess_mhjmpje check_isfijor" id="<?= $filasidmhjmpje ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_mhjmpje<?= $filasidmhjmpje ?>" style="display:none"><img class="get_normal_mhjmpje check_isfijo" id="<?= $filasidmhjmpje ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -5868,6 +5893,7 @@
                                                                                     <i id="flag_reprocess_mhjmpje<?= $filasidmhjmpje ?>" style="display:none"><img class="get_reprocess_mhjmpje check_isfijor" id="<?= $filasidmhjmpje ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_mhjmpje<?= $filasidmhjmpje ?>"><img class="get_normal_mhjmpje check_isfijo" id="<?= $filasidmhjmpje ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <?php endif ?>
+                                                                                <?= $displayflagisfijo2 ?>
                                                                                 <input type="hidden" name="reprocesstatusmhjmpje[]" size="10" id="status_reprocess_val_mhjmpje<?= $filasidmhjmpje ?>" value="<?= $mhjmpje->statusreproceso ?>">
                                                                                 <input type="hidden" size="10" id="reprocess_id_val_mhjmpje<?= $filasidmhjmpje ?>" value="<?= $mhjmpje->idprincipalproducto2 ?>">
                                                                             <?php else : ?>
@@ -6229,7 +6255,7 @@
                                                                 foreach ($mhjmplicencias2 as $mhjmpli) {
                                                                     $filasidmhjmpli++;
                                                                     $consec++;
-                                                                    if($mhjmpli->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                    if($mhjmpli->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                                 ?>
                                                                     <tr id="rowproducto<?= $mhjmpli->id ?>" style="justify-content: center; text-align: center">
                                                                         <?php if ($mhjmpli->color == 1) : ?>
@@ -6415,13 +6441,13 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_mhjmpli[]" type="text" value="<?= $mhjmpli->sku ?>" readonly>
-                                                                                <input type="text" class="skuvaluecc31" value="<?= $mhjmpli->cc31 ?>">
-                                                                                <input type="text" class="skuvaluecc33" value="<?= $mhjmpli->cc33 ?>">
-                                                                                <input type="text" class="skuvaluecc34" value="<?= $mhjmpli->cc34 ?>">
-                                                                                <input type="text" class="skuvaluecc31r" value="<?= $mhjmpli->cc31r ?>">
-                                                                                <input type="text" class="skuvaluecc33r" value="<?= $mhjmpli->cc33r ?>">
-                                                                                <input type="text" class="skuvaluecc34r" value="<?= $mhjmpli->cc34r ?>">
-                                                                                <input type="text" class="skuvalueactivof" value="<?= $mhjmpli->activof ?>">
+                                                                                <input type="hidden" class="skuvaluecc31" value="<?= $mhjmpli->cc31 ?>">
+                                                                                <input type="hidden" class="skuvaluecc33" value="<?= $mhjmpli->cc33 ?>">
+                                                                                <input type="hidden" class="skuvaluecc34" value="<?= $mhjmpli->cc34 ?>">
+                                                                                <input type="hidden" class="skuvaluecc31r" value="<?= $mhjmpli->cc31r ?>">
+                                                                                <input type="hidden" class="skuvaluecc33r" value="<?= $mhjmpli->cc33r ?>">
+                                                                                <input type="hidden" class="skuvaluecc34r" value="<?= $mhjmpli->cc34r ?>">
+                                                                                <input type="hidden" class="skuvalueactivof" value="<?= $mhjmpli->activof ?>">
                                                                                 <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                             <?php else : ?>
                                                                                 <span style="font-size: 1.3em; color: black;"><?= $mhjmpli->sku ?></span>
@@ -6449,6 +6475,7 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="preciomhjmpli-<?= $filasidmhjmpli ?>" name="preciomhjmpli[]" oninput="Calcmhjmpli(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $mhjmpli->precio ?>">
+                                                                                <?= $displayflagisfijo1 ?>
                                                                                 <?php if ($mhjmpli->statusreproceso == 0) : ?>
                                                                                     <i id="flag_reprocess_mhjmpli<?= $filasidmhjmpli ?>"><img class="get_reprocess_mhjmpli check_isfijor" id="<?= $filasidmhjmpli ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_mhjmpli<?= $filasidmhjmpli ?>" style="display:none"><img class="get_normal_mhjmpli check_isfijo" id="<?= $filasidmhjmpli ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -6456,6 +6483,7 @@
                                                                                     <i id="flag_reprocess_mhjmpli<?= $filasidmhjmpli ?>" style="display:none"><img class="get_reprocess_mhjmpli check_isfijor" id="<?= $filasidmhjmpli ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_mhjmpli<?= $filasidmhjmpli ?>"><img class="get_normal_mhjmpli check_isfijo" id="<?= $filasidmhjmpli ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <?php endif ?>
+                                                                                <?= $displayflagisfijo2 ?>
                                                                                 <input type="hidden" name="reprocesstatusmhjmpli[]" size="10" id="status_reprocess_val_mhjmpli<?= $filasidmhjmpli ?>" value="<?= $mhjmpli->statusreproceso ?>">
                                                                                 <input type="hidden" size="10" id="reprocess_id_val_mhjmpli<?= $filasidmhjmpli ?>" value="<?= $mhjmpli->idprincipalproducto2 ?>">
                                                                             <?php else : ?>
@@ -7769,7 +7797,7 @@
                                                                 foreach ($impiso2 as $impi) {
                                                                     $filasidimpi++;
                                                                     $consec++;
-                                                                    if($impi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                    if($impi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                                 ?>
                                                                     <tr id="rowproducto<?= $impi->id ?>" style="justify-content: center; text-align: center">
                                                                         <?php if ($impi->color == 1) : ?>
@@ -7955,13 +7983,13 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_impi[]" type="text" value="<?= $impi->sku ?>" readonly>
-                                                                                <input type="text" class="skuvaluecc31" value="<?= $impi->cc31 ?>">
-                                                                                <input type="text" class="skuvaluecc33" value="<?= $impi->cc33 ?>">
-                                                                                <input type="text" class="skuvaluecc34" value="<?= $impi->cc34 ?>">
-                                                                                <input type="text" class="skuvaluecc31r" value="<?= $impi->cc31r ?>">
-                                                                                <input type="text" class="skuvaluecc33r" value="<?= $impi->cc33r ?>">
-                                                                                <input type="text" class="skuvaluecc34r" value="<?= $impi->cc34r ?>">
-                                                                                <input type="text" class="skuvalueactivof" value="<?= $impi->activof ?>">
+                                                                                <input type="hidden" class="skuvaluecc31" value="<?= $impi->cc31 ?>">
+                                                                                <input type="hidden" class="skuvaluecc33" value="<?= $impi->cc33 ?>">
+                                                                                <input type="hidden" class="skuvaluecc34" value="<?= $impi->cc34 ?>">
+                                                                                <input type="hidden" class="skuvaluecc31r" value="<?= $impi->cc31r ?>">
+                                                                                <input type="hidden" class="skuvaluecc33r" value="<?= $impi->cc33r ?>">
+                                                                                <input type="hidden" class="skuvaluecc34r" value="<?= $impi->cc34r ?>">
+                                                                                <input type="hidden" class="skuvalueactivof" value="<?= $impi->activof ?>">
                                                                                 <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                             <?php else : ?>
                                                                                 <span style="font-size: 1.3em; color: black;"><?= $impi->sku ?></span>
@@ -7989,6 +8017,7 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="precioimpi-<?= $filasidimpi ?>" name="precioimpi[]" oninput="Calcimpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $impi->precio ?>">
+                                                                                <?= $displayflagisfijo1 ?>
                                                                                 <?php if ($impi->statusreproceso == 0) : ?>
                                                                                     <i id="flag_reprocess_impi<?= $filasidimpi ?>"><img class="get_reprocess_impi check_isfijor" id="<?= $filasidimpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_impi<?= $filasidimpi ?>" style="display:none"><img class="get_normal_impi check_isfijo" id="<?= $filasidimpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -7996,6 +8025,7 @@
                                                                                     <i id="flag_reprocess_impi<?= $filasidimpi ?>" style="display:none"><img class="get_reprocess_impi check_isfijor" id="<?= $filasidimpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_impi<?= $filasidimpi ?>"><img class="get_normal_impi check_isfijo" id="<?= $filasidimpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <?php endif ?>
+                                                                                <?= $displayflagisfijo2 ?>
                                                                                 <input type="hidden" name="reprocesstatusimpi[]" size="10" id="status_reprocess_val_impi<?= $filasidimpi ?>" value="<?= $impi->statusreproceso ?>">
                                                                                 <input type="hidden" size="10" id="reprocess_id_val_impi<?= $filasidimpi ?>" value="<?= $impi->idprincipalproducto2 ?>">
                                                                             <?php else : ?>
@@ -8357,7 +8387,7 @@
                                                                 foreach ($imperimetral2 as $impe) {
                                                                     $filasidimpe++;
                                                                     $consec++;
-                                                                    if($impe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                    if($impe->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                                 ?>
                                                                     <tr id="rowproducto<?= $impe->id ?>" style="justify-content: center; text-align: center">
                                                                         <?php if ($impe->color == 1) : ?>
@@ -8543,13 +8573,13 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_impe[]" type="text" value="<?= $impe->sku ?>" readonly>
-                                                                                <input type="text" class="skuvaluecc31" value="<?= $impe->cc31 ?>">
-                                                                                <input type="text" class="skuvaluecc33" value="<?= $impe->cc33 ?>">
-                                                                                <input type="text" class="skuvaluecc34" value="<?= $impe->cc34 ?>">
-                                                                                <input type="text" class="skuvaluecc31r" value="<?= $impe->cc31r ?>">
-                                                                                <input type="text" class="skuvaluecc33r" value="<?= $impe->cc33r ?>">
-                                                                                <input type="text" class="skuvaluecc34r" value="<?= $impe->cc34r ?>">
-                                                                                <input type="text" class="skuvalueactivof" value="<?= $impe->activof ?>">
+                                                                                <input type="hidden" class="skuvaluecc31" value="<?= $impe->cc31 ?>">
+                                                                                <input type="hidden" class="skuvaluecc33" value="<?= $impe->cc33 ?>">
+                                                                                <input type="hidden" class="skuvaluecc34" value="<?= $impe->cc34 ?>">
+                                                                                <input type="hidden" class="skuvaluecc31r" value="<?= $impe->cc31r ?>">
+                                                                                <input type="hidden" class="skuvaluecc33r" value="<?= $impe->cc33r ?>">
+                                                                                <input type="hidden" class="skuvaluecc34r" value="<?= $impe->cc34r ?>">
+                                                                                <input type="hidden" class="skuvalueactivof" value="<?= $impe->activof ?>">
                                                                                 <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                             <?php else : ?>
                                                                                 <span style="font-size: 1.3em; color: black;"><?= $impe->sku ?></span>
@@ -8577,6 +8607,7 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="precioimpe-<?= $filasidimpe ?>" name="precioimpe[]" oninput="Calcimpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $impe->precio ?>">
+                                                                                <?= $displayflagisfijo1 ?>
                                                                                 <?php if ($impe->statusreproceso == 0) : ?>
                                                                                     <i id="flag_reprocess_impe<?= $filasidimpe ?>"><img class="get_reprocess_impe check_isfijor" id="<?= $filasidimpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_impe<?= $filasidimpe ?>" style="display:none"><img class="get_normal_impe check_isfijo" id="<?= $filasidimpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -8584,6 +8615,7 @@
                                                                                     <i id="flag_reprocess_impe<?= $filasidimpe ?>" style="display:none"><img class="get_reprocess_impe check_isfijor" id="<?= $filasidimpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_impe<?= $filasidimpe ?>"><img class="get_normal_impe check_isfijo" id="<?= $filasidimpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <?php endif ?>
+                                                                                <?= $displayflagisfijo2 ?>
                                                                                 <input type="hidden" name="reprocesstatusimpe[]" size="10" id="status_reprocess_val_impe<?= $filasidimpe ?>" value="<?= $impe->statusreproceso ?>">
                                                                                 <input type="hidden" size="10" id="reprocess_id_val_impe<?= $filasidimpe ?>" value="<?= $impe->idprincipalproducto2 ?>">
                                                                             <?php else : ?>
@@ -8945,7 +8977,7 @@
                                                                 foreach ($imherraje2 as $imhe) {
                                                                     $filasidimhe++;
                                                                     $consec++;
-                                                                    if($imhe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                    if($imhe->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                                 ?>
                                                                     <tr id="rowproducto<?= $imhe->id ?>" style="justify-content: center; text-align: center">
                                                                         <?php if ($imhe->color == 1) : ?>
@@ -9131,13 +9163,13 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_imhe[]" type="text" value="<?= $imhe->sku ?>" readonly>
-                                                                                <input type="text" class="skuvaluecc31" value="<?= $imhe->cc31 ?>">
-                                                                                <input type="text" class="skuvaluecc33" value="<?= $imhe->cc33 ?>">
-                                                                                <input type="text" class="skuvaluecc34" value="<?= $imhe->cc34 ?>">
-                                                                                <input type="text" class="skuvaluecc31r" value="<?= $imhe->cc31r ?>">
-                                                                                <input type="text" class="skuvaluecc33r" value="<?= $imhe->cc33r ?>">
-                                                                                <input type="text" class="skuvaluecc34r" value="<?= $imhe->cc34r ?>">
-                                                                                <input type="text" class="skuvalueactivof" value="<?= $imhe->activof ?>">
+                                                                                <input type="hidden" class="skuvaluecc31" value="<?= $imhe->cc31 ?>">
+                                                                                <input type="hidden" class="skuvaluecc33" value="<?= $imhe->cc33 ?>">
+                                                                                <input type="hidden" class="skuvaluecc34" value="<?= $imhe->cc34 ?>">
+                                                                                <input type="hidden" class="skuvaluecc31r" value="<?= $imhe->cc31r ?>">
+                                                                                <input type="hidden" class="skuvaluecc33r" value="<?= $imhe->cc33r ?>">
+                                                                                <input type="hidden" class="skuvaluecc34r" value="<?= $imhe->cc34r ?>">
+                                                                                <input type="hidden" class="skuvalueactivof" value="<?= $imhe->activof ?>">
                                                                                 <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                             <?php else : ?>
                                                                                 <span style="font-size: 1.3em; color: black;"><?= $imhe->sku ?></span>
@@ -9165,6 +9197,7 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="precioimhe-<?= $filasidimhe ?>" name="precioimhe[]" oninput="Calcimhe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $imhe->precio ?>">
+                                                                                <?= $displayflagisfijo1 ?>
                                                                                 <?php if ($imhe->statusreproceso == 0) : ?>
                                                                                     <i id="flag_reprocess_imhe<?= $filasidimhe ?>"><img class="get_reprocess_imhe check_isfijor" id="<?= $filasidimhe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_imhe<?= $filasidimhe ?>" style="display:none"><img class="get_normal_imhe check_isfijo" id="<?= $filasidimhe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -9172,6 +9205,7 @@
                                                                                     <i id="flag_reprocess_imhe<?= $filasidimhe ?>" style="display:none"><img class="get_reprocess_imhe check_isfijor" id="<?= $filasidimhe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_imhe<?= $filasidimhe ?>"><img class="get_normal_imhe check_isfijo" id="<?= $filasidimhe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <?php endif ?>
+                                                                                <?= $displayflagisfijo2 ?>
                                                                                 <input type="hidden" name="reprocesstatusimhe[]" size="10" id="status_reprocess_val_imhe<?= $filasidimhe ?>" value="<?= $imhe->statusreproceso ?>">
                                                                                 <input type="hidden" size="10" id="reprocess_id_val_imhe<?= $filasidimhe ?>" value="<?= $imhe->idprincipalproducto2 ?>">
                                                                             <?php else : ?>
@@ -10184,7 +10218,7 @@
                                                                 foreach ($innpiso2 as $innpi) {
                                                                     $filasidinnpi++;
                                                                     $consec++;
-                                                                    if($innpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                    if($innpi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                                 ?>
                                                                     <tr id="rowproducto<?= $innpi->id ?>" style="justify-content: center; text-align: center">
                                                                         <?php if ($innpi->color == 1) : ?>
@@ -10370,13 +10404,13 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_innpi[]" type="text" value="<?= $innpi->sku ?>" readonly>
-                                                                                <input type="text" class="skuvaluecc31" value="<?= $innpi->cc31 ?>">
-                                                                                <input type="text" class="skuvaluecc33" value="<?= $innpi->cc33 ?>">
-                                                                                <input type="text" class="skuvaluecc34" value="<?= $innpi->cc34 ?>">
-                                                                                <input type="text" class="skuvaluecc31r" value="<?= $innpi->cc31r ?>">
-                                                                                <input type="text" class="skuvaluecc33r" value="<?= $innpi->cc33r ?>">
-                                                                                <input type="text" class="skuvaluecc34r" value="<?= $innpi->cc34r ?>">
-                                                                                <input type="text" class="skuvalueactivof" value="<?= $innpi->activof ?>">
+                                                                                <input type="hidden" class="skuvaluecc31" value="<?= $innpi->cc31 ?>">
+                                                                                <input type="hidden" class="skuvaluecc33" value="<?= $innpi->cc33 ?>">
+                                                                                <input type="hidden" class="skuvaluecc34" value="<?= $innpi->cc34 ?>">
+                                                                                <input type="hidden" class="skuvaluecc31r" value="<?= $innpi->cc31r ?>">
+                                                                                <input type="hidden" class="skuvaluecc33r" value="<?= $innpi->cc33r ?>">
+                                                                                <input type="hidden" class="skuvaluecc34r" value="<?= $innpi->cc34r ?>">
+                                                                                <input type="hidden" class="skuvalueactivof" value="<?= $innpi->activof ?>">
                                                                                 <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                             <?php else : ?>
                                                                                 <span style="font-size: 1.3em; color: black;"><?= $innpi->sku ?></span>
@@ -10404,6 +10438,7 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="precioinnpi-<?= $filasidinnpi ?>" name="precioinnpi[]" oninput="Calcinnpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $innpi->precio ?>">
+                                                                                <?= $displayflagisfijo1 ?>
                                                                                 <?php if ($innpi->statusreproceso == 0) : ?>
                                                                                     <i id="flag_reprocess_innpi<?= $filasidinnpi ?>"><img class="get_reprocess_innpi check_isfijor" id="<?= $filasidinnpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_innpi<?= $filasidinnpi ?>" style="display:none"><img class="get_normal_innpi check_isfijo" id="<?= $filasidinnpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -10411,6 +10446,7 @@
                                                                                     <i id="flag_reprocess_innpi<?= $filasidinnpi ?>" style="display:none"><img class="get_reprocess_innpi check_isfijor" id="<?= $filasidinnpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_innpi<?= $filasidinnpi ?>"><img class="get_normal_innpi check_isfijo" id="<?= $filasidinnpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <?php endif ?>
+                                                                                <?= $displayflagisfijo2 ?>
                                                                                 <input type="hidden" name="reprocesstatusinnpi[]" size="10" id="status_reprocess_val_innpi<?= $filasidinnpi ?>" value="<?= $innpi->statusreproceso ?>">
                                                                                 <input type="hidden" size="10" id="reprocess_id_val_innpi<?= $filasidinnpi ?>" value="<?= $innpi->idprincipalproducto2 ?>">
                                                                             <?php else : ?>
@@ -10772,7 +10808,7 @@
                                                                 foreach ($innperimetral2 as $innpe) {
                                                                     $filasidinnpe++;
                                                                     $consec++;
-                                                                    if($innpe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                    if($innpe->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                                 ?>
                                                                     <tr id="rowproducto<?= $innpe->id ?>" style="justify-content: center; text-align: center">
                                                                         <?php if ($innpe->color == 1) : ?>
@@ -10958,13 +10994,13 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_innpe[]" type="text" value="<?= $innpe->sku ?>" readonly>
-                                                                                <input type="text" class="skuvaluecc31" value="<?= $innpe->cc31 ?>">
-                                                                                <input type="text" class="skuvaluecc33" value="<?= $innpe->cc33 ?>">
-                                                                                <input type="text" class="skuvaluecc34" value="<?= $innpe->cc34 ?>">
-                                                                                <input type="text" class="skuvaluecc31r" value="<?= $innpe->cc31r ?>">
-                                                                                <input type="text" class="skuvaluecc33r" value="<?= $innpe->cc33r ?>">
-                                                                                <input type="text" class="skuvaluecc34r" value="<?= $innpe->cc34r ?>">
-                                                                                <input type="text" class="skuvalueactivof" value="<?= $innpe->activof ?>">
+                                                                                <input type="hidden" class="skuvaluecc31" value="<?= $innpe->cc31 ?>">
+                                                                                <input type="hidden" class="skuvaluecc33" value="<?= $innpe->cc33 ?>">
+                                                                                <input type="hidden" class="skuvaluecc34" value="<?= $innpe->cc34 ?>">
+                                                                                <input type="hidden" class="skuvaluecc31r" value="<?= $innpe->cc31r ?>">
+                                                                                <input type="hidden" class="skuvaluecc33r" value="<?= $innpe->cc33r ?>">
+                                                                                <input type="hidden" class="skuvaluecc34r" value="<?= $innpe->cc34r ?>">
+                                                                                <input type="hidden" class="skuvalueactivof" value="<?= $innpe->activof ?>">
                                                                                 <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                             <?php else : ?>
                                                                                 <span style="font-size: 1.3em; color: black;"><?= $innpe->sku ?></span>
@@ -10992,6 +11028,7 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="precioinnpe-<?= $filasidinnpe ?>" name="precioinnpe[]" oninput="Calcinnpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $innpe->precio ?>">
+                                                                                <?= $displayflagisfijo1 ?>
                                                                                 <?php if ($innpe->statusreproceso == 0) : ?>
                                                                                     <i id="flag_reprocess_innpe<?= $filasidinnpe ?>"><img class="get_reprocess_innpe check_isfijor" id="<?= $filasidinnpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_innpe<?= $filasidinnpe ?>" style="display:none"><img class="get_normal_innpe check_isfijo" id="<?= $filasidinnpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -10999,6 +11036,7 @@
                                                                                     <i id="flag_reprocess_innpe<?= $filasidinnpe ?>" style="display:none"><img class="get_reprocess_innpe check_isfijor" id="<?= $filasidinnpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_innpe<?= $filasidinnpe ?>"><img class="get_normal_innpe check_isfijo" id="<?= $filasidinnpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <?php endif ?>
+                                                                                <?= $displayflagisfijo2 ?>
                                                                                 <input type="hidden" name="reprocesstatusinnpe[]" size="10" id="status_reprocess_val_innpe<?= $filasidinnpe ?>" value="<?= $innpe->statusreproceso ?>">
                                                                                 <input type="hidden" size="10" id="reprocess_id_val_innpe<?= $filasidinnpe ?>" value="<?= $innpe->idprincipalproducto2 ?>">
                                                                             <?php else : ?>
@@ -12012,7 +12050,7 @@
                                                                 foreach ($tnnbpiso2 as $tnnbpi) {
                                                                     $filasidtnnbpi++;
                                                                     $consec++;
-                                                                    if($tnnbpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                    if($tnnbpi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                                 ?>
                                                                     <tr id="rowproducto<?= $tnnbpi->id ?>" style="justify-content: center; text-align: center">
                                                                         <?php if ($tnnbpi->color == 1) : ?>
@@ -12198,13 +12236,13 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpi[]" type="text" value="<?= $tnnbpi->sku ?>" readonly>
-                                                                                <input type="text" class="skuvaluecc31" value="<?= $tnnbpi->cc31 ?>">
-                                                                                <input type="text" class="skuvaluecc33" value="<?= $tnnbpi->cc33 ?>">
-                                                                                <input type="text" class="skuvaluecc34" value="<?= $tnnbpi->cc34 ?>">
-                                                                                <input type="text" class="skuvaluecc31r" value="<?= $tnnbpi->cc31r ?>">
-                                                                                <input type="text" class="skuvaluecc33r" value="<?= $tnnbpi->cc33r ?>">
-                                                                                <input type="text" class="skuvaluecc34r" value="<?= $tnnbpi->cc34r ?>">
-                                                                                <input type="text" class="skuvalueactivof" value="<?= $tnnbpi->activof ?>">
+                                                                                <input type="hidden" class="skuvaluecc31" value="<?= $tnnbpi->cc31 ?>">
+                                                                                <input type="hidden" class="skuvaluecc33" value="<?= $tnnbpi->cc33 ?>">
+                                                                                <input type="hidden" class="skuvaluecc34" value="<?= $tnnbpi->cc34 ?>">
+                                                                                <input type="hidden" class="skuvaluecc31r" value="<?= $tnnbpi->cc31r ?>">
+                                                                                <input type="hidden" class="skuvaluecc33r" value="<?= $tnnbpi->cc33r ?>">
+                                                                                <input type="hidden" class="skuvaluecc34r" value="<?= $tnnbpi->cc34r ?>">
+                                                                                <input type="hidden" class="skuvalueactivof" value="<?= $tnnbpi->activof ?>">
                                                                                 <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                             <?php else : ?>
                                                                                 <span style="font-size: 1.3em; color: black;"><?= $tnnbpi->sku ?></span>
@@ -12232,6 +12270,7 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="preciotnnbpi-<?= $filasidtnnbpi ?>" name="preciotnnbpi[]" oninput="Calctnnbpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $tnnbpi->precio ?>">
+                                                                                <?= $displayflagisfijo1 ?>
                                                                                 <?php if ($tnnbpi->statusreproceso == 0) : ?>
                                                                                     <i id="flag_reprocess_tnnbpi<?= $filasidtnnbpi ?>"><img class="get_reprocess_tnnbpi check_isfijor" id="<?= $filasidtnnbpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_tnnbpi<?= $filasidtnnbpi ?>" style="display:none"><img class="get_normal_tnnbpi check_isfijo" id="<?= $filasidtnnbpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -12239,6 +12278,7 @@
                                                                                     <i id="flag_reprocess_tnnbpi<?= $filasidtnnbpi ?>" style="display:none"><img class="get_reprocess_tnnbpi check_isfijor" id="<?= $filasidtnnbpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_tnnbpi<?= $filasidtnnbpi ?>"><img class="get_normal_tnnbpi check_isfijo" id="<?= $filasidtnnbpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <?php endif ?>
+                                                                                <?= $displayflagisfijo2 ?>
                                                                                 <input type="hidden" name="reprocesstatustnnbpi[]" size="10" id="status_reprocess_val_tnnbpi<?= $filasidtnnbpi ?>" value="<?= $tnnbpi->statusreproceso ?>">
                                                                                 <input type="hidden" size="10" id="reprocess_id_val_tnnbpi<?= $filasidtnnbpi ?>" value="<?= $tnnbpi->idprincipalproducto2 ?>">
                                                                             <?php else : ?>
@@ -12600,7 +12640,7 @@
                                                                 foreach ($tnnbperimetral2 as $tnnbpe) {
                                                                     $filasidtnnbpe++;
                                                                     $consec++;
-                                                                    if($tnnbpe->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                    if($tnnbpe->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                                 ?>
                                                                     <tr id="rowproducto<?= $tnnbpe->id ?>" style="justify-content: center; text-align: center">
                                                                         <?php if ($tnnbpe->color == 1) : ?>
@@ -12786,13 +12826,13 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_tnnbpe[]" type="text" value="<?= $tnnbpe->sku ?>" readonly>
-                                                                                <input type="text" class="skuvaluecc31" value="<?= $tnnbpe->cc31 ?>">
-                                                                                <input type="text" class="skuvaluecc33" value="<?= $tnnbpe->cc33 ?>">
-                                                                                <input type="text" class="skuvaluecc34" value="<?= $tnnbpe->cc34 ?>">
-                                                                                <input type="text" class="skuvaluecc31r" value="<?= $tnnbpe->cc31r ?>">
-                                                                                <input type="text" class="skuvaluecc33r" value="<?= $tnnbpe->cc33r ?>">
-                                                                                <input type="text" class="skuvaluecc34r" value="<?= $tnnbpe->cc34r ?>">
-                                                                                <input type="text" class="skuvalueactivof" value="<?= $tnnbpe->activof ?>">
+                                                                                <input type="hidden" class="skuvaluecc31" value="<?= $tnnbpe->cc31 ?>">
+                                                                                <input type="hidden" class="skuvaluecc33" value="<?= $tnnbpe->cc33 ?>">
+                                                                                <input type="hidden" class="skuvaluecc34" value="<?= $tnnbpe->cc34 ?>">
+                                                                                <input type="hidden" class="skuvaluecc31r" value="<?= $tnnbpe->cc31r ?>">
+                                                                                <input type="hidden" class="skuvaluecc33r" value="<?= $tnnbpe->cc33r ?>">
+                                                                                <input type="hidden" class="skuvaluecc34r" value="<?= $tnnbpe->cc34r ?>">
+                                                                                <input type="hidden" class="skuvalueactivof" value="<?= $tnnbpe->activof ?>">
                                                                                 <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                             <?php else : ?>
                                                                                 <span style="font-size: 1.3em; color: black;"><?= $tnnbpe->sku ?></span>
@@ -12820,6 +12860,7 @@
                                                                         <td>
                                                                             <?php if ($ius->rolusuario == 1) : ?>
                                                                                 <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="preciotnnbpe-<?= $filasidtnnbpe ?>" name="preciotnnbpe[]" oninput="Calctnnbpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $tnnbpe->precio ?>">
+                                                                                <?= $displayflagisfijo1 ?>
                                                                                 <?php if ($tnnbpe->statusreproceso == 0) : ?>
                                                                                     <i id="flag_reprocess_tnnbpe<?= $filasidtnnbpe ?>"><img class="get_reprocess_tnnbpe check_isfijor" id="<?= $filasidtnnbpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_tnnbpe<?= $filasidtnnbpe ?>" style="display:none"><img class="get_normal_tnnbpe check_isfijo" id="<?= $filasidtnnbpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -12827,6 +12868,7 @@
                                                                                     <i id="flag_reprocess_tnnbpe<?= $filasidtnnbpe ?>" style="display:none"><img class="get_reprocess_tnnbpe check_isfijor" id="<?= $filasidtnnbpe ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                     <i id="flag_normal_tnnbpe<?= $filasidtnnbpe ?>"><img class="get_normal_tnnbpe check_isfijo" id="<?= $filasidtnnbpe ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <?php endif ?>
+                                                                                <?= $displayflagisfijo2 ?>
                                                                                 <input type="hidden" name="reprocesstatustnnbpe[]" size="10" id="status_reprocess_val_tnnbpe<?= $filasidtnnbpe ?>" value="<?= $tnnbpe->statusreproceso ?>">
                                                                                 <input type="hidden" size="10" id="reprocess_id_val_tnnbpe<?= $filasidtnnbpe ?>" value="<?= $tnnbpe->idprincipalproducto2 ?>">
                                                                             <?php else : ?>
@@ -13264,7 +13306,7 @@
                                                             foreach ($hernoaplica2 as $herna) {
                                                                 $filasidherna++;
                                                                 $consec++;
-                                                                if($herna->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                if($herna->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                             ?>
                                                                 <tr id="rowproducto<?= $herna->id ?>" style="justify-content: center; text-align: center">
                                                                     <?php if ($herna->color == 1) : ?>
@@ -13450,13 +13492,13 @@
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
                                                                             <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_herna[]" type="text" value="<?= $herna->sku ?>" readonly>
-                                                                            <input type="text" class="skuvaluecc31" value="<?= $herna->cc31 ?>">
-                                                                            <input type="text" class="skuvaluecc33" value="<?= $herna->cc33 ?>">
-                                                                            <input type="text" class="skuvaluecc34" value="<?= $herna->cc34 ?>">
-                                                                            <input type="text" class="skuvaluecc31r" value="<?= $herna->cc31r ?>">
-                                                                            <input type="text" class="skuvaluecc33r" value="<?= $herna->cc33r ?>">
-                                                                            <input type="text" class="skuvaluecc34r" value="<?= $herna->cc34r ?>">
-                                                                            <input type="text" class="skuvalueactivof" value="<?= $herna->activof ?>">
+                                                                            <input type="hidden" class="skuvaluecc31" value="<?= $herna->cc31 ?>">
+                                                                            <input type="hidden" class="skuvaluecc33" value="<?= $herna->cc33 ?>">
+                                                                            <input type="hidden" class="skuvaluecc34" value="<?= $herna->cc34 ?>">
+                                                                            <input type="hidden" class="skuvaluecc31r" value="<?= $herna->cc31r ?>">
+                                                                            <input type="hidden" class="skuvaluecc33r" value="<?= $herna->cc33r ?>">
+                                                                            <input type="hidden" class="skuvaluecc34r" value="<?= $herna->cc34r ?>">
+                                                                            <input type="hidden" class="skuvalueactivof" value="<?= $herna->activof ?>">
                                                                             <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                         <?php else : ?>
                                                                             <span style="font-size: 1.3em; color: black;"><?= $herna->sku ?></span>
@@ -13484,6 +13526,7 @@
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
                                                                             <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="precioherna-<?= $filasidherna ?>" name="precioherna[]" oninput="Calcherna(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $herna->precio ?>">
+                                                                            <?= $displayflagisfijo1 ?>
                                                                             <?php if ($herna->statusreproceso == 0) : ?>
                                                                                 <i id="flag_reprocess_herna<?= $filasidherna ?>"><img class="get_reprocess_herna check_isfijor" id="<?= $filasidherna ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <i id="flag_normal_herna<?= $filasidherna ?>" style="display:none"><img class="get_normal_herna check_isfijo" id="<?= $filasidherna ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -13491,6 +13534,7 @@
                                                                                 <i id="flag_reprocess_herna<?= $filasidherna ?>" style="display:none"><img class="get_reprocess_herna check_isfijor" id="<?= $filasidherna ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <i id="flag_normal_herna<?= $filasidherna ?>"><img class="get_normal_herna check_isfijo" id="<?= $filasidherna ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                             <?php endif ?>
+                                                                            <?= $displayflagisfijo2 ?>
                                                                             <input type="hidden" name="reprocesstatusherna[]" size="10" id="status_reprocess_val_herna<?= $filasidherna ?>" value="<?= $herna->statusreproceso ?>">
                                                                             <input type="hidden" size="10" id="reprocess_id_val_herna<?= $filasidherna ?>" value="<?= $herna->idprincipalproducto2 ?>">
                                                                         <?php else : ?>
@@ -13925,7 +13969,7 @@
                                                             foreach ($probmpiso2 as $probmpi) {
                                                                 $filasidprobmpi++;
                                                                 $consec++;
-                                                                if($probmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                if($probmpi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                             ?>
                                                                 <tr id="rowproducto<?= $probmpi->id ?>" style="justify-content: center; text-align: center">
                                                                     <?php if ($probmpi->color == 1) : ?>
@@ -14111,13 +14155,13 @@
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
                                                                             <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_probmpi[]" type="text" value="<?= $probmpi->sku ?>" readonly>
-                                                                            <input type="text" class="skuvaluecc31" value="<?= $probmpi->cc31 ?>">
-                                                                            <input type="text" class="skuvaluecc33" value="<?= $probmpi->cc33 ?>">
-                                                                            <input type="text" class="skuvaluecc34" value="<?= $probmpi->cc34 ?>">
-                                                                            <input type="text" class="skuvaluecc31r" value="<?= $probmpi->cc31r ?>">
-                                                                            <input type="text" class="skuvaluecc33r" value="<?= $probmpi->cc33r ?>">
-                                                                            <input type="text" class="skuvaluecc34r" value="<?= $probmpi->cc34r ?>">
-                                                                            <input type="text" class="skuvalueactivof" value="<?= $probmpi->activof ?>">
+                                                                            <input type="hidden" class="skuvaluecc31" value="<?= $probmpi->cc31 ?>">
+                                                                            <input type="hidden" class="skuvaluecc33" value="<?= $probmpi->cc33 ?>">
+                                                                            <input type="hidden" class="skuvaluecc34" value="<?= $probmpi->cc34 ?>">
+                                                                            <input type="hidden" class="skuvaluecc31r" value="<?= $probmpi->cc31r ?>">
+                                                                            <input type="hidden" class="skuvaluecc33r" value="<?= $probmpi->cc33r ?>">
+                                                                            <input type="hidden" class="skuvaluecc34r" value="<?= $probmpi->cc34r ?>">
+                                                                            <input type="hidden" class="skuvalueactivof" value="<?= $probmpi->activof ?>">
                                                                             <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                         <?php else : ?>
                                                                             <span style="font-size: 1.3em; color: black;"><?= $probmpi->sku ?></span>
@@ -14145,6 +14189,7 @@
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
                                                                             <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="precioprobmpi-<?= $filasidprobmpi ?>" name="precioprobmpi[]" oninput="Calcprobmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $probmpi->precio ?>">
+                                                                            <?= $displayflagisfijo1 ?>
                                                                             <?php if ($probmpi->statusreproceso == 0) : ?>
                                                                                 <i id="flag_reprocess_probmpi<?= $filasidprobmpi ?>"><img class="get_reprocess_probmpi check_isfijor" id="<?= $filasidprobmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <i id="flag_normal_probmpi<?= $filasidprobmpi ?>" style="display:none"><img class="get_normal_probmpi check_isfijo" id="<?= $filasidprobmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -14152,6 +14197,7 @@
                                                                                 <i id="flag_reprocess_probmpi<?= $filasidprobmpi ?>" style="display:none"><img class="get_reprocess_probmpi check_isfijor" id="<?= $filasidprobmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <i id="flag_normal_probmpi<?= $filasidprobmpi ?>"><img class="get_normal_probmpi check_isfijo" id="<?= $filasidprobmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                             <?php endif ?>
+                                                                            <?= $displayflagisfijo2 ?>
                                                                             <input type="hidden" name="reprocesstatusprobmpi[]" size="10" id="status_reprocess_val_probmpi<?= $filasidprobmpi ?>" value="<?= $probmpi->statusreproceso ?>">
                                                                             <input type="hidden" size="10" id="reprocess_id_val_probmpi<?= $filasidprobmpi ?>" value="<?= $probmpi->idprincipalproducto2 ?>">
                                                                         <?php else : ?>
@@ -14593,7 +14639,7 @@
                                                             foreach ($panmpiso2 as $panmpi) {
                                                                 $filasidpanmpi++;
                                                                 $consec++;
-                                                                if($panmpi->activof !== '') { $isfijo = 1; }else{ $isfijo = 0; }
+                                                                if($panmpi->activof !== '') { $isfijo = 1; $displayflagisfijo1 = "<div style='display:none'>"; $displayflagisfijo2 = "</div>";}else{ $isfijo = 0; $displayflagisfijo1 = ""; $displayflagisfijo2 = "";}
                                                             ?>
                                                                 <tr id="rowproducto<?= $panmpi->id ?>" style="justify-content: center; text-align: center">
                                                                     <?php if ($panmpi->color == 1) : ?>
@@ -14779,13 +14825,13 @@
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
                                                                             <input class="skuvalueinsert" size="11" style="font-size: 1.3em; color: black;" name="sku_panmpi[]" type="text" value="<?= $panmpi->sku ?>" readonly>
-                                                                            <input type="text" class="skuvaluecc31" value="<?= $panmpi->cc31 ?>">
-                                                                            <input type="text" class="skuvaluecc33" value="<?= $panmpi->cc33 ?>">
-                                                                            <input type="text" class="skuvaluecc34" value="<?= $panmpi->cc34 ?>">
-                                                                            <input type="text" class="skuvaluecc31r" value="<?= $panmpi->cc31r ?>">
-                                                                            <input type="text" class="skuvaluecc33r" value="<?= $panmpi->cc33r ?>">
-                                                                            <input type="text" class="skuvaluecc34r" value="<?= $panmpi->cc34r ?>">
-                                                                            <input type="text" class="skuvalueactivof" value="<?= $panmpi->activof ?>">
+                                                                            <input type="hidden" class="skuvaluecc31" value="<?= $panmpi->cc31 ?>">
+                                                                            <input type="hidden" class="skuvaluecc33" value="<?= $panmpi->cc33 ?>">
+                                                                            <input type="hidden" class="skuvaluecc34" value="<?= $panmpi->cc34 ?>">
+                                                                            <input type="hidden" class="skuvaluecc31r" value="<?= $panmpi->cc31r ?>">
+                                                                            <input type="hidden" class="skuvaluecc33r" value="<?= $panmpi->cc33r ?>">
+                                                                            <input type="hidden" class="skuvaluecc34r" value="<?= $panmpi->cc34r ?>">
+                                                                            <input type="hidden" class="skuvalueactivof" value="<?= $panmpi->activof ?>">
                                                                             <i class="isfijoval" isfijo="<?= $isfijo ?>"></i>
                                                                         <?php else : ?>
                                                                             <span style="font-size: 1.3em; color: black;"><?= $panmpi->sku ?></span>
@@ -14813,6 +14859,7 @@
                                                                     <td>
                                                                         <?php if ($ius->rolusuario == 1) : ?>
                                                                             <input size="10" style="font-size: 1.3em; color: black" type="text" inputmode="numeric" placeholder="0" required id="preciopanmpi-<?= $filasidpanmpi ?>" name="preciopanmpi[]" oninput="Calcpanmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="<?= $panmpi->precio ?>">
+                                                                            <?= $displayflagisfijo1 ?>
                                                                             <?php if ($panmpi->statusreproceso == 0) : ?>
                                                                                 <i id="flag_reprocess_panmpi<?= $filasidpanmpi ?>"><img class="get_reprocess_panmpi check_isfijor" id="<?= $filasidpanmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <i id="flag_normal_panmpi<?= $filasidpanmpi ?>" style="display:none"><img class="get_normal_panmpi check_isfijo" id="<?= $filasidpanmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
@@ -14820,6 +14867,7 @@
                                                                                 <i id="flag_reprocess_panmpi<?= $filasidpanmpi ?>" style="display:none"><img class="get_reprocess_panmpi check_isfijor" id="<?= $filasidpanmpi ?>" src="<?= base_url() ?>assets/img/reprocess_on.png" style="width: 20px; cursor:pointer;"></i>
                                                                                 <i id="flag_normal_panmpi<?= $filasidpanmpi ?>"><img class="get_normal_panmpi check_isfijo" id="<?= $filasidpanmpi ?>" src="<?= base_url() ?>assets/img/reprocess_off.png" style="width: 20px; cursor:pointer;"></i>
                                                                             <?php endif ?>
+                                                                            <?= $displayflagisfijo2 ?>
                                                                             <input type="hidden" name="reprocesstatuspanmpi[]" size="10" id="status_reprocess_val_panmpi<?= $filasidpanmpi ?>" value="<?= $panmpi->statusreproceso ?>">
                                                                             <input type="hidden" size="10" id="reprocess_id_val_panmpi<?= $filasidpanmpi ?>" value="<?= $panmpi->idprincipalproducto2 ?>">
                                                                         <?php else : ?>
@@ -18696,3 +18744,41 @@
     });
     
 </script>
+<style>
+    /* Estilo para los radio buttons */
+    .radio-btn {
+        opacity: 0;
+    }
+
+    .radio-btn+label {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333;
+        display: inline-block;
+    }
+
+    .radio-btn+label:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #3498db;
+        border-radius: 50%;
+        background-color: #fff;
+        transition: background 0.3s;
+    }
+
+    .radio-btn:checked+label:before {
+        background-color: #3498db;
+        border-color: #3498db;
+    }
+
+    .radio-label {
+        margin-left: 10px;
+    }
+</style>
