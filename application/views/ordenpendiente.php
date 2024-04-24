@@ -9094,15 +9094,19 @@
                     </div>
                     <input type="hidden" name="color_ent_[]" id="color_values_ent` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreent` + i + `" name="nombreent[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="entincluye[]" id="entincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_ent` + i + `" placeholder="sku" value="" name="sku_ent[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31ent` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33ent` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34ent` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31entr` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33entr` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34entr` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofent` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreent` + i + `" name="nombreent[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="entincluye[]" id="entincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezaent` + i + `" name="piezaent[]" oninput="Calcent(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -9155,8 +9159,12 @@
             var newcc33 = document.getElementById('newcc33ent' + row_id2).value;
             var newcc34 = document.getElementById('newcc34ent' + row_id2).value;
             var new_sku = document.getElementById('new_sku_ent' + row_id2).value;
+            var newcc31r = document.getElementById('newcc31entr' + row_id2).value;
+            var newcc33r = document.getElementById('newcc33entr' + row_id2).value;
+            var newcc34r = document.getElementById('newcc34entr' + row_id2).value;
+            var activof = document.getElementById('newactivofent' + row_id2).value;
 
-            if (nombreent == "" || piezaent == "" || piezaent == "0" || unidadent == "" || precioent == "" || precioent == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombreent == "" || piezaent == "" || piezaent == "0" || unidadent == "" || precioent == "" || precioent == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowent' + row_id2 + '').css('background-color', '#FFE17A');
             } else {
@@ -9214,6 +9222,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -9221,6 +9233,10 @@
                                         $('#newcc31ent' + row_id2).prop('type', 'hidden');
                                         $('#newcc33ent' + row_id2).prop('type', 'hidden');
                                         $('#newcc34ent' + row_id2).prop('type', 'hidden');
+                                        $('#newcc31entr' + row_id2).prop('type', 'hidden');
+                                        $('#newcc33entr' + row_id2).prop('type', 'hidden');
+                                        $('#newcc34entr' + row_id2).prop('type', 'hidden');
+                                        $('#newactivofent' + row_id2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -9402,15 +9418,19 @@
                     </div>
                     <input type="hidden" name="color_dcmpi_[]" id="color_values_dcmpi` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombredcmpi` + i + `" name="nombredcmpi[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="dcmpiincluye[]" id="dcmpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_dcmpi` + i + `" placeholder="sku" value="" name="sku_dcmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31dcmpi` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33dcmpi` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34dcmpi` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31dcmpir` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33dcmpir` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34dcmpir` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofdcmpi` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombredcmpi` + i + `" name="nombredcmpi[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="dcmpiincluye[]" id="dcmpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezadcmpi` + i + `" name="piezadcmpi[]" oninput="Calcdcmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -9463,8 +9483,12 @@
             var newcc33 = document.getElementById('newcc33dcmpi' + row_iddcmpi2).value;
             var newcc34 = document.getElementById('newcc34dcmpi' + row_iddcmpi2).value;
             var new_sku = document.getElementById('new_sku_dcmpi' + row_iddcmpi2).value;
+            var newcc31r = document.getElementById('newcc31dcmpir' + row_iddcmpi2).value;
+            var newcc33r = document.getElementById('newcc33dcmpir' + row_iddcmpi2).value;
+            var newcc34r = document.getElementById('newcc34dcmpir' + row_iddcmpi2).value;
+            var activof = document.getElementById('newactivofdcmpi' + row_iddcmpi2).value;
 
-            if (nombredcmpi == "" || piezadcmpi == "" || piezadcmpi == "0" || unidaddcmpi == "" || preciodcmpi == "" || preciodcmpi == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombredcmpi == "" || piezadcmpi == "" || piezadcmpi == "0" || unidaddcmpi == "" || preciodcmpi == "" || preciodcmpi == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowdcmpi' + row_iddcmpi2 + '').css('background-color', '#FFE17A');
             } else {
@@ -9522,6 +9546,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -9529,6 +9557,10 @@
                                         $('#newcc31dcmpi' + row_iddcmpi2).prop('type', 'hidden');
                                         $('#newcc33dcmpi' + row_iddcmpi2).prop('type', 'hidden');
                                         $('#newcc34dcmpi' + row_iddcmpi2).prop('type', 'hidden');
+                                        $('#newcc31dcmpir' + row_iddcmpi2).prop('type', 'hidden');
+                                        $('#newcc33dcmpir' + row_iddcmpi2).prop('type', 'hidden');
+                                        $('#newcc34dcmpir' + row_iddcmpi2).prop('type', 'hidden');
+                                        $('#newactivofdcmpi' + row_iddcmpi2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -9710,15 +9742,19 @@
                     </div>
                     <input type="hidden" name="color_dcmpe_[]" id="color_values_dcmpe` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombredcmpe` + i + `" name="nombredcmpe[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="dcmpeincluye[]" id="dcmpeincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_dcmpe` + i + `" placeholder="sku" value="" name="sku_dcmpe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31dcmpe` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33dcmpe` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34dcmpe` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31dcmper` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33dcmper` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34dcmper` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofdcmpe` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombredcmpe` + i + `" name="nombredcmpe[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="dcmpeincluye[]" id="dcmpeincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezadcmpe` + i + `" name="piezadcmpe[]" oninput="Calcdcmpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -9771,8 +9807,12 @@
             var newcc33 = document.getElementById('newcc33dcmpe' + row_iddcmpe2).value;
             var newcc34 = document.getElementById('newcc34dcmpe' + row_iddcmpe2).value;
             var new_sku = document.getElementById('new_sku_dcmpe' + row_iddcmpe2).value;
+            var newcc31r = document.getElementById('newcc31dcmper' + row_iddcmpe2).value;
+            var newcc33r = document.getElementById('newcc33dcmper' + row_iddcmpe2).value;
+            var newcc34r = document.getElementById('newcc34dcmper' + row_iddcmpe2).value;
+            var activof = document.getElementById('newactivofdcmpe' + row_iddcmpe2).value;
 
-            if (nombredcmpe == "" || piezadcmpe == "" || piezadcmpe == "0" || unidaddcmpe == "" || preciodcmpe == "" || preciodcmpe == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombredcmpe == "" || piezadcmpe == "" || piezadcmpe == "0" || unidaddcmpe == "" || preciodcmpe == "" || preciodcmpe == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowdcmpe' + row_iddcmpe2 + '').css('background-color', '#FFE17A');
             } else {
@@ -9829,6 +9869,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -9836,6 +9880,10 @@
                                         $('#newcc31dcmpe' + row_iddcmpe2).prop('type', 'hidden');
                                         $('#newcc33dcmpe' + row_iddcmpe2).prop('type', 'hidden');
                                         $('#newcc34dcmpe' + row_iddcmpe2).prop('type', 'hidden');
+                                        $('#newcc31dcmper' + row_iddcmpe2).prop('type', 'hidden');
+                                        $('#newcc33dcmper' + row_iddcmpe2).prop('type', 'hidden');
+                                        $('#newcc34dcmper' + row_iddcmpe2).prop('type', 'hidden');
+                                        $('#newactivofdcmpe' + row_iddcmpe2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -10017,15 +10065,19 @@
                     </div>
                     <input type="hidden" name="color_mhjmpi_[]" id="color_values_mhjmpi` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombremhjmpi` + i + `" name="nombremhjmpi[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="mhjmpiincluye[]" id="mhjmpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_mhjmpi` + i + `" placeholder="sku" value="" name="sku_mhjmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31mhjmpi` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33mhjmpi` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34mhjmpi` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31mhjmpir` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33mhjmpir` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34mhjmpir` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofmhjmpi` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombremhjmpi` + i + `" name="nombremhjmpi[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="mhjmpiincluye[]" id="mhjmpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezamhjmpi` + i + `" name="piezamhjmpi[]" oninput="Calcmhjmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -10078,8 +10130,12 @@
             var newcc33 = document.getElementById('newcc33mhjmpi' + row_idmhjmpi2).value;
             var newcc34 = document.getElementById('newcc34mhjmpi' + row_idmhjmpi2).value;
             var new_sku = document.getElementById('new_sku_mhjmpi' + row_idmhjmpi2).value;
+            var newcc31r = document.getElementById('newcc31mhjmpir' + row_idmhjmpi2).value;
+            var newcc33r = document.getElementById('newcc33mhjmpir' + row_idmhjmpi2).value;
+            var newcc34r = document.getElementById('newcc34mhjmpir' + row_idmhjmpi2).value;
+            var activof = document.getElementById('newactivofmhjmpi' + row_idmhjmpi2).value;
 
-            if (nombremhjmpi == "" || piezamhjmpi == "" || piezamhjmpi == "0" || unidadmhjmpi == "" || preciomhjmpi == "" || preciomhjmpi == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombremhjmpi == "" || piezamhjmpi == "" || piezamhjmpi == "0" || unidadmhjmpi == "" || preciomhjmpi == "" || preciomhjmpi == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowmhjmpi' + row_idmhjmpi2 + '').css('background-color', '#FFE17A');
             } else {
@@ -10137,6 +10193,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -10144,6 +10204,10 @@
                                         $('#newcc31mhjmpi' + row_idmhjmpi2).prop('type', 'hidden');
                                         $('#newcc33mhjmpi' + row_idmhjmpi2).prop('type', 'hidden');
                                         $('#newcc34mhjmpi' + row_idmhjmpi2).prop('type', 'hidden');
+                                        $('#newcc31mhjmpir' + row_idmhjmpi2).prop('type', 'hidden');
+                                        $('#newcc33mhjmpir' + row_idmhjmpi2).prop('type', 'hidden');
+                                        $('#newcc34mhjmpir' + row_idmhjmpi2).prop('type', 'hidden');
+                                        $('#newactivofmhjmpi' + row_idmhjmpi2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -10325,15 +10389,19 @@
                     </div>
                     <input type="hidden" name="color_mhjmpe_[]" id="color_values_mhjmpe` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombremhjmpe` + i + `" name="nombremhjmpe[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="mhjmpeincluye[]" id="mhjmpeincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_mhjmpe` + i + `" placeholder="sku" value="" name="sku_mhjmpe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31mhjmpe` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33mhjmpe` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34mhjmpe` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31mhjmper` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33mhjmper` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34mhjmper` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofmhjmpe` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombremhjmpe` + i + `" name="nombremhjmpe[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="mhjmpeincluye[]" id="mhjmpeincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezamhjmpe` + i + `" name="piezamhjmpe[]" oninput="Calcmhjmpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -10386,8 +10454,12 @@
             var newcc33 = document.getElementById('newcc33mhjmpe' + row_idmhjmpe2).value;
             var newcc34 = document.getElementById('newcc34mhjmpe' + row_idmhjmpe2).value;
             var new_sku = document.getElementById('new_sku_mhjmpe' + row_idmhjmpe2).value;
+            var newcc31r = document.getElementById('newcc31mhjmper' + row_idmhjmpe2).value;
+            var newcc33r = document.getElementById('newcc33mhjmper' + row_idmhjmpe2).value;
+            var newcc34r = document.getElementById('newcc34mhjmper' + row_idmhjmpe2).value;
+            var activof = document.getElementById('newactivofmhjmpe' + row_idmhjmpe2).value;
 
-            if (nombremhjmpe == "" || piezamhjmpe == "" || piezamhjmpe == "0" || unidadmhjmpe == "" || preciomhjmpe == "" || preciomhjmpe == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombremhjmpe == "" || piezamhjmpe == "" || piezamhjmpe == "0" || unidadmhjmpe == "" || preciomhjmpe == "" || preciomhjmpe == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowmhjmpe' + row_idmhjmpe2 + '').css('background-color', '#FFE17A');
             } else {
@@ -10445,6 +10517,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -10452,6 +10528,10 @@
                                         $('#newcc31mhjmpe' + row_idmhjmpe2).prop('type', 'hidden');
                                         $('#newcc33mhjmpe' + row_idmhjmpe2).prop('type', 'hidden');
                                         $('#newcc34mhjmpe' + row_idmhjmpe2).prop('type', 'hidden');
+                                        $('#newcc31mhjmper' + row_idmhjmpe2).prop('type', 'hidden');
+                                        $('#newcc33mhjmper' + row_idmhjmpe2).prop('type', 'hidden');
+                                        $('#newcc34mhjmper' + row_idmhjmpe2).prop('type', 'hidden');
+                                        $('#newactivofmhjmpe' + row_idmhjmpe2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -10633,15 +10713,19 @@
                     </div>
                     <input type="hidden" name="color_mhjmpje_[]" id="color_values_mhjmpje` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombremhjmpje` + i + `" name="nombremhjmpje[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="mhjmpjeincluye[]" id="mhjmpjeincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_mhjmpje` + i + `" placeholder="sku" value="" name="sku_mhjmpje[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31mhjmpje` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33mhjmpje` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34mhjmpje` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31mhjmpjer` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33mhjmpjer` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34mhjmpjer` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofmhjmpje` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombremhjmpje` + i + `" name="nombremhjmpje[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="mhjmpjeincluye[]" id="mhjmpjeincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezamhjmpje` + i + `" name="piezamhjmpje[]" oninput="Calcmhjmpje(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -10694,8 +10778,12 @@
             var newcc33 = document.getElementById('newcc33mhjmpje' + row_idmhjmpje2).value;
             var newcc34 = document.getElementById('newcc34mhjmpje' + row_idmhjmpje2).value;
             var new_sku = document.getElementById('new_sku_mhjmpje' + row_idmhjmpje2).value;
+            var newcc31r = document.getElementById('newcc31mhjmpjer' + row_idmhjmpje2).value;
+            var newcc33r = document.getElementById('newcc33mhjmpjer' + row_idmhjmpje2).value;
+            var newcc34r = document.getElementById('newcc34mhjmpjer' + row_idmhjmpje2).value;
+            var activof = document.getElementById('newactivofmhjmpje' + row_idmhjmpje2).value;
 
-            if (nombremhjmpje == "" || piezamhjmpje == "" || piezamhjmpje == "0" || unidadmhjmpje == "" || preciomhjmpje == "" || preciomhjmpje == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombremhjmpje == "" || piezamhjmpje == "" || piezamhjmpje == "0" || unidadmhjmpje == "" || preciomhjmpje == "" || preciomhjmpje == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowmhjmpje' + row_idmhjmpje2 + '').css('background-color', '#FFE17A');
             } else {
@@ -10752,6 +10840,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -10759,6 +10851,10 @@
                                         $('#newcc31mhjmpje' + row_idmhjmpje2).prop('type', 'hidden');
                                         $('#newcc33mhjmpje' + row_idmhjmpje2).prop('type', 'hidden');
                                         $('#newcc34mhjmpje' + row_idmhjmpje2).prop('type', 'hidden');
+                                        $('#newcc31mhjmpjer' + row_idmhjmpje2).prop('type', 'hidden');
+                                        $('#newcc33mhjmpjer' + row_idmhjmpje2).prop('type', 'hidden');
+                                        $('#newcc34mhjmpjer' + row_idmhjmpje2).prop('type', 'hidden');
+                                        $('#newactivofmhjmpje' + row_idmhjmpje2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -10940,15 +11036,19 @@
                     </div>
                     <input type="hidden" name="color_mhjmpli_[]" id="color_values_mhjmpli` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombremhjmpli` + i + `" name="nombremhjmpli[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="mhjmpliincluye[]" id="mhjmpliincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_mhjmpli` + i + `" placeholder="sku" value="" name="sku_mhjmpli[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31mhjmpli` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33mhjmpli` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34mhjmpli` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31mhjmplir` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33mhjmplir` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34mhjmplir` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofmhjmpli` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombremhjmpli` + i + `" name="nombremhjmpli[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="mhjmpliincluye[]" id="mhjmpliincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezamhjmpli` + i + `" name="piezamhjmpli[]" oninput="Calcmhjmpli(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -11001,8 +11101,12 @@
             var newcc33 = document.getElementById('newcc33mhjmpli' + row_idmhjmpli2).value;
             var newcc34 = document.getElementById('newcc34mhjmpli' + row_idmhjmpli2).value;
             var new_sku = document.getElementById('new_sku_mhjmpli' + row_idmhjmpli2).value;
+            var newcc31r = document.getElementById('newcc31mhjmplir' + row_idmhjmpli2).value;
+            var newcc33r = document.getElementById('newcc33mhjmplir' + row_idmhjmpli2).value;
+            var newcc34r = document.getElementById('newcc34mhjmplir' + row_idmhjmpli2).value;
+            var activof = document.getElementById('newactivofmhjmpli' + row_idmhjmpli2).value;
 
-            if (nombremhjmpli == "" || piezamhjmpli == "" || piezamhjmpli == "0" || unidadmhjmpli == "" || preciomhjmpli == "" || preciomhjmpli == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombremhjmpli == "" || piezamhjmpli == "" || piezamhjmpli == "0" || unidadmhjmpli == "" || preciomhjmpli == "" || preciomhjmpli == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowmhjmpli' + row_idmhjmpli2 + '').css('background-color', '#FFE17A');
             } else {
@@ -11059,6 +11163,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -11066,6 +11174,10 @@
                                         $('#newcc31mhjmpli' + row_idmhjmpli2).prop('type', 'hidden');
                                         $('#newcc33mhjmpli' + row_idmhjmpli2).prop('type', 'hidden');
                                         $('#newcc34mhjmpli' + row_idmhjmpli2).prop('type', 'hidden');
+                                        $('#newcc31mhjmplir' + row_idmhjmpli2).prop('type', 'hidden');
+                                        $('#newcc33mhjmplir' + row_idmhjmpli2).prop('type', 'hidden');
+                                        $('#newcc34mhjmplir' + row_idmhjmpli2).prop('type', 'hidden');
+                                        $('#newactivofmhjmpli' + row_idmhjmpli2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -11247,15 +11359,19 @@
                     </div>
                     <input type="hidden" name="color_impi_[]" id="color_values_impi` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreimpi` + i + `" name="nombreimpi[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="impiincluye[]" id="impiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_impi` + i + `" placeholder="sku" value="" name="sku_impi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31impi` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33impi` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34impi` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31impir` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33impir` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34impir` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofimpi` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreimpi` + i + `" name="nombreimpi[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="impiincluye[]" id="impiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezaimpi` + i + `" name="piezaimpi[]" oninput="Calcimpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -11308,8 +11424,12 @@
             var newcc33 = document.getElementById('newcc33impi' + row_idimpi2).value;
             var newcc34 = document.getElementById('newcc34impi' + row_idimpi2).value;
             var new_sku = document.getElementById('new_sku_impi' + row_idimpi2).value;
+            var newcc31r = document.getElementById('newcc31impir' + row_idimpi2).value;
+            var newcc33r = document.getElementById('newcc33impir' + row_idimpi2).value;
+            var newcc34r = document.getElementById('newcc34impir' + row_idimpi2).value;
+            var activof = document.getElementById('newactivofimpi' + row_idimpi2).value;
 
-            if (nombreimpi == "" || piezaimpi == "" || piezaimpi == "0" || unidadimpi == "" || precioimpi == "" || precioimpi == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombreimpi == "" || piezaimpi == "" || piezaimpi == "0" || unidadimpi == "" || precioimpi == "" || precioimpi == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowimpi' + row_idimpi2 + '').css('background-color', '#FFE17A');
             } else {
@@ -11366,6 +11486,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -11373,6 +11497,10 @@
                                         $('#newcc31impi' + row_idimpi2).prop('type', 'hidden');
                                         $('#newcc33impi' + row_idimpi2).prop('type', 'hidden');
                                         $('#newcc34impi' + row_idimpi2).prop('type', 'hidden');
+                                        $('#newcc31impir' + row_idimpi2).prop('type', 'hidden');
+                                        $('#newcc33impir' + row_idimpi2).prop('type', 'hidden');
+                                        $('#newcc34impir' + row_idimpi2).prop('type', 'hidden');
+                                        $('#newactivofimpi' + row_idimpi2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -11554,15 +11682,19 @@
                     </div>
                     <input type="hidden" name="color_impe_[]" id="color_values_impe` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreimpe` + i + `" name="nombreimpe[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="impeincluye[]" id="impeincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_impe` + i + `" placeholder="sku" value="" name="sku_impe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31impe` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33impe` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34impe` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31imper` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33imper` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34imper` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofimpe` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreimpe` + i + `" name="nombreimpe[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="impeincluye[]" id="impeincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezaimpe` + i + `" name="piezaimpe[]" oninput="Calcimpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -11615,8 +11747,12 @@
             var newcc33 = document.getElementById('newcc33impe' + row_idimpe2).value;
             var newcc34 = document.getElementById('newcc34impe' + row_idimpe2).value;
             var new_sku = document.getElementById('new_sku_impe' + row_idimpe2).value;
+            var newcc31r = document.getElementById('newcc31imper' + row_idimpe2).value;
+            var newcc33r = document.getElementById('newcc33imper' + row_idimpe2).value;
+            var newcc34r = document.getElementById('newcc34imper' + row_idimpe2).value;
+            var activof = document.getElementById('newactivofimpe' + row_idimpe2).value;
 
-            if (nombreimpe == "" || piezaimpe == "" || piezaimpe == "0" || unidadimpe == "" || precioimpe == "" || precioimpe == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombreimpe == "" || piezaimpe == "" || piezaimpe == "0" || unidadimpe == "" || precioimpe == "" || precioimpe == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowimpe' + row_idimpe2 + '').css('background-color', '#FFE17A');
             } else {
@@ -11673,6 +11809,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -11680,6 +11820,10 @@
                                         $('#newcc31impe' + row_idimpe2).prop('type', 'hidden');
                                         $('#newcc33impe' + row_idimpe2).prop('type', 'hidden');
                                         $('#newcc34impe' + row_idimpe2).prop('type', 'hidden');
+                                        $('#newcc31imper' + row_idimpe2).prop('type', 'hidden');
+                                        $('#newcc33imper' + row_idimpe2).prop('type', 'hidden');
+                                        $('#newcc34imper' + row_idimpe2).prop('type', 'hidden');
+                                        $('#newactivofimpe' + row_idimpe2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -11861,15 +12005,19 @@
                     </div>
                     <input type="hidden" name="color_imhe_[]" id="color_values_imhe` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreimhe` + i + `" name="nombreimhe[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="imheincluye[]" id="imheincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_imhe` + i + `" placeholder="sku" value="" name="sku_imhe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31imhe` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33imhe` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34imhe` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31imher` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33imher` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34imher` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofimhe` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreimhe` + i + `" name="nombreimhe[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="imheincluye[]" id="imheincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezaimhe` + i + `" name="piezaimhe[]" oninput="Calcimhe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -11922,8 +12070,12 @@
             var newcc33 = document.getElementById('newcc33imhe' + row_idimhe2).value;
             var newcc34 = document.getElementById('newcc34imhe' + row_idimhe2).value;
             var new_sku = document.getElementById('new_sku_imhe' + row_idimhe2).value;
+            var newcc31r = document.getElementById('newcc31imher' + row_idimhe2).value;
+            var newcc33r = document.getElementById('newcc33imher' + row_idimhe2).value;
+            var newcc34r = document.getElementById('newcc34imher' + row_idimhe2).value;
+            var activof = document.getElementById('newactivofimhe' + row_idimhe2).value;
 
-            if (nombreimhe == "" || piezaimhe == "" || piezaimhe == "0" || unidadimhe == "" || precioimhe == "" || precioimhe == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombreimhe == "" || piezaimhe == "" || piezaimhe == "0" || unidadimhe == "" || precioimhe == "" || precioimhe == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowimhe' + row_idimhe2 + '').css('background-color', '#FFE17A');
             } else {
@@ -11980,6 +12132,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -11987,6 +12143,10 @@
                                         $('#newcc31imhe' + row_idimhe2).prop('type', 'hidden');
                                         $('#newcc33imhe' + row_idimhe2).prop('type', 'hidden');
                                         $('#newcc34imhe' + row_idimhe2).prop('type', 'hidden');
+                                        $('#newcc31imher' + row_idimhe2).prop('type', 'hidden');
+                                        $('#newcc33imher' + row_idimhe2).prop('type', 'hidden');
+                                        $('#newcc34imher' + row_idimhe2).prop('type', 'hidden');
+                                        $('#newactivofimhe' + row_idimhe2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -12168,15 +12328,19 @@
                     </div>
                     <input type="hidden" name="color_innpi_[]" id="color_values_innpi` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreinnpi` + i + `" name="nombreinnpi[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="innpiincluye[]" id="innpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_innpi` + i + `" placeholder="sku" value="" name="sku_innpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31innpi` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33innpi` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34innpi` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31innpir` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33innpir` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34innpir` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofinnpi` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreinnpi` + i + `" name="nombreinnpi[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="innpiincluye[]" id="innpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezainnpi` + i + `" name="piezainnpi[]" oninput="Calcinnpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -12229,8 +12393,12 @@
             var newcc33 = document.getElementById('newcc33innpi' + row_idinnpi2).value;
             var newcc34 = document.getElementById('newcc34innpi' + row_idinnpi2).value;
             var new_sku = document.getElementById('new_sku_innpi' + row_idinnpi2).value;
+            var newcc31r = document.getElementById('newcc31innpir' + row_idinnpi2).value;
+            var newcc33r = document.getElementById('newcc33innpir' + row_idinnpi2).value;
+            var newcc34r = document.getElementById('newcc34innpir' + row_idinnpi2).value;
+            var activof = document.getElementById('newactivofinnpi' + row_idinnpi2).value;
 
-            if (nombreinnpi == "" || piezainnpi == "" || piezainnpi == "0" || unidadinnpi == "" || precioinnpi == "" || precioinnpi == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombreinnpi == "" || piezainnpi == "" || piezainnpi == "0" || unidadinnpi == "" || precioinnpi == "" || precioinnpi == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowinnpi' + row_idinnpi2 + '').css('background-color', '#FFE17A');
             } else {
@@ -12287,6 +12455,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -12294,6 +12466,10 @@
                                         $('#newcc31innpi' + row_idinnpi2).prop('type', 'hidden');
                                         $('#newcc33innpi' + row_idinnpi2).prop('type', 'hidden');
                                         $('#newcc34innpi' + row_idinnpi2).prop('type', 'hidden');
+                                        $('#newcc31innpir' + row_idinnpi2).prop('type', 'hidden');
+                                        $('#newcc33innpir' + row_idinnpi2).prop('type', 'hidden');
+                                        $('#newcc34innpir' + row_idinnpi2).prop('type', 'hidden');
+                                        $('#newactivofinnpi' + row_idinnpi2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -12475,15 +12651,19 @@
                     </div>
                     <input type="hidden" name="color_innpe_[]" id="color_values_innpe` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreinnpe` + i + `" name="nombreinnpe[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="innpeincluye[]" id="innpeincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_innpe` + i + `" placeholder="sku" value="" name="sku_innpe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31innpe` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33innpe` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34innpe` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31innper` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33innper` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34innper` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofinnpe` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreinnpe` + i + `" name="nombreinnpe[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="innpeincluye[]" id="innpeincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezainnpe` + i + `" name="piezainnpe[]" oninput="Calcinnpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -12536,8 +12716,12 @@
             var newcc33 = document.getElementById('newcc33innpe' + row_idinnpe2).value;
             var newcc34 = document.getElementById('newcc34innpe' + row_idinnpe2).value;
             var new_sku = document.getElementById('new_sku_innpe' + row_idinnpe2).value;
+            var newcc31r = document.getElementById('newcc31innper' + row_idinnpe2).value;
+            var newcc33r = document.getElementById('newcc33innper' + row_idinnpe2).value;
+            var newcc34r = document.getElementById('newcc34innper' + row_idinnpe2).value;
+            var activof = document.getElementById('newactivofinnpe' + row_idinnpe2).value;
 
-            if (nombreinnpe == "" || piezainnpe == "" || piezainnpe == "0" || unidadinnpe == "" || precioinnpe == "" || precioinnpe == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombreinnpe == "" || piezainnpe == "" || piezainnpe == "0" || unidadinnpe == "" || precioinnpe == "" || precioinnpe == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowinnpe' + row_idinnpe2 + '').css('background-color', '#FFE17A');
             } else {
@@ -12594,6 +12778,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -12601,6 +12789,10 @@
                                         $('#newcc31innpe' + row_idinnpe2).prop('type', 'hidden');
                                         $('#newcc33innpe' + row_idinnpe2).prop('type', 'hidden');
                                         $('#newcc34innpe' + row_idinnpe2).prop('type', 'hidden');
+                                        $('#newcc31innper' + row_idinnpe2).prop('type', 'hidden');
+                                        $('#newcc33innper' + row_idinnpe2).prop('type', 'hidden');
+                                        $('#newcc34innper' + row_idinnpe2).prop('type', 'hidden');
+                                        $('#newactivofinnpe' + row_idinnpe2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -12782,15 +12974,19 @@
                     </div>
                     <input type="hidden" name="color_tnnbpi_[]" id="color_values_tnnbpi` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombretnnbpi` + i + `" name="nombretnnbpi[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="tnnbpiincluye[]" id="tnnbpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_tnnbpi` + i + `" placeholder="sku" value="" name="sku_tnnbpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31tnnbpi` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33tnnbpi` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34tnnbpi` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31tnnbpir` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33tnnbpir` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34tnnbpir` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivoftnnbpi` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombretnnbpi` + i + `" name="nombretnnbpi[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="tnnbpiincluye[]" id="tnnbpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezatnnbpi` + i + `" name="piezatnnbpi[]" oninput="Calctnnbpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -12843,8 +13039,12 @@
             var newcc33 = document.getElementById('newcc33tnnbpi' + row_idtnnbpi2).value;
             var newcc34 = document.getElementById('newcc34tnnbpi' + row_idtnnbpi2).value;
             var new_sku = document.getElementById('new_sku_tnnbpi' + row_idtnnbpi2).value;
+            var newcc31r = document.getElementById('newcc31tnnbpir' + row_idtnnbpi2).value;
+            var newcc33r = document.getElementById('newcc33tnnbpir' + row_idtnnbpi2).value;
+            var newcc34r = document.getElementById('newcc34tnnbpir' + row_idtnnbpi2).value;
+            var activof = document.getElementById('newactivoftnnbpi' + row_idtnnbpi2).value;
 
-            if (nombretnnbpi == "" || piezatnnbpi == "" || piezatnnbpi == "0" || unidadtnnbpi == "" || preciotnnbpi == "" || preciotnnbpi == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombretnnbpi == "" || piezatnnbpi == "" || piezatnnbpi == "0" || unidadtnnbpi == "" || preciotnnbpi == "" || preciotnnbpi == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowtnnbpi' + row_idtnnbpi2 + '').css('background-color', '#FFE17A');
             } else {
@@ -12901,6 +13101,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -12908,6 +13112,10 @@
                                         $('#newcc31tnnbpi' + row_idtnnbpi2).prop('type', 'hidden');
                                         $('#newcc33tnnbpi' + row_idtnnbpi2).prop('type', 'hidden');
                                         $('#newcc34tnnbpi' + row_idtnnbpi2).prop('type', 'hidden');
+                                        $('#newcc31tnnbpir' + row_idtnnbpi2).prop('type', 'hidden');
+                                        $('#newcc33tnnbpir' + row_idtnnbpi2).prop('type', 'hidden');
+                                        $('#newcc34tnnbpir' + row_idtnnbpi2).prop('type', 'hidden');
+                                        $('#newactivoftnnbpi' + row_idtnnbpi2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -13089,15 +13297,19 @@
                     </div>
                     <input type="hidden" name="color_tnnbpe_[]" id="color_values_tnnbpe` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombretnnbpe` + i + `" name="nombretnnbpe[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="tnnbpeincluye[]" id="tnnbpeincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_tnnbpe` + i + `" placeholder="sku" value="" name="sku_tnnbpe[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31tnnbpe` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33tnnbpe` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34tnnbpe` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31tnnbper` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33tnnbper` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34tnnbper` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivoftnnbpe` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombretnnbpe` + i + `" name="nombretnnbpe[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="tnnbpeincluye[]" id="tnnbpeincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezatnnbpe` + i + `" name="piezatnnbpe[]" oninput="Calctnnbpe(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -13150,8 +13362,12 @@
             var newcc33 = document.getElementById('newcc33tnnbpe' + row_idtnnbpe2).value;
             var newcc34 = document.getElementById('newcc34tnnbpe' + row_idtnnbpe2).value;
             var new_sku = document.getElementById('new_sku_tnnbpe' + row_idtnnbpe2).value;
+            var newcc31r = document.getElementById('newcc31tnnbper' + row_idtnnbpe2).value;
+            var newcc33r = document.getElementById('newcc33tnnbper' + row_idtnnbpe2).value;
+            var newcc34r = document.getElementById('newcc34tnnbper' + row_idtnnbpe2).value;
+            var activof = document.getElementById('newactivoftnnbpe' + row_idtnnbpe2).value;
 
-            if (nombretnnbpe == "" || piezatnnbpe == "" || piezatnnbpe == "0" || unidadtnnbpe == "" || preciotnnbpe == "" || preciotnnbpe == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombretnnbpe == "" || piezatnnbpe == "" || piezatnnbpe == "0" || unidadtnnbpe == "" || preciotnnbpe == "" || preciotnnbpe == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowtnnbpe' + row_idtnnbpe2 + '').css('background-color', '#FFE17A');
             } else {
@@ -13208,6 +13424,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -13215,6 +13435,10 @@
                                         $('#newcc31tnnbpe' + row_idtnnbpe2).prop('type', 'hidden');
                                         $('#newcc33tnnbpe' + row_idtnnbpe2).prop('type', 'hidden');
                                         $('#newcc34tnnbpe' + row_idtnnbpe2).prop('type', 'hidden');
+                                        $('#newcc31tnnbper' + row_idtnnbpe2).prop('type', 'hidden');
+                                        $('#newcc33tnnbper' + row_idtnnbpe2).prop('type', 'hidden');
+                                        $('#newcc34tnnbper' + row_idtnnbpe2).prop('type', 'hidden');
+                                        $('#newactivoftnnbpe' + row_idtnnbpe2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -13396,15 +13620,19 @@
                     </div>
                     <input type="hidden" name="color_herna_[]" id="color_values_herna` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreherna` + i + `" name="nombreherna[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="hernaincluye[]" id="hernaincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_herna` + i + `" placeholder="sku" value="" name="sku_herna[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31herna` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33herna` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34herna` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31hernar` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33hernar` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34hernar` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofherna` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreherna` + i + `" name="nombreherna[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="hernaincluye[]" id="hernaincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezaherna` + i + `" name="piezaherna[]" oninput="Calcherna(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -13457,8 +13685,12 @@
             var newcc33 = document.getElementById('newcc33herna' + row_idherna2).value;
             var newcc34 = document.getElementById('newcc34herna' + row_idherna2).value;
             var new_sku = document.getElementById('new_sku_herna' + row_idherna2).value;
+            var newcc31r = document.getElementById('newcc31hernar' + row_idherna2).value;
+            var newcc33r = document.getElementById('newcc33hernar' + row_idherna2).value;
+            var newcc34r = document.getElementById('newcc34hernar' + row_idherna2).value;
+            var activof = document.getElementById('newactivofherna' + row_idherna2).value;
 
-            if (nombreherna == "" || piezaherna == "" || piezaherna == "0" || unidadherna == "" || precioherna == "" || precioherna == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombreherna == "" || piezaherna == "" || piezaherna == "0" || unidadherna == "" || precioherna == "" || precioherna == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowherna' + row_idherna2 + '').css('background-color', '#FFE17A');
             } else {
@@ -13515,6 +13747,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -13522,6 +13758,10 @@
                                         $('#newcc31herna' + row_idherna2).prop('type', 'hidden');
                                         $('#newcc33herna' + row_idherna2).prop('type', 'hidden');
                                         $('#newcc34herna' + row_idherna2).prop('type', 'hidden');
+                                        $('#newcc31hernar' + row_idherna2).prop('type', 'hidden');
+                                        $('#newcc33hernar' + row_idherna2).prop('type', 'hidden');
+                                        $('#newcc34hernar' + row_idherna2).prop('type', 'hidden');
+                                        $('#newactivofherna' + row_idherna2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -13703,15 +13943,19 @@
                     </div>
                     <input type="hidden" name="color_probmpi_[]" id="color_values_probmpi` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreprobmpi` + i + `" name="nombreprobmpi[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="probmpiincluye[]" id="probmpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_probmpi` + i + `" placeholder="sku" value="" name="sku_probmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31probmpi` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33probmpi` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34probmpi` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31probmpir` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33probmpir` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34probmpir` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofprobmpi` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreprobmpi` + i + `" name="nombreprobmpi[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="probmpiincluye[]" id="probmpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezaprobmpi` + i + `" name="piezaprobmpi[]" oninput="Calcprobmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -13764,8 +14008,12 @@
             var newcc33 = document.getElementById('newcc33probmpi' + row_idprobmpi2).value;
             var newcc34 = document.getElementById('newcc34probmpi' + row_idprobmpi2).value;
             var new_sku = document.getElementById('new_sku_probmpi' + row_idprobmpi2).value;
+            var newcc31r = document.getElementById('newcc31probmpr' + row_idprobmpi2).value;
+            var newcc33r = document.getElementById('newcc33probmpr' + row_idprobmpi2).value;
+            var newcc34r = document.getElementById('newcc34probmpr' + row_idprobmpi2).value;
+            var activof = document.getElementById('newactivofprobmpi' + row_idprobmpi2).value;
 
-            if (nombreprobmpi == "" || piezaprobmpi == "" || piezaprobmpi == "0" || unidadprobmpi == "" || precioprobmpi == "" || precioprobmpi == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombreprobmpi == "" || piezaprobmpi == "" || piezaprobmpi == "0" || unidadprobmpi == "" || precioprobmpi == "" || precioprobmpi == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowprobmpi' + row_idprobmpi2 + '').css('background-color', '#FFE17A');
             } else {
@@ -13822,6 +14070,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -13829,6 +14081,10 @@
                                         $('#newcc31probmpi' + row_idprobmpi2).prop('type', 'hidden');
                                         $('#newcc33probmpi' + row_idprobmpi2).prop('type', 'hidden');
                                         $('#newcc34probmpi' + row_idprobmpi2).prop('type', 'hidden');
+                                        $('#newcc31probmpr' + row_idprobmpi2).prop('type', 'hidden');
+                                        $('#newcc33probmpr' + row_idprobmpi2).prop('type', 'hidden');
+                                        $('#newcc34probmpr' + row_idprobmpi2).prop('type', 'hidden');
+                                        $('#newactivofprobmpi' + row_idprobmpi2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -14010,15 +14266,19 @@
                     </div>
                     <input type="hidden" name="color_panmpi_[]" id="color_values_panmpi` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombrepanmpi` + i + `" name="nombrepanmpi[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="panmpiincluye[]" id="panmpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_panmpi` + i + `" placeholder="sku" value="" name="sku_panmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31panmpi` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33panmpi` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34panmpi` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31panmpir` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33panmpir` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34panmpir` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofpanmpi` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombrepanmpi` + i + `" name="nombrepanmpi[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="panmpiincluye[]" id="panmpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezapanmpi` + i + `" name="piezapanmpi[]" oninput="Calcpanmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -14071,8 +14331,12 @@
             var newcc33 = document.getElementById('newcc33panmpi' + row_idpanmpi2).value;
             var newcc34 = document.getElementById('newcc34panmpi' + row_idpanmpi2).value;
             var new_sku = document.getElementById('new_sku_panmpi' + row_idpanmpi2).value;
+            var newcc31r = document.getElementById('newcc31panmpir' + row_idpanmpi2).value;
+            var newcc33r = document.getElementById('newcc33panmpir' + row_idpanmpi2).value;
+            var newcc34r = document.getElementById('newcc34panmpir' + row_idpanmpi2).value;
+            var activof = document.getElementById('newactivofpanmpi' + row_idpanmpi2).value;
 
-            if (nombrepanmpi == "" || piezapanmpi == "" || piezapanmpi == "0" || unidadpanmpi == "" || preciopanmpi == "" || preciopanmpi == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombrepanmpi == "" || piezapanmpi == "" || piezapanmpi == "0" || unidadpanmpi == "" || preciopanmpi == "" || preciopanmpi == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowpanmpi' + row_idpanmpi2 + '').css('background-color', '#FFE17A');
             } else {
@@ -14129,6 +14393,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -14136,6 +14404,10 @@
                                         $('#newcc31panmpi' + row_idpanmpi2).prop('type', 'hidden');
                                         $('#newcc33panmpi' + row_idpanmpi2).prop('type', 'hidden');
                                         $('#newcc34panmpi' + row_idpanmpi2).prop('type', 'hidden');
+                                        $('#newcc31panmpir' + row_idpanmpi2).prop('type', 'hidden');
+                                        $('#newcc33panmpir' + row_idpanmpi2).prop('type', 'hidden');
+                                        $('#newcc34panmpir' + row_idpanmpi2).prop('type', 'hidden');
+                                        $('#newactivofpanmpi' + row_idpanmpi2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -14317,15 +14589,19 @@
                     </div>
                     <input type="hidden" name="color_extmpi_[]" id="color_values_extmpi` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreextmpi` + i + `" name="nombreextmpi[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="extmpiincluye[]" id="extmpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_extmpi` + i + `" placeholder="sku" value="" name="sku_extmpi[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31extmpi` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33extmpi` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34extmpi` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31extmpir` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33extmpir` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34extmpir` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofextmpi` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreextmpi` + i + `" name="nombreextmpi[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="extmpiincluye[]" id="extmpiincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezaextmpi` + i + `" name="piezaextmpi[]" oninput="Calcextmpi(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -14378,8 +14654,12 @@
             var newcc33 = document.getElementById('newcc33extmpi' + row_idextmpi2).value;
             var newcc34 = document.getElementById('newcc34extmpi' + row_idextmpi2).value;
             var new_sku = document.getElementById('new_sku_extmpi' + row_idextmpi2).value;
+            var newcc31r = document.getElementById('newcc31extmpir' + row_idextmpi2).value;
+            var newcc33r = document.getElementById('newcc33extmpir' + row_idextmpi2).value;
+            var newcc34r = document.getElementById('newcc34extmpir' + row_idextmpi2).value;
+            var activof = document.getElementById('newactivofextmpi' + row_idextmpi2).value;
 
-            if (nombreextmpi == "" || piezaextmpi == "" || piezaextmpi == "0" || unidadextmpi == "" || precioextmpi == "" || precioextmpi == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombreextmpi == "" || piezaextmpi == "" || piezaextmpi == "0" || unidadextmpi == "" || precioextmpi == "" || precioextmpi == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowextmpi' + row_idextmpi2 + '').css('background-color', '#FFE17A');
             } else {
@@ -14436,6 +14716,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -14443,6 +14727,10 @@
                                         $('#newcc31extmpi' + row_idextmpi2).prop('type', 'hidden');
                                         $('#newcc33extmpi' + row_idextmpi2).prop('type', 'hidden');
                                         $('#newcc34extmpi' + row_idextmpi2).prop('type', 'hidden');
+                                        $('#newcc31extmpir' + row_idextmpi2).prop('type', 'hidden');
+                                        $('#newcc33extmpir' + row_idextmpi2).prop('type', 'hidden');
+                                        $('#newcc34extmpir' + row_idextmpi2).prop('type', 'hidden');
+                                        $('#newactivofextmpi' + row_idextmpi2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -14624,15 +14912,19 @@
                     </div>
                     <input type="hidden" name="color_imgp_[]" id="color_values_imgp` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreimgp` + i + `" name="nombreimgp[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="imgpincluye[]" id="imgpincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_imgp` + i + `" placeholder="sku" value="" name="sku_imgp[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31imgp` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33imgp` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34imgp` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31imgpr` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33imgpr` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34imgpr` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofimgp` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreimgp` + i + `" name="nombreimgp[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="imgpincluye[]" id="imgpincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required class="auto_complete_precio" id="precioimgp` + i + `" name="precioimgp[]" oninput=" enviarimagenpops(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes(); ">
@@ -14680,8 +14972,12 @@
             var newcc33 = document.getElementById('newcc33imgp' + row_idimgp2).value;
             var newcc34 = document.getElementById('newcc34imgp' + row_idimgp2).value;
             var new_sku = document.getElementById('new_sku_imgp' + row_idimgp2).value;
+            var newcc31r = document.getElementById('newcc31imgpr' + row_idimgp2).value;
+            var newcc33r = document.getElementById('newcc33imgpr' + row_idimgp2).value;
+            var newcc34r = document.getElementById('newcc34imgpr' + row_idimgp2).value;
+            var activof = document.getElementById('newactivofimgp' + row_idimgp2).value;
 
-            if (nombreimgp == "" || precioimgp == "" || precioimgp == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombreimgp == "" || precioimgp == "" || precioimgp == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowimgp' + row_idimgp2 + '').css('background-color', '#FFE17A');
             } else {
@@ -14739,6 +15035,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -14746,6 +15046,10 @@
                                         $('#newcc31imgp' + row_idimgp2).prop('type', 'hidden');
                                         $('#newcc33imgp' + row_idimgp2).prop('type', 'hidden');
                                         $('#newcc34imgp' + row_idimgp2).prop('type', 'hidden');
+                                        $('#newcc31imgpr' + row_idimgp2).prop('type', 'hidden');
+                                        $('#newcc33imgpr' + row_idimgp2).prop('type', 'hidden');
+                                        $('#newcc34imgpr' + row_idimgp2).prop('type', 'hidden');
+                                        $('#newactivofimgp' + row_idimgp2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -14927,15 +15231,19 @@
                     </div>
                     <input type="hidden" name="color_imgm_[]" id="color_values_imgm` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreimgm` + i + `" name="nombreimgm[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="imgmincluye[]" id="imgmincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_imgm` + i + `" placeholder="sku" value="" name="sku_imgm[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31imgm` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33imgm` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34imgm` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31imgmr` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33imgmr` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34imgmr` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofimgm` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreimgm` + i + `" name="nombreimgm[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="imgmincluye[]" id="imgmincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;" type="text" inputmode="numeric" placeholder="0" required class="auto_complete_precio" id="precioimgm` + i + `" name="precioimgm[]" oninput=" enviarimagenmaniquis(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes(); ">
@@ -14983,8 +15291,12 @@
             var newcc33 = document.getElementById('newcc33imgm' + row_idimgm2).value;
             var newcc34 = document.getElementById('newcc34imgm' + row_idimgm2).value;
             var new_sku = document.getElementById('new_sku_imgm' + row_idimgm2).value;
+            var newcc31r = document.getElementById('newcc31imgmr' + row_idimgm2).value;
+            var newcc33r = document.getElementById('newcc33imgmr' + row_idimgm2).value;
+            var newcc34r = document.getElementById('newcc34imgmr' + row_idimgm2).value;
+            var activof = document.getElementById('newactivofimgm' + row_idimgm2).value;
 
-            if (nombreimgm == "" || precioimgm == "" || precioimgm == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombreimgm == "" || precioimgm == "" || precioimgm == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowimgm' + row_idimgm2 + '').css('background-color', '#FFE17A');
             } else {
@@ -15042,6 +15354,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -15049,6 +15365,10 @@
                                         $('#newcc31imgm' + row_idimgm2).prop('type', 'hidden');
                                         $('#newcc33imgm' + row_idimgm2).prop('type', 'hidden');
                                         $('#newcc34imgm' + row_idimgm2).prop('type', 'hidden');
+                                        $('#newcc31imgmr' + row_idimgm2).prop('type', 'hidden');
+                                        $('#newcc33imgmr' + row_idimgm2).prop('type', 'hidden');
+                                        $('#newcc34imgmr' + row_idimgm2).prop('type', 'hidden');
+                                        $('#newactivofimgm' + row_idimgm2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');
@@ -15230,15 +15550,19 @@
                     </div>
                     <input type="hidden" name="color_ots_[]" id="color_values_ots` + i + `" value="0" size="5">
                 </td>
-                <td style="font-size: 1.3em; color: black">
-                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreots` + i + `" name="nombreots[]" placeholder="Nombre" class="auto_complete">
-                    <textarea style="background: transparent" name="otsincluye[]" id="otsincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
-                </td>
                 <td>
                     <div><input class="skuvalueinsert" id="new_sku_ots` + i + `" placeholder="sku" value="" name="sku_ots[]" size="10" style="font-size: 1.3em; color: black;border:none;border-bottom:1px solid gray;"></div>
                     <div><input class="skuvaluecc31" id="newcc31ots` + i + `" size="10" value="" placeholder="cc31" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc33" id="newcc33ots` + i + `" size="10" value="" placeholder="cc33" style="border:none; border-bottom: 1px solid gray"></div>
                     <div><input class="skuvaluecc34" id="newcc34ots` + i + `" size="10" value="" placeholder="cc34" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc31r" id="newcc31otsr` + i + `" size="10" value="" placeholder="cc31 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc33r" id="newcc33otsr` + i + `" size="10" value="" placeholder="cc33 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvaluecc34r" id="newcc34otsr` + i + `" size="10" value="" placeholder="cc34 rep" style="border:none; border-bottom: 1px solid gray"></div>
+                    <div><input class="skuvalueactivof" id="newactivofots` + i + `" size="10" value="" placeholder="activo f" style="border:none; border-bottom: 1px solid gray"></div>
+                </td>
+                <td style="font-size: 1.3em; color: black">
+                    <input type="text" style="width:100%;border:none;border-bottom:1px solid gray;" required id="nombreots` + i + `" name="nombreots[]" placeholder="Nombre" class="auto_complete">
+                    <textarea style="background: transparent" name="otsincluye[]" id="otsincluye` + i + `" cols="50" rows="3" placeholder="incluye"></textarea>
                 </td>
                 <td>
                     <input style="font-size: 1.3em; color: black; width: 50px;border:none;border-bottom:1px solid gray;" type="number" min="1" inputmode="numeric" step="any" placeholder="0" required class="auto_complete_pieza" id="piezaots` + i + `" name="piezaots[]" oninput="Calcots(this); calculaherrajes(); calculamuebles(); calculaextras(); calculapop(); calculamaniquis(); calculaotros(); calculatotalmueherextintytrapopman(); calculatotalentrevalorantespreciototal(); calculatotalmueherext(); calculatotalentrevalorantespreciototal2(); getanticipo(); gettotaliva(); getanticipoiva(); gettotaltiendatotal(); gettotaltiendaanticipo(); getfiniquito(); getPorcentajes()" value="">
@@ -15291,8 +15615,12 @@
             var newcc33 = document.getElementById('newcc33ots' + row_idots2).value;
             var newcc34 = document.getElementById('newcc34ots' + row_idots2).value;
             var new_sku = document.getElementById('new_sku_ots' + row_idots2).value;
+            var newcc31r = document.getElementById('newcc31otsr' + row_idots2).value;
+            var newcc33r = document.getElementById('newcc33otsr' + row_idots2).value;
+            var newcc34r = document.getElementById('newcc34otsr' + row_idots2).value;
+            var activof = document.getElementById('newactivofots' + row_idots2).value;
 
-            if (nombreots == "" || piezaots == "" || piezaots == "0" || unidadots == "" || precioots == "" || precioots == "0" || newcc31 == "" || newcc33 == "" || newcc34 == "" || new_sku == "") {
+            if (nombreots == "" || piezaots == "" || piezaots == "0" || unidadots == "" || precioots == "" || precioots == "0") {
                 alert("¡UNO O MAS CAMPOS OBLIGATORIOS DEL NUEVO REGISTRO ESTAN VACIOS O ESTAN EN '0'!")
                 $('#rowots' + row_idots2 + '').css('background-color', '#FFE17A');
             } else {
@@ -15350,6 +15678,10 @@
                                         'cc31': newcc31,
                                         'cc33': newcc33,
                                         'cc34': newcc34,
+                                        'cc31r': newcc31r,
+                                        'cc33r': newcc33r,
+                                        'cc34r': newcc34r,
+                                        'activof': activof,
                                         'id_producto': response2,
                                     },
                                     success: function() {
@@ -15357,6 +15689,10 @@
                                         $('#newcc31ots' + row_idots2).prop('type', 'hidden');
                                         $('#newcc33ots' + row_idots2).prop('type', 'hidden');
                                         $('#newcc34ots' + row_idots2).prop('type', 'hidden');
+                                        $('#newcc31otsr' + row_idots2).prop('type', 'hidden');
+                                        $('#newcc33otsr' + row_idots2).prop('type', 'hidden');
+                                        $('#newcc34otsr' + row_idots2).prop('type', 'hidden');
+                                        $('#newactivofots' + row_idots2).prop('type', 'hidden');
                                     },
                                     error: function (){
                                         alert('error al registrar skus nuevos');

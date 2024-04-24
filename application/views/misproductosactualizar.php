@@ -461,8 +461,10 @@
                 // no encontrara los productos que sean solamente o contengan la palabra "panel", si no que como todos los select box conetienen
                 // el departamento "paneles", traera siempre todos y no mostrara los que tienen especificamente "panel" entonces hará la busqueda
                 // en las demas columnas y omitirá esa columna.
-            }
-            ]
+            }],
+            scrollY: "600px", // Altura máxima de la tabla
+            scrollX: true, // Habilita el scroll horizontal si es necesario
+            scrollCollapse: true // Colapsa el scroll si la tabla es más pequeña que el área definida
         });
     });
 </script>
@@ -642,8 +644,13 @@
     }
 
     #container_table {
-        max-height: 600px;
+        max-height: 700px;
         overflow-y: auto;
         overflow-x: auto;
+    }
+    #catalgo_tbl {
+        width: auto; /* Ajusta el ancho automáticamente */
+        table-layout: auto; /* Ajusta el ancho de las columnas automáticamente */
+        margin-left: 0; /* Asegura que la tabla esté alineada a la izquierda */
     }
 </style>

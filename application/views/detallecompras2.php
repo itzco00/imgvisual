@@ -182,6 +182,24 @@
                                     ?>
                                 </div>
                             </div>
+                            <div style="display: flex; justify-content: space-around; padding-top:5px;">
+                                <div id="section_cc31" >
+                                    <input type="radio" id="change_sku_values_cc31" name="radioGroup" class="radio-btn">
+                                    <label for="change_sku_values_cc31" class="radio-label">CC 31</label>
+                                </div>
+                                <div id="section_cc33" >
+                                    <input type="radio" id="change_sku_values_cc33" name="radioGroup" class="radio-btn">
+                                    <label for="change_sku_values_cc33" class="radio-label">CC 33</label>
+                                </div>
+                                <div id="section_cc34" >
+                                    <input type="radio" id="change_sku_values_cc34" name="radioGroup" class="radio-btn">
+                                    <label for="change_sku_values_cc34" class="radio-label">CC 34</label>
+                                </div>
+                                <div id="limpia_skus_div" >
+                                    <input type="radio" id="limpia_skus_vals" name="radioGroup" class="radio-btn">
+                                    <label for="limpia_skus_vals" class="radio-label">Limpia skus</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -798,7 +816,7 @@
                                                                 <th></th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody id="contenidotablaentrada">
                                                             <?php
                                                             $filasident = 0;
                                                             $consec = 0;
@@ -2027,7 +2045,7 @@
                                                                     <th></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="contenidotabladcmpi">
                                                                 <?php
                                                                 $filasiddcmpi = 0;
                                                                 $consec = 0;
@@ -2615,7 +2633,7 @@
                                                                     <th></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="contenidotabladcmpe">
                                                                 <?php
                                                                 $filasiddcmpe = 0;
                                                                 $consec = 0;
@@ -4439,7 +4457,7 @@
                                                                     <th></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="contenidotablamhjmpi">
                                                                 <?php
                                                                 $filasidmhjmpi = 0;
                                                                 $consec = 0;
@@ -5027,7 +5045,7 @@
                                                                     <th></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="contenidotablamhjmpe">
                                                                 <?php
                                                                 $filasidmhjmpe = 0;
                                                                 $consec = 0;
@@ -5615,7 +5633,7 @@
                                                                     <th></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="contenidotablamhjmpje">
                                                                 <?php
                                                                 $filasidmhjmpje = 0;
                                                                 $consec = 0;
@@ -6203,7 +6221,7 @@
                                                                     <th></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="contenidotablamhjmpli">
                                                                 <?php
                                                                 $filasidmhjmpli = 0;
                                                                 $consec = 0;
@@ -7743,7 +7761,7 @@
                                                                     <th></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="contenidotablaimpi">
                                                                 <?php
                                                                 $filasidimpi = 0;
                                                                 $consec = 0;
@@ -8331,7 +8349,7 @@
                                                                     <th></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="contenidotablaimpe">
                                                                 <?php
                                                                 $filasidimpe = 0;
                                                                 $consec = 0;
@@ -8919,7 +8937,7 @@
                                                                     <th></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="contenidotablaimhe">
                                                                 <?php
                                                                 $filasidimhe = 0;
                                                                 $consec = 0;
@@ -10158,7 +10176,7 @@
                                                                     <th></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="contenidotablainnpi">
                                                                 <?php
                                                                 $filasidinnpi = 0;
                                                                 $consec = 0;
@@ -10746,7 +10764,7 @@
                                                                     <th></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="contenidotablainnpe">
                                                                 <?php
                                                                 $filasidinnpe = 0;
                                                                 $consec = 0;
@@ -11986,7 +12004,7 @@
                                                                     <th></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="contenidotablatnnbpi">
                                                                 <?php
                                                                 $filasidtnnbpi = 0;
                                                                 $consec = 0;
@@ -12574,7 +12592,7 @@
                                                                     <th></th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody id="contenidotablatnnbpe">
                                                                 <?php
                                                                 $filasidtnnbpe = 0;
                                                                 $consec = 0;
@@ -13238,7 +13256,7 @@
                                                                 <th></th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody id="contenidotablaherna">
                                                             <?php
                                                             $filasidherna = 0;
                                                             $consec = 0;
@@ -13899,7 +13917,7 @@
                                                                 <th></th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody id="contenidotablaprobmpi">
                                                             <?php
                                                             $filasidprobmpi = 0;
                                                             $consec = 0;
@@ -14567,7 +14585,7 @@
                                                                 <th></th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody id="contenidotablapanmpi">
                                                             <?php
                                                             $filasidpanmpi = 0;
                                                             $consec = 0;
@@ -17951,6 +17969,679 @@
             document.getElementById('tdsubtotalots-' + split_row_idots).innerHTML = valuesots + (' MXN');
             console.log(valuesots);
             $('#piezaots-' + split_row_idots).trigger('input');
+        });
+
+
+
+
+
+
+        //******************SKUS VALUES***************** */
+        $('#change_sku_values_cc31').on('click', function() {
+            $('#ccstatus').val(31);
+            $('#contenidotablaentrada tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotabladcmpi tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotabladcmpe tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablamhjmpi tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablamhjmpe tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablamhjmpje tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablamhjmpli tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablaimpi tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablaimpe tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablaimhe tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablainnpi tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablainnpe tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablatnnbpi tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablatnnbpe tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablaherna tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablaprobmpi tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablapanmpi tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablaextmpi tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablaimgp tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablaimgm tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+            $('#contenidotablaots tr').each(function() {
+                var cc31v = $(this).find('.skuvaluecc31').val();
+                var cc31rv = $(this).find('.skuvaluecc31r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc31v == '' && cc31rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc31v);
+                }
+            });
+
+
+            var cuentacontable = $('#ccstatus').val();
+            var tipo_tienda = $('#tipo_tienda').val();
+            var ubicacion_tienda = $('#ubicacion_tienda').val();
+            $('#replicacuentacontable').val(cuentacontable);
+            $('#replicatipotienda').val(tipo_tienda);
+            $('#replicaubicacion').val(ubicacion_tienda);
+            
+        });
+        $('#change_sku_values_cc33').on('click', function() {
+            $('#ccstatus').val(33);
+            $('#contenidotablaentrada tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotabladcmpi tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotabladcmpe tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablamhjmpi tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablamhjmpe tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablamhjmpje tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablamhjmpli tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablaimpi tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablaimpe tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablaimhe tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablainnpi tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablainnpe tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablatnnbpi tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablatnnbpe tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablaherna tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablaprobmpi tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablapanmpi tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablaextmpi tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablaimgp tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablaimgm tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+            $('#contenidotablaots tr').each(function() {
+                var cc33v = $(this).find('.skuvaluecc33').val();
+                var cc33rv = $(this).find('.skuvaluecc33r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc33v == '' && cc33rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc33v);
+                }
+            });
+
+
+            var cuentacontable = $('#ccstatus').val();
+            var tipo_tienda = $('#tipo_tienda').val();
+            var ubicacion_tienda = $('#ubicacion_tienda').val();
+            $('#replicacuentacontable').val(cuentacontable);
+            $('#replicatipotienda').val(tipo_tienda);
+            $('#replicaubicacion').val(ubicacion_tienda);
+
+        });
+        $('#change_sku_values_cc34').on('click', function() {
+            $('#ccstatus').val(34);
+            $('#contenidotablaentrada tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotabladcmpi tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotabladcmpe tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablamhjmpi tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablamhjmpe tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablamhjmpje tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablamhjmpli tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablaimpi tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablaimpe tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablaimhe tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablainnpi tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablainnpe tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablatnnbpi tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablatnnbpe tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablaherna tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablaprobmpi tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablapanmpi tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablaextmpi tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablaimgp tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablaimgm tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+            $('#contenidotablaots tr').each(function() {
+                var cc34v = $(this).find('.skuvaluecc34').val();
+                var cc34rv = $(this).find('.skuvaluecc34r').val();
+                var activof = $(this).find('.skuvalueactivof').val();
+                if (cc34v == '' && cc34rv == ''){
+                    $(this).find('.skuvalueinsert').val(activof);
+                }else{
+                    $(this).find('.skuvalueinsert').val(cc34v);
+                }
+            });
+
+
+            var cuentacontable = $('#ccstatus').val();
+            var tipo_tienda = $('#tipo_tienda').val();
+            var ubicacion_tienda = $('#ubicacion_tienda').val();
+            $('#replicacuentacontable').val(cuentacontable);
+            $('#replicatipotienda').val(tipo_tienda);
+            $('#replicaubicacion').val(ubicacion_tienda);
+
         });
 
 

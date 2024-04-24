@@ -777,11 +777,19 @@ class Dashboard extends CI_Controller
         $cc31 = $this->input->post('cc31');
         $cc33 = $this->input->post('cc33');
         $cc34 = $this->input->post('cc34');
+        $cc31r = $this->input->post('cc31r');
+        $cc33r = $this->input->post('cc33r');
+        $cc34r = $this->input->post('cc34r');
+        $activof = $this->input->post('activof');
         $id_producto = $this->input->post('id_producto');
         $data = array(
             'cc31' => $cc31,
             'cc33' => $cc33,
             'cc34' => $cc34,
+            'cc31r' => $cc31r,
+            'cc33r' => $cc33r,
+            'cc34r' => $cc34r,
+            'activof' => $activof,
             'id_producto' => $id_producto
         );
         $this->model->getregistraNuevosSkus($data);
