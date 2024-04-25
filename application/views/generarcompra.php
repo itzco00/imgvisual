@@ -14987,210 +14987,210 @@
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotabladcmpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotabladcmpe tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablamhjmpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablamhjmpe tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablamhjmpje tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablamhjmpli tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimpe tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimhe tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablainnpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablainnpe tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablatnnbpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablatnnbpe tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaherna tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaprobmpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablapanmpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaextmpi tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimgp tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimgm tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaots tr').each(function() {
                 var cc31v = $(this).find('.skuvaluecc31').val();
                 var cc31rv = $(this).find('.skuvaluecc31r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc31v == '' && cc31rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc31v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
 
@@ -15210,210 +15210,210 @@
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotabladcmpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotabladcmpe tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablamhjmpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablamhjmpe tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablamhjmpje tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablamhjmpli tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimpe tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimhe tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablainnpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablainnpe tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablatnnbpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablatnnbpe tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaherna tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaprobmpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablapanmpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaextmpi tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimgp tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimgm tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaots tr').each(function() {
                 var cc33v = $(this).find('.skuvaluecc33').val();
                 var cc33rv = $(this).find('.skuvaluecc33r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc33v == '' && cc33rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc33v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
 
@@ -15433,210 +15433,210 @@
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotabladcmpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotabladcmpe tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablamhjmpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablamhjmpe tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablamhjmpje tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablamhjmpli tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimpe tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimhe tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablainnpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablainnpe tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablatnnbpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablatnnbpe tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaherna tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaprobmpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablapanmpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaextmpi tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimgp tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaimgm tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
             $('#contenidotablaots tr').each(function() {
                 var cc34v = $(this).find('.skuvaluecc34').val();
                 var cc34rv = $(this).find('.skuvaluecc34r').val();
                 var activof = $(this).find('.skuvalueactivof').val();
-                if (cc34v == '' && cc34rv == ''){
-                    $(this).find('.skuvalueinsert').val(activof);
-                }else{
+                if (activof == ''){
                     $(this).find('.skuvalueinsert').val(cc34v);
+                }else{
+                    $(this).find('.skuvalueinsert').val(activof);
                 }
             });
 
@@ -15735,9 +15735,9 @@
         if(ccstatus == ''){ //si no se ha seleccionado cuenta contable
             console.log('seleccione cc');// no interccambia sku de reproceso
         }else{//si hay cuenta contable activa
-            if(isfijo == '1'){// si es activo fijo
-                console.log('no se cambia rep');//se queda con el valor de AC.F.
-            }else{//si no es activo fijo
+            //if(isfijo == '1'){// si es activo fijo
+                //console.log('no se cambia rep');//se queda con el valor de AC.F.
+            //}else{//si no es activo fijo
                 if(ccstatus == '31'){//si la cuenta contable es 31
                     $(this).closest('tr').find('.skuvalueinsert').val(cc31rv);//cambia sku de reproceso de de la cuenta contable 31
                 }else if(ccstatus == '33'){//si la cuenta contable es 33
@@ -15745,7 +15745,7 @@
                 }else if(ccstatus == '34'){//si la cuenta contable es 34
                     $(this).closest('tr').find('.skuvalueinsert').val(cc34rv);//cambia sku de reproceso de de la cuenta contable 34
                 }else{}
-            }
+            //}
         }
     });
     $('.check_isfijo').click(function (){ //traer skus normales cuando se selecciona la bandera azul
@@ -15757,9 +15757,9 @@
         if(ccstatus == ''){ //si no se ha seleccionado cuenta contable
             console.log('seleccione cc');// no interccambia sku normal
         }else{//si hay cuenta contable activa
-            if(isfijo == '1'){// si es activo fijo
-                console.log('no se cambia rep');//se queda con el valor de AC.F.
-            }else{//si no es activo fijo
+            //if(isfijo == '1'){// si es activo fijo
+                //console.log('no se cambia rep');//se queda con el valor de AC.F.
+            //}else{//si no es activo fijo
                 if(ccstatus == '31'){//si la cuenta contable es 31
                     $(this).closest('tr').find('.skuvalueinsert').val(cc31v);//cambia sku de reproceso de de la cuenta contable 31
                 }else if(ccstatus == '33'){//si la cuenta contable es 33
@@ -15767,7 +15767,7 @@
                 }else if(ccstatus == '34'){//si la cuenta contable es 34
                     $(this).closest('tr').find('.skuvalueinsert').val(cc34v);//cambia sku de reproceso de de la cuenta contable 34
                 }else{}
-            }
+            //}
         }
     });
 </script>
